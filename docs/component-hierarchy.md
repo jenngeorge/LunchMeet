@@ -6,15 +6,15 @@
   + Header nav
 
 
-  **MatchesContainer** 
+  + **MatchesContainer** 
     + MatchesIndex
-      + Filter: an array of ProfileLookingFor items
-        * ProfileLookingForm (but styled differently)
+    + Filter: an array of ProfileLookingFor items
+      * ProfileLookingForm (but styled differently)
 
-  MatchesIndex (appears in Browse and Likes)
+  + MatchesIndex (appears in Browse and Likes)
     + MatchIndexItem (each match displayed in MatchesIndex, links to a profile)
 
-  **ProfileContainer**
+  + **ProfileContainer**
     + **ProfileBasic** (location, "I’m a “, photo )
       - ProfileBasicForm (if currentUser)
         - **ProfileLookingFor** (sidebar)
@@ -27,13 +27,13 @@
           * ProfileQuestionItem
             + ProfileQuestionForm (if currentUser)
 
-  **MessagesContainer** 
+  + **MessagesContainer** 
     + MessagesIndex (all messages to currentUser, displays under header)
       - MessageIndexItem
     + MessageDetail (display chat on bottom left of screen)
       - NewMessageForm (add message to current chat)
 
-  **Bonus : LikesContainer** 
+  + **Bonus : LikesContainer** 
     + MatchesIndex
     + Filter: by mutual liking
 
