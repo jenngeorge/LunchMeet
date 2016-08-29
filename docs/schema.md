@@ -79,8 +79,8 @@ explanation     | text      |
 column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
-sender_id       | integer   | not null, foreign key, indexed
-receiver_id     | integer   | not null, foreign key, indexed
+user_id         | integer   | not null, foreign key, indexed
+other_user_id   | integer   | not null, foreign key, indexed
 
 
 ## messages
