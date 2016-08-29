@@ -8,7 +8,7 @@
 
   + **MatchesContainer**
     + MatchesIndex
-    + Filter: an array of ProfileLookingFor items
+    + Filter: an array of Interest items
       * ProfileLookingForm (but styled differently)
 
   + MatchesIndex (appears in Browse and Likes)
