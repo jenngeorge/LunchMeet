@@ -15,7 +15,7 @@ column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
 user_id         | string    | not null, foreign key, indexed, unique
-photo           | string    |
+photo_url       | string    |
 zip_code        | integer   | not null
 type            | string    | not null, only: [developer, recruiter, designer, business/operations, sales]
 about           | text      |
@@ -89,6 +89,7 @@ sender_id       | integer   | not null, foreign key, indexed
 receiver_id     | integer   | not null, foreign key, indexed
 content         | text      | not null
 timestamp       | date      | not null
+
 
 ## likes
 
