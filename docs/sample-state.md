@@ -34,20 +34,27 @@
       }
     }
   },
-  open_messages: {
+  conversations: {
     1: {
       sender_id: 1,
       receiver_id: 2,
-      content: "Coding is fun",
-      timestamp: 2038-01-19 03:12:05
+      messages: [
+        1: {
+        sender_id: 1,
+        receiver_id: 2,
+        content: "Coding is fun",
+        timestamp: 2038-01-19 03:10:05
+        },
+        2: {
+        sender_id: 2,
+        receiver_id: 1,
+        content: "I agree",
+        timestamp: 2038-01-19 03:12:05
+        },
+      ]
     },
-    2: {
-      sender_id: 1,
-      receiver_id: 2,
-      content: "Yes I agree"
-      timestamp: 2038-01-19 03:14:07
-    }
   },
+  likes : {},
   matches: {
     1: {
       username: AnotherUser,

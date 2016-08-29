@@ -48,12 +48,12 @@
 
 * `fetchSingleUser`
   0. invoked from `Profile` `didMount / willReceiveProps`
-  0. `GET /api/users/:id` is called
+  0. `GET /api/users/:user_id` is called
   0. `receiveSingleUser` is set as the success callback
 
 * `updateUser`
   0. invoked from `ProfileBasicForm` `onSubmit`
-  0. `PATCH /api/users/:id` is called
+  0. `POST api/users/:id` is called
   0. `receiveSingleUser` is set as the success callback
 
 
@@ -62,6 +62,73 @@
   0. invoked from an API callback
   0. the `MatchReducer` updates `matches` in the application's state
 
-* `receiveSingeleUser`
+* `receiveSingleUser`
   0. invoked from an API callback
   0. the `ProfileReducer` updates `current_profile` in the application's state
+
+## Conversation Cycles
+
+### Conversations API Request Actions
+* `fetchAllConversations`
+  0. invoked from `User` `didMount / willReceiveProps`
+  0. `GET /api/conversations` is called
+  0. `receiveAllConversations` is set as the success callback
+
+* `createConversation`
+  0. invoked from new message button `onClick`
+  0. `POST /api/conversations` is called.
+  0. `receiveSingleConversation` is set as the success callback.
+
+* `fetchSingleConversation`
+  0. invoked from `Conversations` index `onClick`
+  0. `GET /api/conversations/:conversation_id` is called
+  0. `receiveSingleConversation` is set as the success callback`
+
+### Conversations API Response Actions
+
+* `receiveAllConversations`
+  0. invoked from an API callback
+  0. the `ConversationReducer` updates `Conversations` in the application's state.
+
+* `receiveSingleConversation`
+  0. invoked from an API callback
+  0. the `ConversationReducer` updates `conversaion[id]` in the application's state.
+
+
+## Question Cycles
+
+
+
+
+## MatchFilter Cycles
+
+* `fetchMatchFilters`
+  0. invoked from `ProfileLookingForm` `onSubmit`
+  0. `receiveMatchFilters` is set as the success callback.
+
+* `receiveMatchFilters`
+  0. invoked from an API callback.
+  0. The `MatchesReducer` reducer updates `filters` in the application's state.
+
+## Likes Cycles
+
+### Likes API Request Actions
+* `fetchAllLikes`
+  0. invoked from `Likes`
+  0. `GET api/api/likes` is called
+  0. `receiveAllLikes` is set as the success callback
+
+* `createLike`
+  0. invoked from `Profile` on `ToggleLikeButton` `onClick`
+  0. `POST api/likes` is called
+  0. `receiveAllLikes` is set as the success callback
+
+* `destroyLike`
+  0. invoked from `Profile` on `ToggleLikeButton` `onClick`
+  0. `DELETE api/likes/:like_id` is called
+  0. `receiveAllLikes` is set as the success callback
+
+### Likes API Response Actions
+* `receiveAllLikes`
+  0. invoked from an API callback
+  0. the `LikesReducer` updates `likes` in the application's state

@@ -12,7 +12,7 @@
 
 - `POST /api/users`
 - `PATCH /api/users` - update user profile info
-- `GET /api/users/:id` - get a specific user
+- `GET /api/users/:user_id` - get a specific user
 - `GET /api/users/new` - new user
 - `GET /api/users` - used for MatchesIndex
 
@@ -22,14 +22,15 @@
 - `DELETE /api/session`
 - `GET /api/session/new` - login user
 
-### Messages
+### Conversations
 
--  `GET /api/messages`
--  `POST /api/messages`
+-  `GET /api/conversations`
+-  `POST /api/conversations`
+-  `GET /api/conversations/:conversation_id/messages` -get a specific conversation's messages
 
 ### Questions
 
--  `GET /api/questions/:id`
+-  `GET /api/questions`
 
 ### Answers
 
@@ -38,4 +39,4 @@
 ### Bonus: Likes
 - `GET /api/likes`
 - `POST /api/likes`
-- `DELETE /api/likes/:id`
+- `DELETE /api/likes/:like_id`

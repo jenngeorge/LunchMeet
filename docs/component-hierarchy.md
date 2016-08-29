@@ -2,11 +2,11 @@
 **AuthformContainer**
   + AuthForm
 
-**UserContainer** 
+**UserContainer**
   + Header nav
 
 
-  + **MatchesContainer** 
+  + **MatchesContainer**
     + MatchesIndex
     + Filter: an array of ProfileLookingFor items
       * ProfileLookingForm (but styled differently)
@@ -27,13 +27,13 @@
           * ProfileQuestionItem
             + ProfileQuestionForm (if currentUser)
 
-  + **MessagesContainer** 
-    + MessagesIndex (all messages to currentUser, displays under header)
-      - MessageIndexItem
-    + MessageDetail (display chat on bottom left of screen)
-      - NewMessageForm (add message to current chat)
+  + **ConversationsContainer**
+    + ConversationsIndex (all currentUser's conversations, displays under header)
+      - ConversationIndexItem
+        + Message
+        + NewMessageForm (add message to current chat)
 
-  + **Bonus : LikesContainer** 
+  + **Bonus : LikesContainer**
     + MatchesIndex
     + Filter: by mutual liking
 
@@ -55,6 +55,6 @@ Routes
 |“/user/about"| “ProfileContainer"|
 |“/user/questions"| “ProfileContainer"|
 |“/user/availability"| “ProfileContainer"|
-|“/user/messages”| “MessageContainer"|
-|“/user/messages/:username”| “MessageContainer"|
+|“/user/conversations”| “ConversationContainer"|
+|“/user/conversation/:conversation_id/messages”| “ConversationContainer"|
 |“/user/likes”| “LikesContainer"|
