@@ -10,6 +10,30 @@
     signIn: {errors: []},
     answerQuestion: {errors: ["must select one option"]}
   },
+  current_profile: {
+    profile_info: {
+      username: AnotherUser,
+      photo_url: "pic.jpg",
+      type: "Recruiter",
+      location: "SOMA",
+      about: "Hi I want to hire people."
+    },
+    availability: {
+      "Monday": 1-2,
+      "Wednesday": 12-1
+    },
+    looking_for: "developers",
+    interests: ["mentee", "friendship"],
+    questions: {
+      1: {
+        title: "Tabs or spaces?"
+        answer: "Spaces",
+        acceptable: "Spaces",
+        importance: 2,
+        explanation: ""
+      }
+    }
+  },
   open_messages: {
     1: {
       sender_id: 1,
