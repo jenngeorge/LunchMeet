@@ -54,9 +54,6 @@ Routes
 |“/users/:username/questions"| “ProfileContainer"|
 |“/users/:username/availability"| “ProfileContainer"|
 |“/user”| “ProfileContainer"|
-|“/user/about"| “ProfileContainer"|
-|“/user/questions"| “ProfileContainer"|
-|“/user/availability"| “ProfileContainer"|
 |“/user/conversations”| “ConversationContainer"|
 |“/user/conversation/:conversation_id/messages”| “ConversationContainer"|
 |“/user/likes”| “LikesContainer"|
