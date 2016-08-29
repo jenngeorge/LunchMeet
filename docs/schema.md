@@ -77,7 +77,7 @@ question_id     | integer   | not null, foreign key, indexed, unique[user_id]
 answer          | integer   | not null, foreign key (from question_options), indexed
 acceptable      | integer   | not null, foreign key (from question_options), indexed
 importance      | integer   | not null
-explanation     | text      | not null
+explanation     | text      | 
 
 
 # messages
