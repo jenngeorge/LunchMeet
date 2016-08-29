@@ -1,5 +1,5 @@
 ## example state
-
+```json
 {
   currentUser: {
     id: 1,
@@ -47,3 +47,4 @@
 
   filters: ["Mentee", "Friendship"]
 }
+```
