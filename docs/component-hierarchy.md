@@ -15,7 +15,7 @@
     + MatchIndexItem (each match displayed in MatchesIndex, links to a profile)
 
   + **ProfileContainer**
-    + **ProfileBasic** (location, "I’m a “, photo )
+    + **ProfileBasic** (location, type, photo, zip )
       - ProfileBasicForm (if currentUser)
         - **ProfileLookingFor** (sidebar)
           * ProfileLookingForm (if currentUser)
@@ -42,15 +42,18 @@
 
 Routes
 
+* user/ is the current user
+
+
 |Path   | Component   |
 |-------|-------------|
 |“/sign-up” | “AuthFormContainer"|
 |“/sign-in” | “AuthFormContainer"|
 |“/matches” | “MatchesContainer" |
-|“/matches/:username” | “ProfileContainer"|
-|“/matches/:username/about"| “ProfileContainer"|
-|“/matches/:username/questions"| “ProfileContainer"|
-|“/matches/:username/availability"| “ProfileContainer"|
+|“/profiles/:username” | “ProfileContainer"|
+|“/profile/:username/about"| “ProfileContainer"|
+|“/profile/:username/questions"| “ProfileContainer"|
+|“/profile/:username/availability"| “ProfileContainer"|
 |“/user”| “ProfileContainer"|
 |“/user/about"| “ProfileContainer"|
 |“/user/questions"| “ProfileContainer"|

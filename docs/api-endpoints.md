@@ -28,13 +28,14 @@
 -  `POST /api/conversations`
 -  `GET /api/conversations/:conversation_id/messages` -get a specific conversation's messages
 
-### Questions
+### Questions and Responses
 
--  `GET /api/questions`
+- `GET /api/questions`
+- `GET /api/question_responses`
+- `POST /api/question_responses`
+- `PATCH /api/questions_responses`
+- `DELETE /api/questions_responses/:id`
 
-### Answers
-
-- `GET /api/answers`
 
 ### Bonus: Likes
 - `GET /api/likes`

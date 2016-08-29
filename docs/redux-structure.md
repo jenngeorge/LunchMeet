@@ -94,10 +94,54 @@
   0. invoked from an API callback
   0. the `ConversationReducer` updates `conversaion[id]` in the application's state.
 
-
 ## Question Cycles
 
+### Question API Request Actions
 
+* `fetchSingleQuestion`
+  0. invoked from currentUser's profile question tab `onClick`
+  0. `GET /api/questions/:question_id` is called
+  0. `receiveSingleQuestion` is set as the success callback`
+
+### Question API Receive Action
+
+* `receiveSingleQuestion`
+  0. invoked from an API callback
+  0. the `QuestionReducer` updates `question` in the application's state.
+
+## Question Response Cycles
+
+### Question API Request Actions
+
+* `fetchResponses`
+  0. invoked from Profile question tab `onClick`
+  0. `GET /api/question_responses` is called
+  0. `receiveResponses` is set as the success callback`
+
+* `createResponse`
+  0. invoked from currentUser's ProfileQuestions tab on `onSubmit`
+  0. `POST /api/question_responses` is called
+  0. `receiveResponses` is set as the success callback`
+
+* `updateResponse`
+  0. invoked from currentUser's ProfileQuestions tab on `Update Answer` button
+  0. `POST /api/question_responses/:id` is called
+  0. `receiveResponses` is set as the success callback`
+
+* `destroyResponse`
+  0. invoked from currentUser's ProfileQuestions tab on `Delete Answer` button
+  0. `DELETE /api/question_responses/:id` is called
+  0. `removeResponses` is set as the success callback`
+
+### Question API Receive Action
+
+* `receiveResponses`
+  0. invoked from an API callback
+  0. the `ResponsesReducer` updates `questions[id]` in the application's state under `current_profile`
+
+* `removeResponse`
+  0. invoked from an API callback
+  0. the `ResponsesReducer` removes `questions[id]` in the application's state under `current_profile`
 
 
 ## MatchFilter Cycles
@@ -108,7 +152,7 @@
 
 * `receiveMatchFilters`
   0. invoked from an API callback.
-  0. The `MatchesReducer` reducer updates `filters` in the application's state.
+  0. The `MatchesReducer` updates `filters` in the application's state.
 
 ## Likes Cycles
 
