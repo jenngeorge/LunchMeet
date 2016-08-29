@@ -11,7 +11,7 @@ password_digest | string    | not null
 session_token   | string    | not null, indexed, unique
 
 
-## profile_info
+## profile
 
 column name     | data type | details
 ----------------|-----------|-----------------------

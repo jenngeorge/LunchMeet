@@ -21,7 +21,7 @@
           * ProfileLookingForm (if currentUser)
         - **ProfileAbout** (About tab)
           * ProfileAboutForm (if currentUser)
-        - **ProfileAvailability** (Availability tab)
+        - **ProfileAvailability** (Bonus: Availability tab)
           * ProfileAvailabilityForm (if currentUser)
         - **ProfileQuestions** (Questions tab)
           * ProfileQuestionItem
