@@ -62,21 +62,10 @@ the API.
 - [ ] CRUD API for profiles (`ProfilesController`)
 - [ ] JBuilder views for Basic Profile
 - [ ] redux loop
-- [ ] Basic Profile Component
+- [ ] Basic Profile Components
 - [ ] Style Basic Profile components
 - [ ] Seed Basic Profile information
 
-### Phase 2: Looking-for Model, API, and components (1 half day)
-
-**Objective:** Looking-for can be read and edited through
-the API.
-- [ ] `Looking-for` model
-- [ ] Seed database with a small amount of test data
-- [ ] CRUD API for profiles (`LookingController`)
-- [ ] JBuilder views for Looking-for
-- [ ] update ProfilesComponents
-- [ ] Style Looking-for component
-- [ ] Seed Looking-for information
 
 ### Phase 3: Interests Model, API, and components (1 half day)
 

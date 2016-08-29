@@ -13,6 +13,7 @@ photo_url       | string    |
 zip_code        | integer   | not null
 type            | string    | not null, only: [developer, recruiter, designer, business/operations, sales]
 about           | text      |
+looking_for     | string    | not null, only: [developers, recruiters,
 
 
 ## availability
@@ -24,15 +25,6 @@ user_id         | string    | not null, foreign key, indexed, unique
 day             | string    | not null
 start-time      | float     | not null
 end-time        | float     | not null
-
-
-## looking_for
-
-column name     | data type | details
-----------------|-----------|-----------------------
-id              | integer   | not null, primary key
-user_id         | string    | not null, foreign key, indexed, unique
-type            | string    | not null, only: [developers, recruiters, designers, business/operations, sales, all]
 
 
 ## interests
