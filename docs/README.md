@@ -80,7 +80,7 @@ the API.
 - [ ] Seed Interests information
 
 
-### Phase 4: Matching (1 day)
+### Phase 4: Matching (1.5 day)
 
 **Objective:** User can browse matches based on location, looking-for, and interests
 
