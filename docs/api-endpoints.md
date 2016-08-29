@@ -11,8 +11,8 @@
 ### Users
 
 - `POST /api/users`
-- `PATCH /api/users` - update user profile info
-- `GET /api/users/:user_id` - get a specific user
+- `PATCH /api/users/:id` - update user profile info
+- `GET /api/users/:id` - get a specific user
 - `GET /api/users/new` - new user
 - `GET /api/users` - used for MatchesIndex
 
@@ -22,22 +22,35 @@
 - `DELETE /api/session`
 - `GET /api/session/new` - login user
 
+### Availability
+- `POST /api/users/:user_id/availability`
+- `PATCH /api/users/:user_id/availability` - update availability info
+
+### Looking for
+- `POST /api/users/:user_id/looking_for`
+- `PATCH /api/users/:user_id/looking_for` - update looking for info
+
+### Interests
+- `POST /api/users/:user_id/interests`
+- `PATCH /api/users/:user_id/interests` - update user interests info
+
 ### Conversations
 
--  `GET /api/conversations`
--  `POST /api/conversations`
--  `GET /api/conversations/:conversation_id/messages` -get a specific conversation's messages
+-  `GET /api/users/:user_id/conversations`
+-  `POST /api/users/:user_id/conversations`
+-  `GET /api/users/:user_id/conversations/:conversation_id/messages` -get a specific conversation's messages
 
 ### Questions and Responses
 
 - `GET /api/questions`
-- `GET /api/question_responses`
-- `POST /api/question_responses`
-- `PATCH /api/questions_responses`
-- `DELETE /api/questions_responses/:id`
+- `GET /api/questions/:id` - one unanswered question
+- `GET /api/users/:user_id/question_responses`
+- `POST /api/users/:user_id/question_responses`
+- `PATCH /api/users/:user_id/questions_responses`
+- `DELETE /api/users/:user_id/questions_responses/:id`
 
 
 ### Bonus: Likes
-- `GET /api/likes`
-- `POST /api/likes`
-- `DELETE /api/likes/:like_id`
+- `GET /api/users/:user_id/likes`
+- `POST /api/users/:user_id/likes`
+- `DELETE /api/users/:user_id/likes/:like_id`

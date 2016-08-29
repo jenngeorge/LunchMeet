@@ -58,7 +58,6 @@ LunchMeet is a web application inspired by OkCupid, built using Ruby on Rails an
 **Objective:** Basic Profiles can be read and edited through
 the API.
 
-- [ ] `Profile` model
 - [ ] Seed database with a small amount of test data
 - [ ] CRUD API for profiles (`ProfilesController`)
 - [ ] JBuilder views for Basic Profile

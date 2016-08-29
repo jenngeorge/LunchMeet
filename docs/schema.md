@@ -9,14 +9,6 @@ username        | string    | not null, indexed, unique
 email           | string    | not null, indexed, unique
 password_digest | string    | not null
 session_token   | string    | not null, indexed, unique
-
-
-## profile
-
-column name     | data type | details
-----------------|-----------|-----------------------
-id              | integer   | not null, primary key
-user_id         | string    | not null, foreign key, indexed, unique
 photo_url       | string    |
 zip_code        | integer   | not null
 type            | string    | not null, only: [developer, recruiter, designer, business/operations, sales]

@@ -48,7 +48,7 @@
 
 * `fetchSingleUser`
   0. invoked from `Profile` `didMount / willReceiveProps`
-  0. `GET /api/users/:user_id` is called
+  0. `GET /api/users/:id` is called
   0. `receiveSingleUser` is set as the success callback
 
 * `updateUser`
@@ -71,17 +71,17 @@
 ### Conversations API Request Actions
 * `fetchAllConversations`
   0. invoked from `User` `didMount / willReceiveProps`
-  0. `GET /api/conversations` is called
+  0. `GET /api/users/:user_id/conversations` is called
   0. `receiveAllConversations` is set as the success callback
 
 * `createConversation`
   0. invoked from new message button `onClick`
-  0. `POST /api/conversations` is called.
+  0. `POST /api/users/:user_id/conversations` is called.
   0. `receiveSingleConversation` is set as the success callback.
 
 * `fetchSingleConversation`
   0. invoked from `Conversations` index `onClick`
-  0. `GET /api/conversations/:conversation_id` is called
+  0. `GET /api/users/:user_id/conversations/:conversation_id/messages` is called
   0. `receiveSingleConversation` is set as the success callback`
 
 ### Conversations API Response Actions
@@ -92,7 +92,7 @@
 
 * `receiveSingleConversation`
   0. invoked from an API callback
-  0. the `ConversationReducer` updates `conversaion[id]` in the application's state.
+  0. the `ConversationReducer` updates `conversation[id]` in the application's state.
 
 ## Question Cycles
 
@@ -100,7 +100,7 @@
 
 * `fetchSingleQuestion`
   0. invoked from currentUser's profile question tab `onClick`
-  0. `GET /api/questions/:question_id` is called
+  0. `GET /api/questions/:id` is called
   0. `receiveSingleQuestion` is set as the success callback`
 
 ### Question API Receive Action
@@ -115,22 +115,22 @@
 
 * `fetchResponses`
   0. invoked from Profile question tab `onClick`
-  0. `GET /api/question_responses` is called
+  0. `GET /api/users/:user_id/question_responses` is called
   0. `receiveResponses` is set as the success callback`
 
 * `createResponse`
   0. invoked from currentUser's ProfileQuestions tab on `onSubmit`
-  0. `POST /api/question_responses` is called
+  0. `POST /api/users/:user_id/question_responses` is called
   0. `receiveResponses` is set as the success callback`
 
 * `updateResponse`
   0. invoked from currentUser's ProfileQuestions tab on `Update Answer` button
-  0. `POST /api/question_responses/:id` is called
+  0. `POST /api/users/:user_id/question_responses/:id` is called
   0. `receiveResponses` is set as the success callback`
 
 * `destroyResponse`
   0. invoked from currentUser's ProfileQuestions tab on `Delete Answer` button
-  0. `DELETE /api/question_responses/:id` is called
+  0. `DELETE /api/users/:user_id/question_responses/:id` is called
   0. `removeResponses` is set as the success callback`
 
 ### Question API Receive Action
@@ -159,17 +159,17 @@
 ### Likes API Request Actions
 * `fetchAllLikes`
   0. invoked from `Likes`
-  0. `GET api/api/likes` is called
+  0. `GET api/users/:user_id/likes` is called
   0. `receiveAllLikes` is set as the success callback
 
 * `createLike`
   0. invoked from `Profile` on `ToggleLikeButton` `onClick`
-  0. `POST api/likes` is called
+  0. `POST api/users/:user_id/likes` is called
   0. `receiveAllLikes` is set as the success callback
 
 * `destroyLike`
   0. invoked from `Profile` on `ToggleLikeButton` `onClick`
-  0. `DELETE api/likes/:like_id` is called
+  0. `DELETE api/users/:user_id/likes/:like_id` is called
   0. `receiveAllLikes` is set as the success callback
 
 ### Likes API Response Actions
