@@ -6,10 +6,10 @@ export const UserConstants = {
   REQUEST_SINGLE_USER: "REQUEST_SINGLE_USER"
 };
 
-export const signup = user => ({
-  type: UserConstants.SIGNUP,
-  user
-});
+// export const signupAction = user => ({
+//   type: UserConstants.SIGNUP,
+//   user
+// });
 
 export const requestUsers = () => ({
   type: UserConstants.REQUEST_USERS

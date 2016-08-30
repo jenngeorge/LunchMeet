@@ -1,5 +1,5 @@
 
-export const sign_up = function (user, success, error ){
+export const signup = function (user, success, error ){
   $.ajax({
     method: 'POST',
     url: 'api/users',
