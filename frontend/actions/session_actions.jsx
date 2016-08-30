@@ -5,13 +5,13 @@ export const SessionConstants = {
   RECEIVE_ERRORS: "RECEIVE_ERRORS"
 };
 
-export const login = user => ({
-  type: SessionConstants.LOGIN,
+export const signin = user => ({
+  type: SessionConstants.SIGNIN,
   user
 });
 
-export const logout = () => ({
-  type: SessionConstants.LOGOUT
+export const signout = () => ({
+  type: SessionConstants.SIGNOUT
 });
 
 export const receiveCurrentUser = currentUser => ({

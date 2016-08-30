@@ -15,7 +15,7 @@ export const signout = function (success){
     url:'api/session',
     success,
     error: () => {
-		  console.log("Logout error in SessionApiUtil#sign_out");
+		  console.log("Signout error in SessionApiUtil#sign_out");
 		}
   });
 };
