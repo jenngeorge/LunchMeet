@@ -10,7 +10,7 @@ LunchMeet is a web application inspired by OkCupid, built using Ruby on Rails an
 
 - [ ] Hosting on Heroku
 - [ ] Production Readme
-- [ ] New account creation, login, and guest/demo login
+- [ ] New account creation, sign_in, and guest/demo sign_in
 - [ ] Browse and search other users by location and ‘looking for’
 - [ ] Messaging
 - [ ] Personality questions

@@ -7,7 +7,7 @@ class Api::SessionsController < ApplicationController
     )
 
     if @user
-			login(@user)
+			sign_in(@user)
 			render "api/users/show"
 		else
 			render(
@@ -19,7 +19,7 @@ class Api::SessionsController < ApplicationController
 	def destroy
 		@user = current_user
 		if @user
-			logout
+			sign_out
 			render "api/users/show"
 		else
 			render(

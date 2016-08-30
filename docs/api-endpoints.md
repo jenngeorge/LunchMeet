@@ -20,7 +20,7 @@
 
 - `POST /api/session`
 - `DELETE /api/session`
-- `GET /api/session/new` - login user
+- `GET /api/session/new` - sign_in user
 
 
 ### Conversations
