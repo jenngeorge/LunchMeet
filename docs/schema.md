@@ -8,12 +8,12 @@ id              | integer   | not null, primary key
 username        | string    | not null, indexed, unique
 email           | string    | not null, indexed, unique
 password_digest | string    | not null
-session_token   | string    | not null, indexed, unique
+session_token   | string    | not null
 photo_url       | string    |
-zip_code        | integer   | not null
-type            | string    | not null, only: [developer, recruiter, designer, business/operations, sales]
+zip_code        | string    | not null
+type            | string    | not null
 about           | text      |
-looking_for     | string    | not null, only: [developers, recruiters,
+looking_for     | string    | not null
 
 
 ## availability
