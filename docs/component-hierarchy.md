@@ -14,7 +14,7 @@
   + MatchesIndex (appears in Browse and Likes)
     + MatchIndexItem (each match displayed in MatchesIndex, links to a profile)
 
-  + **ProfileContainer**
+  + **ProfileContainer** /
     + **ProfileBasic** (from users table)
       - ProfileBasicForm (if currentUser)
         - **ProfileInterestForm** (sidebar)
@@ -26,6 +26,9 @@
         - **ProfileQuestionIndex** (Questions tab)
           * ProfileQuestionItem
             + ProfileQuestionForm (if currentUser)
+            + 
+   + **ProfileFormContainer** 
+   + move forms here 
 
   + **ConversationsContainer**
     + ConversationsIndex (all currentUser's conversations, displays under header)
@@ -51,19 +54,21 @@ Routes
 |“/sign-up” | “AuthFormContainer"|
 |“/sign-in” | “AuthFormContainer"|
 
+* do benchbnb auth 
+
 
 |Path   | Component   |
 |-------|-------------|
 |“/” | “User" |
+|“/profile” | “ProfileContainer" |
+|“/profile/edit” | “ProfileFormContainer" |
+|“/profile/edit/about” | “ProfileFormContainer" |
 |“/matches” | “MatchesContainer" |
-|“/matches/:username” | “MatchIndexItem" |
 |“/:username” | “ProfileContainer"|
 |“/:username/about"| “About"|
 |“/:username/availability"| “Availability"|
 |“/:username/questions"| “QuestionIndex"|
 |“/:username/questions/:id"| “QuestionItem"|
 |“/conversations”| “ConversationContainer"|
-|“/conversation/:conversation_id”| “ConversationIndexItem"|
-|“/conversation/:conversation_id/messages”| “MessageIndex"|
-|“/conversation/:conversation_id/messages/:message_id”| “MessageIndexItem"|
+|“/conversation/:conversation_id”| “MessageIndex"|
 |“/likes”| “LikesContainer"|
