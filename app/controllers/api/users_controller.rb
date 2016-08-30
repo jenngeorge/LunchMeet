@@ -1,5 +1,7 @@
 class Api::UsersController < ApplicationController
 
+  # before_action :require_signin, only: [:index, :update, :show]
+
   def create
     @user = User.new(user_params)
 
@@ -33,6 +35,6 @@ class Api::UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(
-      :username, :password, :email, :photo_url, :zip_code, :role, :about, :looking_for)
+      :username, :password, :email, :photo_url, :zip_code, :role, :about, :looking_for, :id)
   end
 end

@@ -19,12 +19,16 @@ import {
 export default ({getState, dispatch}) => next => action => {
   const usersSuccess = data => dispatch(receiveUsers(data));
   const singleUserSuccess = data => dispatch(receiveSingleUser(data));
-  const errorCallback = () => console.log('error from user signup middleware');
+  const errorCallback = () => console.log('error from user middleware');
   const result = next(action);
 
   switch(action.type){
     case UserConstants.SIGNUP:
       signup(action.user, usersSuccess, errorCallback);
+      break;
+
+    case UserConstants.UPDATE_USER:
+      updateUser(action.user, usersSuccess, errorCallback);
       break;
 
     case UserConstants.REQUEST_USERS:

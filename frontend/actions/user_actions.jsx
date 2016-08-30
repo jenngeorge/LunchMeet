@@ -1,5 +1,6 @@
 export const UserConstants = {
   SIGNUP: "SIGNUP",
+  UPDATE_USER: "UPDATE_USER",
   RECEIVE_USERS: "RECEIVE_USERS",
   REQUEST_USERS: "REQUEST_USERS",
   RECEIVE_SINGLE_USER: "RECEIVE_SINGLE_USER",
@@ -8,6 +9,11 @@ export const UserConstants = {
 
 export const signupAction = user => ({
   type: UserConstants.SIGNUP,
+  user
+});
+
+export const updateUserAction = user => ({
+  type: UserConstants.UPDATE_USER,
   user
 });
 

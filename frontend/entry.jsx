@@ -8,6 +8,7 @@ import configureStore from './store/store';
 //user actions
 import {
   UserConstants,
+  updateUserAction,
   signupAction,
   requestUsers,
   requestSingleUser,
@@ -37,6 +38,7 @@ window.receiveUsers = receiveUsers;
 window.requestUsers = requestUsers;
 window.requestSingleUser = requestSingleUser;
 window.receiveSingleUser = receiveSingleUser;
+window.updateUserAction = updateUserAction;
 
 document.addEventListener('DOMContentLoaded', () => {
 
