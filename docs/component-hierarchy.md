@@ -14,21 +14,21 @@
   + MatchesIndex (appears in Browse and Likes)
     + MatchIndexItem (each match displayed in MatchesIndex, links to a profile)
 
-  + **ProfileContainer** /
+  + **ProfileContainer** 
     + **ProfileBasic** (from users table)
-      - ProfileBasicForm (if currentUser)
-        - **ProfileInterestForm** (sidebar)
-          * ProfileInterestForm (if currentUser)
-        - **ProfileAbout** (About tab)
-          * ProfileAboutForm (if currentUser)
-        - **ProfileAvailability** (Bonus: Availability tab)
-          * ProfileAvailabilityForm (if currentUser)
-        - **ProfileQuestionIndex** (Questions tab)
-          * ProfileQuestionItem
-            + ProfileQuestionForm (if currentUser)
-            + 
-   + **ProfileFormContainer** 
-   + move forms here 
+    + **ProfileInterest** (sidebar)
+    + **ProfileAbout** (About tab)
+    + **ProfileAvailability** (Bonus: Availability tab)
+    + **ProfileQuestionIndex** (Questions tab)
+      * ProfileQuestionItem
+
+  + **ProfileFormContainer** 
+    + **ProfileBasicForm** (from users table)
+    + **ProfileInterestForm** (sidebar)
+    + **ProfileAboutForm** (About tab)
+    + **ProfileAvailabilityForm** (Bonus: Availability tab)
+    + **ProfileQuestionIndexForm** (Questions tab)
+      * ProfileQuestionItemForm
 
   + **ConversationsContainer**
     + ConversationsIndex (all currentUser's conversations, displays under header)
