@@ -4,7 +4,7 @@ import {
   fetchUsers,
   fetchSingleUser,
   updateUser
-  } from '../util/user_api/util';
+} from '../util/user_api_util';
 
 //user actions
 import {
