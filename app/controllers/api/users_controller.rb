@@ -11,6 +11,24 @@ class Api::UsersController < ApplicationController
 		end
   end
 
+  def update
+    @user = current_user
+    if @user.update_attributes(user_params)
+      render "api/users/show"
+      # TODO: change to current_user's profile
+    else
+      render json: @user.errors.full_messages
+    end
+  end
+
+  def index
+    User.all
+  end
+
+  def show
+    @user = User.find(params[:id])
+  end
+
   private
 
   def user_params
