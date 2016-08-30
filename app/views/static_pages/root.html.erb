@@ -1,3 +1,6 @@
 <main id="root">
-  Hi I'm root 
+  <% if signed_in? %>
+    window.currentUser = <%= render("api/users/user.json.jbuilder",
+      user: current_user).html_safe %>
+  <% end %>
 </main>
