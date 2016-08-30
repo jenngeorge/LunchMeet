@@ -1,5 +1,5 @@
 
-const sign_up = function (user, success, error ){
+export const sign_up = function (user, success, error ){
   $.ajax({
     method: 'POST',
     url: 'api/users',
@@ -9,7 +9,7 @@ const sign_up = function (user, success, error ){
   });
 };
 
-const update = function (user, success, error){
+export const updateUser = function (user, success, error){
   $.ajax({
     method: 'PATCH',
     url: `api/users/${user.id}`,
@@ -19,7 +19,7 @@ const update = function (user, success, error){
   });
 };
 
-const fetchUsers = function(success, error){
+export const fetchUsers = function(success, error){
   // TODO: add filters
   $.ajax({
     method:'GET',
@@ -29,7 +29,7 @@ const fetchUsers = function(success, error){
   });
 };
 
-const fetchSingleUser = function(user, success, error){
+export const fetchSingleUser = function(user, success, error){
   $.ajax({
     method:'GET',
     url: `api/users/${user.id}`,
