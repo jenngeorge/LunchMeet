@@ -8,30 +8,36 @@
 
   + **MatchesContainer**
     + MatchesIndex
-    + Filter: an array of ProfileLookingFor items
-      * ProfileLookingForm (but styled differently)
+    + Filter: an array of Interest items
+      * ProfileInterestForm (but styled differently)
 
   + MatchesIndex (appears in Browse and Likes)
     + MatchIndexItem (each match displayed in MatchesIndex, links to a profile)
 
-  + **ProfileContainer**
+  + **ProfileContainer** 
     + **ProfileBasic** (from users table)
-      - ProfileBasicForm (if currentUser)
-        - **ProfileLookingFor** (sidebar)
-          * ProfileLookingForm (if currentUser)
-        - **ProfileAbout** (About tab)
-          * ProfileAboutForm (if currentUser)
-        - **ProfileAvailability** (Bonus: Availability tab)
-          * ProfileAvailabilityForm (if currentUser)
-        - **ProfileQuestions** (Questions tab)
-          * ProfileQuestionItem
-            + ProfileQuestionForm (if currentUser)
+    + **ProfileInterest** (sidebar)
+    + **ProfileAbout** (About tab)
+    + **ProfileAvailability** (Bonus: Availability tab)
+    + **ProfileQuestionIndex** (Questions tab)
+      * ProfileQuestionItem
+
+  + **ProfileFormContainer** 
+    + **ProfileBasicForm** (from users table)
+    + **ProfileInterestForm** (sidebar)
+    + **ProfileAboutForm** (About tab)
+    + **ProfileAvailabilityForm** (Bonus: Availability tab)
+    + **ProfileQuestionIndexForm** (Questions tab)
+      * ProfileQuestionItemForm
 
   + **ConversationsContainer**
     + ConversationsIndex (all currentUser's conversations, displays under header)
-      - ConversationIndexItem
-        + Message
-        + NewMessageForm (add message to current chat)
+      - ConversationIndexItem (preview a single conversation)
+  
+  + **MessageContainer**
+      + MessagesIndex (single conversation -- a list of messages)
+        - MessageIndexItem (one message)
+      + NewMessageForm (add message to current chat)
 
   + **Bonus : LikesContainer**
     + MatchesIndex
@@ -42,21 +48,27 @@
 
 Routes
 
-* user/ is the current user
 
 |Path   | Component   |
 |-------|-------------|
 |“/sign-up” | “AuthFormContainer"|
 |“/sign-in” | “AuthFormContainer"|
+
+* do benchbnb auth 
+
+
+|Path   | Component   |
+|-------|-------------|
+|“/” | “User" |
+|“/profile” | “ProfileContainer" |
+|“/profile/edit” | “ProfileFormContainer" |
+|“/profile/edit/about” | “ProfileFormContainer" |
 |“/matches” | “MatchesContainer" |
-|“/users/:username” | “ProfileContainer"|
-|“/users/:username/about"| “ProfileContainer"|
-|“/users/:username/questions"| “ProfileContainer"|
-|“/users/:username/availability"| “ProfileContainer"|
-|“/user”| “ProfileContainer"|
-|“/user/about"| “ProfileContainer"|
-|“/user/questions"| “ProfileContainer"|
-|“/user/availability"| “ProfileContainer"|
-|“/user/conversations”| “ConversationContainer"|
-|“/user/conversation/:conversation_id/messages”| “ConversationContainer"|
-|“/user/likes”| “LikesContainer"|
+|“/:username” | “ProfileContainer"|
+|“/:username/about"| “About"|
+|“/:username/availability"| “Availability"|
+|“/:username/questions"| “QuestionIndex"|
+|“/:username/questions/:id"| “QuestionItem"|
+|“/conversations”| “ConversationContainer"|
+|“/conversation/:conversation_id”| “MessageIndex"|
+|“/likes”| “LikesContainer"|

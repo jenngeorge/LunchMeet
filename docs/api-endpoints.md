@@ -22,17 +22,6 @@
 - `DELETE /api/session`
 - `GET /api/session/new` - login user
 
-### Availability
-- `POST /api/users/:user_id/availability`
-- `PATCH /api/users/:user_id/availability` - update availability info
-
-### Looking for
-- `POST /api/users/:user_id/looking_for`
-- `PATCH /api/users/:user_id/looking_for` - update looking for info
-
-### Interests
-- `POST /api/users/:user_id/interests`
-- `PATCH /api/users/:user_id/interests` - update user interests info
 
 ### Conversations
 
