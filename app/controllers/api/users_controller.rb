@@ -22,7 +22,7 @@ class Api::UsersController < ApplicationController
   end
 
   def index
-    User.all
+    render :show
   end
 
   def show
@@ -33,6 +33,6 @@ class Api::UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(
-      :username, :password, :email, :photo_url, :zip_code, :type, :about, :looking_for)
+      :username, :password, :email, :photo_url, :zip_code, :role, :about, :looking_for)
   end
 end

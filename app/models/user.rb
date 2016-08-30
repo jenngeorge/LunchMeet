@@ -9,7 +9,7 @@
 #  email           :string           not null
 #  photo_url       :string
 #  zip_code        :string           not null
-#  type            :string           not null
+#  role            :string           not null
 #  about           :text
 #  looking_for     :string           not null
 #  created_at      :datetime         not null
@@ -19,7 +19,7 @@
 class User < ActiveRecord::Base
   attr_reader :password
 
-  validates :username, :password_digest, :session_token, :email, :zip_code, :type, :looking_for, presence: true
+  validates :username, :password_digest, :session_token, :email, :zip_code, :role, :looking_for, presence: true
   validates :username, uniqueness: true
   validates :password, length: {minimum: 6}, allow_nil: :true
 

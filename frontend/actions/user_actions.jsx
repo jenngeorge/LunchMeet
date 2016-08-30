@@ -20,8 +20,9 @@ export const receiveUsers = users => ({
   users
 });
 
-export const requestSingleUser = () => ({
-  type: UserConstants.REQUEST_SINGLE_USER
+export const requestSingleUser = user => ({
+  type: UserConstants.REQUEST_SINGLE_USER,
+  user
 });
 
 export const receiveSingleUser = user => ({

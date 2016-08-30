@@ -13,10 +13,11 @@ export default ({getState, dispatch}) => next => action => {
   };
   switch(action.type){
     case SessionConstants.SIGNIN:
+      console.log('in session_middleware signin');
       signin(action.user, successCallback, errorCallback);
       return next(action);
-      break;
     case SessionConstants.SIGNOUT:
+      console.log('in session_middleware signin');
       signout(() => next(action));
       break;
     default:

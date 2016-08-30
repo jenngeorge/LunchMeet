@@ -28,10 +28,12 @@ export default ({getState, dispatch}) => next => action => {
       break;
 
     case UserConstants.REQUEST_USERS:
+      console.log('users_middleware request users ');
       fetchUsers(usersSuccess);
       break;
 
     case UserConstants.REQUEST_SINGLE_USER:
+      console.log('users_middleware request single user ');
       fetchSingleUser(action.user, singleUserSuccess);
       break;
 
