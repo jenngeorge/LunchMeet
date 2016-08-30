@@ -1,5 +1,5 @@
 
-export const sign_in = function (user, success, error) {
+export const signin = function (user, success, error) {
   $.ajax ({
     method: 'POST',
     url: 'api/session',
@@ -9,7 +9,7 @@ export const sign_in = function (user, success, error) {
   });
 };
 
-export const sign_out = function (success){
+export const signout = function (success){
   $.ajax({
     method: 'DELETE',
     url:'api/session',
