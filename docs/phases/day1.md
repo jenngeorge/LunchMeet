@@ -6,6 +6,7 @@
   - update needs more work: currently takes an id and user_params,
    so user_params accepts a user id which is hacky and needs to change
 + deployed to heroku
++ auth styling
 
 ### Notes
 + made User responsible for 'signup' rather than Session

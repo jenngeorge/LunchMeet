@@ -4,4 +4,24 @@
   border-radius: 0px;
   padding-left: 15px;
   padding-right: 15px;
+  background-color: $color-1;
+  border: none;
+
+  li > a {
+    color: $white;
+
+    &:hover, &:active {
+      background-color: $color-2;
+    }
+
+  }
+
+  .navbar-brand {
+    color: $white;
+
+    &:hover{
+      color: $color-2;
+    }
+  }
+
 }

@@ -1,12 +1,13 @@
 // button mixin
 
-@mixin button-theme($color, $color-text-hover, $bg-color, $bg-color-hover){
+@mixin button-theme($color, $bg-color, $bg-color-hover){
   color: $color;
   border-color: $color;
   background-color: $bg-color;
+  height: 40px;
+  width: 80px;
 
   &:hover {
-    color: $color-text-hover;
     background-color: $bg-color-hover;
   }
 }

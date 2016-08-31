@@ -4,7 +4,7 @@ import GreetingContainer from './greeting/greeting_container';
 
 const App = ({children}) => (
   <div>
-    <div className="navbar navbar-default">
+    <div className="navbar navbar-fixed-top">
       <div className="container-fluid">
         <Link to="/" className="navbar-brand">LunchMeet</Link>
         <GreetingContainer className="nav navbar-nav"/>

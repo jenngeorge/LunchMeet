@@ -47,29 +47,32 @@ class AuthForm extends React.Component {
 						value={this.state.email}
 						onChange={this.update("email")}/>
 				</label>
-				<label> Zip Code:
-					<input type="text"
-						value={this.state.zip_code}
-						onChange={this.update("zip_code")}/>
-				</label>
-				<label> I am a
-					<select id="role" value={this.state.role} onChange={this.update("role")}>
-						<option value="developer">Developer</option>
-						<option value="designer" >Designer</option>
-						<option value="sales" >Salesperson</option>
-						<option value="recruiter" >Recruiter</option>
-						<option value="business" >Business/Operations person</option>
-					</select>
-				</label>
-				<label> Looking to meet
-					<select id="role" value={this.state.looking_for} onChange={this.update("looking_for")}>
-						<option value="developer">Developers</option>
-						<option value="designer" >Designers</option>
-						<option value="sales" >Salespeople</option>
-						<option value="recruiter" >Recruiters</option>
-						<option value="business" >Business/Operations People</option>
-					</select>
-				</label>
+				<div>
+					<label> I am a
+						<select id="role" value={this.state.role} onChange={this.update("role")}>
+							<option value="developer">Developer</option>
+							<option value="designer" >Designer</option>
+							<option value="sales" >Salesperson</option>
+							<option value="recruiter" >Recruiter</option>
+							<option value="business" >Business/Operations person</option>
+						</select>
+					</label>
+					<label> Looking to meet
+						<select id="role" value={this.state.looking_for} onChange={this.update("looking_for")}>
+							<option value="developer">Developers</option>
+							<option value="designer" >Designers</option>
+							<option value="sales" >Salespeople</option>
+							<option value="recruiter" >Recruiters</option>
+							<option value="business" >Business/Operations People</option>
+						</select>
+					</label>
+					<label> in:
+						<input type="text"
+							value={this.state.zip_code}
+							defaultValue="zipcode ex: 94107"
+							onChange={this.update("zip_code")}/>
+					</label>
+				</div>
 			</div>
 		);
 	}
@@ -88,7 +91,7 @@ class AuthForm extends React.Component {
 
 	render() {
 		return (
-			<div className="signin-form-container">
+			<div className="signin-form-container" >
 				<form onSubmit={this.handleSubmit} className="signin-form-box">
 					<br/>
 					Please { this.props.formType } or { this.navLink() }
@@ -112,10 +115,11 @@ class AuthForm extends React.Component {
 						{this.props.formType === "signup" ? this.renderSignupInputs() : null}
 
 						<br />
-						<input type="submit" value="Submit" />
+						<input type="submit" value="Submit" className="submit-btn"/>
 					</div>
 				</form>
 			</div>
+
 		);
 	}
 
