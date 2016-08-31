@@ -13,6 +13,11 @@
  * use import to import Sass files
  * Do not use *= require in Sass
  */
-
  @import "bootstrap-sprockets";
  @import "bootstrap";
+
+ // import style modules
+ @import 'base/_base';
+ @import 'components/_components';
+ @import 'layout/_layout';
+ @import 'utils/_utils';
