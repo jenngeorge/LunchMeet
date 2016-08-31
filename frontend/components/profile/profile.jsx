@@ -1,25 +1,21 @@
-import { connect } from 'react-redux';
-import Profile from './profile';
-import { signin, signout } from '../../actions/session_actions';
-import {signupAction} from '../../actions/user_actions';
+import React from 'react';
+import { Link, hashHistory } from 'react-router';
 
+class Profile extends React.Component {
+  constructor(props){
+    super(props);
+  }
 
-const mapStateToProps = state => ({
-  signedIn: !!state.session.currentUser,
+  render(){
+    return (
+      <div className="profile-container">
+        <h1>IN UR PROFILE</h1>
+        <h1>IN UR PROFILE {currentUser.username}</h1>
+        <h1>IN UR PROFILE {currentUser.username}</h1>
+        <h1>IN UR PROFILE {currentUser.username}</h1>
+        <h1>IN UR PROFILE {currentUser.username}</h1>
+      </div>);
+  }
+}
 
-  errors: state.session.errors
-});
-
-const mapDispatchToProps = (dispatch, ownProps) => {
-  const processForm = (formType === 'signin') ? signin : signupAction;
-
-  return {
-    processForm: user => dispatch(processForm(user)),
-    formType
-  };
-};
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Profile);
+export default Profile;

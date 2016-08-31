@@ -12,13 +12,20 @@ const sessionLinks = () => (
   </ul>
 );
 
-const personalGreeting = (currentUser, signout) => (
-	<button className="navbar-btn navbar-right" onClick={signout}>Sign Out</button>
+const signedInOptions = (currentUser, signout) => (
+  <ul className="nav navbar-nav navbar-right">
+    <li>
+      <Link to="/profile" activeClassName="current" >{currentUser.username}</Link>
+    </li>
+    <li>
+      <button className="navbar-btn navbar-right" onClick={signout}>Sign Out</button>
+    </li>
+  </ul>
 );
 
 function Greeting({currentUser, signout}){
   if (currentUser){
-    return personalGreeting(currentUser, signout);
+    return signedInOptions(currentUser, signout);
   } else {
     return sessionLinks();
   }

@@ -6,7 +6,9 @@ class AuthForm extends React.Component {
 		super(props);
 		this.state = {
 			username: "",
-			password: ""
+			password: "",
+			role: "developer",
+			looking_for: "developer"
 		};
 		this.handleSubmit = this.handleSubmit.bind(this);
 	}
@@ -49,7 +51,7 @@ class AuthForm extends React.Component {
 				</label>
 				<div>
 					<label> I am a
-						<select id="role" value={this.state.role} onChange={this.update("role")}>
+						<select id="role" value={this.state.role} onChange={this.update("role")} defaultValue="developer">
 							<option value="developer">Developer</option>
 							<option value="designer" >Designer</option>
 							<option value="sales" >Salesperson</option>
@@ -58,7 +60,7 @@ class AuthForm extends React.Component {
 						</select>
 					</label>
 					<label> Looking to meet
-						<select id="role" value={this.state.looking_for} onChange={this.update("looking_for")}>
+						<select id="role" value={this.state.looking_for} onChange={this.update("looking_for")} defaultValue="developer">
 							<option value="developer">Developers</option>
 							<option value="designer" >Designers</option>
 							<option value="sales" >Salespeople</option>
@@ -69,7 +71,7 @@ class AuthForm extends React.Component {
 					<label> in:
 						<input type="text"
 							value={this.state.zip_code}
-							defaultValue="zipcode ex: 94107"
+							placeholder="zipcode ex: 94107"
 							onChange={this.update("zip_code")}/>
 					</label>
 				</div>
