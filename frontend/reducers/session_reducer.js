@@ -10,7 +10,6 @@ const SessionReducer = function(state = _nullUser, action){
   switch(action.type){
     case SessionConstants.RECEIVE_CURRENT_USER:
       console.log('in session_reducer receive current user ');
-      const test = merge({}, {i: "am", merged: "no"}, {merged: "yes?"});
       const currentUser = action.currentUser;
       const merged = merge({}, state, {currentUser});
       return merged;
@@ -22,7 +21,7 @@ const SessionReducer = function(state = _nullUser, action){
     case SessionConstants.RECEIVE_ERRORS:
       console.log('in session_reducer receive errors');
       const errors = action.errors;
-      return merge({}, _nullUser, {errors});
+      return merge({}, state, {errors});
     default:
       return state;
   }
