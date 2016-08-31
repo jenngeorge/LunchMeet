@@ -25,7 +25,6 @@ import {
   } from './actions/session_actions';
 
 
-window.Store = configureStore();
 
 //test session actions
 window.signout = signout;
@@ -46,8 +45,10 @@ document.addEventListener('DOMContentLoaded', () => {
   if (window.currentUser) {
     const initialState = {session: {currentUser: window.currentUser}};
     store = configureStore(initialState);
+    window.store = store;
   } else {
     store = configureStore();
+    window.store = store;
   }
 
   const root = document.getElementById('root');

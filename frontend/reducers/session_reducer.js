@@ -10,8 +10,11 @@ const SessionReducer = function(state = _nullUser, action){
   switch(action.type){
     case SessionConstants.RECEIVE_CURRENT_USER:
       console.log('in session_reducer receive current user ');
+      const test = merge({}, {i: "am", merged: "no"}, {merged: "yes?"});
       const currentUser = action.currentUser;
-      return merge({}, _nullUser, {currentUser});
+      const merged = merge({}, state, {currentUser});
+      debugger
+      return merged;
 
     case SessionConstants.SIGNOUT:
       console.log('in session_reducer signout ');
