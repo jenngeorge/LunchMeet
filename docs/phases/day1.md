@@ -6,6 +6,8 @@
   - update needs more work: currently takes an id and user_params,
    so user_params accepts a user id which is hacky and needs to change
 + deployed to heroku
++ added bootstrap
++ sassy architecture for beautiful stylz
 + auth styling
 
 ### Notes
