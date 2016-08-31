@@ -3,7 +3,7 @@ import React from 'react';
 
 const Home = (props) => (
   <div className="user-pane">
-    <h1>I'm a header</h1>
+
   </div>
 );
 

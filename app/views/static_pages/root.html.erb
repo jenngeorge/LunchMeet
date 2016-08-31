@@ -1,6 +1,8 @@
-<main id="root">
+<script id="bootstrap-current-user" type="text/javascript">
   <% if signed_in? %>
-    window.currentUser = <%= render("api/users/user.json.jbuilder",
-      user: current_user).html_safe %>
+  	window.currentUser = <%= render("api/users/user.json.jbuilder",
+  		user: current_user).html_safe %>
   <% end %>
-</main>
+</script>
+
+<main id="root"></main>
