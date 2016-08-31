@@ -42,7 +42,6 @@ window.receiveSingleUser = receiveSingleUser;
 window.updateUserAction = updateUserAction;
 
 document.addEventListener('DOMContentLoaded', () => {
-  const store = configureStore();
   let store;
   if (window.currentUser) {
     const initialState = {session: {currentUser: window.currentUser}};
