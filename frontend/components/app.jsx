@@ -4,10 +4,12 @@ import GreetingContainer from './greeting/greeting_container';
 
 const App = ({children}) => (
   <div>
-    <header>
-      <Link to="/" className="header-link"><h1>LunchMeet</h1></Link>
-      <GreetingContainer />
-    </header>
+    <div className="navbar navbar-default">
+      <div className="container-fluid">
+        <Link to="/" className="navbar-brand">LunchMeet</Link>
+        <GreetingContainer className="nav navbar-nav"/>
+      </div>
+    </div>
     {children}
   </div>
 );

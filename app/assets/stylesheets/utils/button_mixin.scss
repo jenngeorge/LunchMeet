@@ -1,0 +1,12 @@
+// button mixin
+
+@mixin button-theme($color, $color-text-hover, $bg-color, $bg-color-hover){
+  color: $color;
+  border-color: $color;
+  background-color: $bg-color;
+
+  &:hover {
+    color: $color-text-hover;
+    background-color: $bg-color-hover;
+  }
+}
