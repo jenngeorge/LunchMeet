@@ -12,11 +12,11 @@ class AuthForm extends React.Component {
 	}
 
 	componentDidUpdate(){
-		this.redirectIfLoggedIn();
+		this.redirectIfSignedIn();
 	}
 
-	redirectIfLoggedIn(){
-		if (this.props.loggedIn){
+	redirectIfSignedIn(){
+		if (this.props.signedIn){
 			hashHistory.push("/");
 		}
 	}
@@ -80,18 +80,18 @@ class AuthForm extends React.Component {
 
 	render() {
 		return (
-			<div className="login-form-container">
-				<form onSubmit={this.handleSubmit} className="login-form-box">
+			<div className="signin-form-container">
+				<form onSubmit={this.handleSubmit} className="signin-form-box">
 					<br/>
 					Please { this.props.formType } or { this.navLink() }
 					{ this.renderErrors() }
-					<div className="login-form">
+					<div className="signin-form">
 						<br />
 						<label> Username:
 							<input type="text"
 								value={this.state.username}
 								onChange={this.update("username")}
-								className="login-input" />
+								className="signin-input" />
 						</label>
 
 						<br />
@@ -99,7 +99,7 @@ class AuthForm extends React.Component {
 							<input type="password"
 								value={this.state.password}
 								onChange={this.update("password")}
-								className="login-input" />
+								className="signin-input" />
 						</label>
 						{this.props.formType === "signup" ? this.renderSignupInputs() : null}
 
