@@ -39,6 +39,33 @@ class AuthForm extends React.Component {
 		}
 	}
 
+	renderSignupInputs(){
+		return (
+			<div>
+				<label> Email:
+					<input type="text"
+						value={this.state.email}
+						onChange={this.update("email")}/>
+				</label>
+				<label> Zip Code:
+					<input type="text"
+						value={this.state.zip_code}
+						onChange={this.update("zip_code")}/>
+				</label>
+				<label> Role:
+					<input type="text"
+						value={this.state.role}
+						onChange={this.update("role")}/>
+				</label>
+				<label> Looking for:
+					<input type="text"
+						value={this.state.looking_for}
+						onChange={this.update("looking_for")}/>
+				</label>
+			</div>
+		);
+	}
+
 	renderErrors(){
 		return(
 			<ul>
@@ -74,6 +101,7 @@ class AuthForm extends React.Component {
 								onChange={this.update("password")}
 								className="login-input" />
 						</label>
+						{this.props.formType === "signup" ? this.renderSignupInputs() : null}
 
 						<br />
 						<input type="submit" value="Submit" />

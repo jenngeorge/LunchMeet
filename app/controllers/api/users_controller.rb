@@ -7,7 +7,7 @@ class Api::UsersController < ApplicationController
 
 		if @user.save
 			sign_in(@user)
-			render "api/users/show"
+			render :show
 		else
 			render json: @user.errors.full_messages
 		end
@@ -20,6 +20,7 @@ class Api::UsersController < ApplicationController
       # TODO: change to current_user's profile
     else
       render json: @user.errors.full_messages
+      render :show
     end
   end
 

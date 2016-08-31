@@ -16,15 +16,18 @@ import {
   receiveSingleUser
   } from '../actions/user_actions';
 
+import { receiveCurrentUser} from '../actions/session_actions';
+
 export default ({getState, dispatch}) => next => action => {
   const usersSuccess = data => dispatch(receiveUsers(data));
-  const singleUserSuccess = data => dispatch(receiveSingleUser(data));
+  const singleUserSuccess = user => dispatch(receiveSingleUser(user));
+  const signupSuccess = user => dispatch(receiveCurrentUser(user));
   const errorCallback = () => console.log('error from user middleware');
   const result = next(action);
 
   switch(action.type){
     case UserConstants.SIGNUP:
-      signup(action.user, usersSuccess, errorCallback);
+      signup(action.user, signupSuccess, errorCallback);
       break;
 
     case UserConstants.UPDATE_USER:
