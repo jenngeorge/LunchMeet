@@ -70,11 +70,6 @@ class AuthForm extends React.Component {
 						<option value="business" >Business/Operations People</option>
 					</select>
 				</label>
-				<label> Looking for:
-					<input type="text"
-						value={this.state.looking_for}
-						onChange={this.update("looking_for")}/>
-				</label>
 			</div>
 		);
 	}
