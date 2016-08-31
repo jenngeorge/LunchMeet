@@ -9,7 +9,7 @@ class Api::UsersController < ApplicationController
 			sign_in(@user)
 			render :show
 		else
-			render json: @user.errors.full_messages
+			render json: @user.errors.full_messages, status: 422
 		end
   end
 
@@ -19,7 +19,7 @@ class Api::UsersController < ApplicationController
       render "api/users/show"
       # TODO: change to current_user's profile
     else
-      render json: @user.errors.full_messages
+      render json: @user.errors.full_messages, status: 422
       render :show
     end
   end

@@ -6,6 +6,12 @@ import {
   updateUser
 } from '../util/user_api_util';
 
+//session actions
+import { receiveCurrentUser,
+         receiveErrors,
+         SessionConstants
+       } from '../actions/session_actions';
+
 //user actions
 import {
   UserConstants,
@@ -16,13 +22,15 @@ import {
   receiveSingleUser
   } from '../actions/user_actions';
 
-import { receiveCurrentUser} from '../actions/session_actions';
 
 export default ({getState, dispatch}) => next => action => {
   const usersSuccess = data => dispatch(receiveUsers(data));
   const singleUserSuccess = user => dispatch(receiveSingleUser(user));
   const signupSuccess = user => dispatch(receiveCurrentUser(user));
-  const errorCallback = () => console.log('error from user middleware');
+  const errorCallback = xhr => {
+    const errors = xhr.responseJSON;
+    dispatch(receiveErrors(errors));
+  };
   const result = next(action);
 
   switch(action.type){
