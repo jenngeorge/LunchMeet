@@ -6,7 +6,7 @@ import {signupAction} from '../../actions/user_actions';
 
 const mapStateToProps = state => ({
   signedIn: !!state.session.currentUser,
-  isCurrentUser:
+
   errors: state.session.errors
 });
 

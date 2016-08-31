@@ -13,7 +13,6 @@ const SessionReducer = function(state = _nullUser, action){
       const test = merge({}, {i: "am", merged: "no"}, {merged: "yes?"});
       const currentUser = action.currentUser;
       const merged = merge({}, state, {currentUser});
-      debugger
       return merged;
 
     case SessionConstants.SIGNOUT:
