@@ -2,7 +2,7 @@
 
 [Heroku link][heroku] not yet set up
 
-[heroku]: http://www.herokuapp.com
+[heroku]: https://lunch-meet-aa.herokuapp.com/
 
 ## Minimum Viable Product
 
