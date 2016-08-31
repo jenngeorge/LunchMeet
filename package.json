@@ -9,6 +9,10 @@
   "scripts": {
     "postinstall": "./node_modules/.bin/webpack"
   },
+  "engines": {
+    "node": "6.2.1",
+    "npm": "3.9.3"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jenngeorge/LunchMeet.git"
@@ -31,9 +35,5 @@
     "react-router": "^2.7.0",
     "redux": "^3.5.2",
     "webpack": "^1.13.2"
-  },
-  "engines": {
-    "node": "6.2.1",
-    "npm": "3.9.3"
   }
 }
