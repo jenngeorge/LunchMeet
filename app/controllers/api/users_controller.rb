@@ -26,7 +26,8 @@ class Api::UsersController < ApplicationController
   end
 
   def index
-    render :show
+    @user = User.all
+    render :index
   end
 
   def show
