@@ -9,10 +9,14 @@ class Profile extends React.Component {
     this.neighborhoods = {
       "94102": "North of Market",
       "94013": "SOMA",
+      "94105": "Embarcadero South",
+      "94103": "SOMA",
+      "94104": "Fidi",
       "94107": "Portrero Hill",
       "94108": "Chinatown",
-      "94109": "Nob Hill",
+      "94109": "Nob Hill/ Russian Hill",
       "94110": "Inner Mission/ Bernal Heights",
+      "94111": "Embarcadero North",
       "94112": "Ingleside-Excelsior",
       "94114": "Castro/Noe Valley",
       "94115": "Western Addition/ Japantown",
@@ -26,7 +30,7 @@ class Profile extends React.Component {
       "94127": "St. Francis Wood/Miraloma/West Portal",
       "94131": "Twin Peaks-Glen Park",
       "94132": "Lake Merced",
-      "94133": "North Beach/ Chinatown",
+      "94133": "North Beach/ Fisherman's Wharf",
       "94134": "Visitacion Valley/Sunnydale"
     };
 
@@ -45,11 +49,32 @@ class Profile extends React.Component {
   render(){
     return (
       <div className="profile-container">
-        <div className="profile-photo"><img src={this.user.photo_url}/></div>
-        <div className="profile-username"><h1>{this.user.username}</h1></div>
-        <div className="profile-type"><h1>{this.user.type}</h1></div>
-        <div className="profile-location"><h1>{this.location(this.user.zip_code, this.neighborhoods)}</h1></div>
-        <div className="profile-about"><h1>{this.user.about}</h1></div>
+        <div className="profile-header-container">
+          <div className="profile-header inner">
+            <div className="profile-info">
+              <div className="profile-photo">
+                <img src={this.user.photo_url}/>
+              </div>
+              <div className="profile-basics">
+                <div className="profile-username">
+                  <h2>{this.user.username}</h2>
+                </div>
+                <div className="profile-sub-basic">
+                  <h3>{this.user.role}</h3>
+                </div>
+                <div className="profile-sub-basic">
+                  <h3>{this.location(this.user.zip_code, this.neighborhoods)}</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="profile-about-container">
+          <div className="profile-about inner">
+            <h2>About</h2>
+            <div className="profile-about"><p>{this.user.about}</p></div>
+          </div>
+        </div>
       </div>
     );
   }

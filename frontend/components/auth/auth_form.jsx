@@ -68,7 +68,7 @@ class AuthForm extends React.Component {
 							<option value="business" >Business/Operations People</option>
 						</select>
 					</label>
-					<label> in:
+					<label> near:
 						<input type="text"
 							value={this.state.zip_code}
 							placeholder="zipcode ex: 94107"

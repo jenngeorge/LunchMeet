@@ -12,7 +12,7 @@ billGates = User.create!(
   username: "BillGates",
   password: "password",
   email: "bill@bill.com",
-  photo_url: "face.jpg",
+  photo_url: "https://pbs.twimg.com/profile_images/558109954561679360/j1f9DiJi.jpeg",
   zip_code: "999999",
   role: "business/operations",
   about: "working hard is good",
@@ -22,7 +22,7 @@ steveJobs = User.create!(
   username: "SteveJobs",
   password: "password",
   email: "steve@steve.com",
-  photo_url: "face1.jpg",
+  photo_url: "http://i.telegraph.co.uk/multimedia/archive/03230/jobs_3230753b.jpg",
   zip_code: "999991",
   role: "designer",
   about: "I am pretty great.",
@@ -32,7 +32,7 @@ elonMusk = User.create!(
   username: "ElonMusk",
   password: "password",
   email: "elon@elon.com",
-  photo_url: "face.jpg",
+  photo_url: "http://i.telegraph.co.uk/multimedia/archive/02778/MUSKsum_2778344b.jpg",
   zip_code: "000000",
   role: "business/operations",
   about: "lez go to marz",
@@ -43,7 +43,7 @@ marissaMayer = User.create(
   username: "MarissaMayer",
   password: "password",
   email: "m@m.com",
-  photo_url: "face.jpg",
+  photo_url: "http://i.forbesimg.com/media/lists/people/marissa-mayer_416x416.jpg",
   zip_code: "000000",
   role: "business/operations",
   about: "looking for new opportunies ",
@@ -51,10 +51,10 @@ marissaMayer = User.create(
 )
 
 elizabethHolmes = User.create(
-  username: "eHolmes",
+  username: "ElizabethHolmes",
   password: "password",
   email: "e@e.com",
-  photo_url: "face.jpg",
+  photo_url: "http://i.forbesimg.com/media/lists/people/elizabeth-holmes_416x416.jpg",
   zip_code: "000000",
   role: "business/operations",
   about: "everything is fine I'm doing awesome ",
@@ -62,10 +62,10 @@ elizabethHolmes = User.create(
 )
 
 adaLovelace = User.create(
-  username: "adaLovelace",
+  username: "AdaLovelace",
   password: "password",
   email: "ada@ada.com",
-  photo_url: "face.jpg",
+  photo_url: "http://media.boingboing.net/wp-content/uploads/2015/12/ada-lovelace.jpg",
   zip_code: "000000",
   role: "developer",
   about: "Computers are the best",

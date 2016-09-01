@@ -5,12 +5,12 @@
   padding-left: 15px;
   padding-right: 15px;
   background-color: $color-1;
-  border: none;
+  border-bottom: 1px solid $color-2;
 
   li > a {
     color: $white;
 
-    &:hover, &:active {
+    &:hover, &:active, &:focus {
       background-color: $color-2;
     }
 
