@@ -15,7 +15,9 @@ class Api::UsersController < ApplicationController
 
   def update
     @user = current_user
+
     if @user.update_attributes(user_params)
+      session[:session_token] = @user.reset_session_token!
       render :show
     else
       render json: @user.errors.full_messages, status: 422

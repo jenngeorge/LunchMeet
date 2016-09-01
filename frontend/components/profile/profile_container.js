@@ -6,13 +6,14 @@ import { updateUserAction } from '../../actions/session_actions';
 
 
 const mapStateToProps = state => ({
-  user: state.session.currentUser
-  // change to be any one user
+  user: state.session.currentUser,
+  currentUser: state.session.currentUser
+  // change user to be any one user
 });
 
 
 const mapDispatchToProps = dispatch => ({
-  updateProfile: (user) => dispatch(updateUserAction(user))
+  // updateProfile: (user) => dispatch(updateUserAction(user))
 });
 
 export default connect(

@@ -10,10 +10,11 @@ export const signup = function (user, success, error ){
 };
 
 export const updateUser = function (user, success, error){
+
   $.ajax({
     method: 'PATCH',
     url: `api/users/${user.id}`,
-    data: user,
+    data: {user: user},
     success,
     error
   });

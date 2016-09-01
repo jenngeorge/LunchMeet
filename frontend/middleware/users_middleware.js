@@ -39,7 +39,8 @@ export default ({getState, dispatch}) => next => action => {
       break;
 
     case UserConstants.UPDATE_USER:
-      updateUser(action.user, usersSuccess, errorCallback);
+      console.log('in update user middleware');
+      updateUser(action.user, signupSuccess, errorCallback);
       break;
 
     case UserConstants.REQUEST_USERS:

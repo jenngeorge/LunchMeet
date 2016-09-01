@@ -1,10 +1,15 @@
 import React from 'react';
 import { Link, hashHistory } from 'react-router';
+import UpdateButton from './update_button';
 
 class Profile extends React.Component {
   constructor(props){
     super(props);
     this.user = this.props.user;
+    this.currentUser = this.props.currentUser;
+
+
+    //TODO: refactor out and update to include zip ~ neighborhood ~ lat/long center point
 
     this.neighborhoods = {
       "94102": "North of Market",
@@ -35,6 +40,7 @@ class Profile extends React.Component {
     };
 
     this.location = this.location.bind(this);
+    this.updateButton = this.updateButton.bind(this);
   }
 
   location(zip, neighborhoods){
@@ -43,6 +49,12 @@ class Profile extends React.Component {
       return this.neighborhoods[zip];
     } else {
       return "basically Mars";
+    }
+  }
+
+  updateButton(currentUser){
+    if (this.user === this.currentUser){
+      return(<UpdateButton currentUser={currentUser}/>);
     }
   }
 
@@ -59,6 +71,7 @@ class Profile extends React.Component {
                 <div className="profile-username">
                   <h2>{this.user.username}</h2>
                 </div>
+                {this.updateButton(this.currentUser)}
                 <div className="profile-sub-basic">
                   <h3>{this.user.role}</h3>
                 </div>
@@ -69,10 +82,23 @@ class Profile extends React.Component {
             </div>
           </div>
         </div>
-        <div className="profile-about-container">
-          <div className="profile-about inner">
-            <h2>About</h2>
-            <div className="profile-about"><p>{this.user.about}</p></div>
+
+        <div className="profile-content-container">
+          <div className="profile-content-container inner ">
+            <div className="profile-about col-lg-8 col-sm-6">
+              <h2>About</h2>
+              <div className="profile-about"><p>{this.user.about}</p></div>
+            </div>
+            <div className="profile-sidebox-container col-lg-4 col-sm-6">
+              <div className ="profile-sidebox">
+                <div className="profile-looking">
+                  <h4>Looking for: {this.user.looking_for}</h4>
+                </div>
+                <div className="profile-interests">
+                  <h4>Interested in</h4>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

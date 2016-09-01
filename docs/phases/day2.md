@@ -4,10 +4,12 @@
 + continued to style Auth
 + fix bugs
   - render error messages (needed status codes in user controller)
-  - signin / signup -- fixed issues 
+  - signin / signup -- fixed issues
 + display profile info
 + get neighborhood from zip code and display on profile
 + redirect user away from profile on signout
++ profile components (user show)
+  -began styling on profile components
 
 
 ###notes

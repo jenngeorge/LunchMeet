@@ -14,7 +14,7 @@
   + MatchesIndex (appears in Browse and Likes)
     + MatchIndexItem (each match displayed in MatchesIndex, links to a profile)
 
-  + **ProfileContainer** 
+  + **ProfileContainer**
     + **ProfileBasic** (from users table)
     + **ProfileInterest** (sidebar)
     + **ProfileAbout** (About tab)
@@ -22,7 +22,7 @@
     + **ProfileQuestionIndex** (Questions tab)
       * ProfileQuestionItem
 
-  + **ProfileFormContainer** 
+  + **ProfileFormContainer**
     + **ProfileBasicForm** (from users table)
     + **ProfileInterestForm** (sidebar)
     + **ProfileAboutForm** (About tab)
@@ -33,7 +33,7 @@
   + **ConversationsContainer**
     + ConversationsIndex (all currentUser's conversations, displays under header)
       - ConversationIndexItem (preview a single conversation)
-  
+
   + **MessageContainer**
       + MessagesIndex (single conversation -- a list of messages)
         - MessageIndexItem (one message)
@@ -54,7 +54,7 @@ Routes
 |“/sign-up” | “AuthFormContainer"|
 |“/sign-in” | “AuthFormContainer"|
 
-* do benchbnb auth 
+* do benchbnb auth
 
 
 |Path   | Component   |
@@ -62,11 +62,11 @@ Routes
 |“/” | “User" |
 |“/profile” | “ProfileContainer" |
 |“/profile/edit” | “ProfileFormContainer" |
-|“/profile/edit/about” | “ProfileFormContainer" |
+|“/profile/questions” | “ProfileFormContainer" |
+|“/profile/questions/:id"| “QuestionItem"|
 |“/matches” | “MatchesContainer" |
 |“/:username” | “ProfileContainer"|
-|“/:username/about"| “About"|
-|“/:username/availability"| “Availability"|
+|“/:username/about"| “About"| default to this
 |“/:username/questions"| “QuestionIndex"|
 |“/:username/questions/:id"| “QuestionItem"|
 |“/conversations”| “ConversationContainer"|
