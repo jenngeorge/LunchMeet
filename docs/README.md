@@ -10,7 +10,7 @@ LunchMeet is a web application inspired by OkCupid, built using Ruby on Rails an
 
 - [X] Hosting on Heroku
 - [ ] Production Readme
-- [ ] New account creation, sign_in, and guest/demo sign_in
+- [X] New account creation, sign_in, and guest/demo sign_in
 - [ ] Browse and search other users by location and ‘looking for’
 - [ ] Messaging
 - [ ] Personality questions
@@ -60,15 +60,28 @@ LunchMeet is a web application inspired by OkCupid, built using Ruby on Rails an
 the API.
 
 - [ ] Seed database with a small amount of test data
-- [ ] CRUD API for profiles (`ProfilesController`)
-- [ ] JBuilder views for Basic Profile
+- [X] CRUD API for profiles (`ProfilesController`)
+- [X] JBuilder views for Basic Profile
 - [ ] redux loop
-- [ ] Basic Profile Components
+- [X] Basic Profile Components
 - [ ] Style Basic Profile components
 - [ ] Seed Basic Profile information
 
+### Phase 3: Matching (1.5 day)
 
-### Phase 3: Interests Model, API, and components (1 half day)
+**Objective:** User can browse matches based on location, looking-for, and interests
+
+- [ ] `MatchesIndex` components and respective redux loops
++ [ ] `MatchesIndexItem`  
+- [ ] Seed database with a small amount of test data
+- [ ] JBuilder views for browse page and MatchesIndexItems
+- [ ] `MatchesIndexItems` direct user to match profiles
+- [ ] `MatchesIndex` filter
++ [ ] style the form
++ [ ] redux loop
+- [ ] Seed more users for matches
+
+### Phase 4: Interests Model, API, and components (1 half day)
 
 **Objective:** Interests can be read and edited through
 the API.
@@ -81,19 +94,6 @@ the API.
 - [ ] Seed Interests information
 
 
-### Phase 4: Matching (1.5 day)
-
-**Objective:** User can browse matches based on location, looking-for, and interests
-
-- [ ] `MatchesIndex` components and respective redux loops
-  + [ ] `MatchesIndexItem`  
-- [ ] Seed database with a small amount of test data
-- [ ] JBuilder views for browse page and MatchesIndexItems
-- [ ] `MatchesIndexItems` direct user to match profiles
-- [ ] `MatchesIndex` filter
-  + [ ] style the form
-  + [ ] redux loop
-- [ ] Seed more users for matches
 
 ### Phase 5: Questions (2 day)
 - [ ] `Questions` model
