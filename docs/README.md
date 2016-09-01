@@ -59,24 +59,24 @@ LunchMeet is a web application inspired by OkCupid, built using Ruby on Rails an
 **Objective:** Basic Profiles can be read and edited through
 the API.
 
-- [ ] Seed database with a small amount of test data
+- [X] Seed database with a small amount of test data
 - [X] CRUD API for profiles (`ProfilesController`)
 - [X] JBuilder views for Basic Profile
-- [ ] redux loop
+- [X] redux loop (create and update profile)
 - [X] Basic Profile Components
-- [ ] Style Basic Profile components
-- [ ] Seed Basic Profile information
+- [X] Style Basic Profile components
+- [X] Seed Basic Profile information
 
 ### Phase 3: Matching (1.5 day)
 
 **Objective:** User can browse matches based on location, looking-for, and interests
 
-- [ ] `MatchesIndex` components and respective redux loops
-+ [ ] `MatchesIndexItem`  
+- [ ] `MatchIndex` components and respective redux loops
++ [ ] `MatchIndexItem`  
 - [ ] Seed database with a small amount of test data
 - [ ] JBuilder views for browse page and MatchesIndexItems
-- [ ] `MatchesIndexItems` direct user to match profiles
-- [ ] `MatchesIndex` filter
+- [ ] `MatchIndexItems` direct user to match profiles
+- [ ] `MatchIndex` filter
 + [ ] style the form
 + [ ] redux loop
 - [ ] Seed more users for matches
@@ -92,7 +92,6 @@ the API.
 - [ ] update ProfilesComponents
 - [ ] Style Interests component
 - [ ] Seed Interests information
-
 
 
 ### Phase 5: Questions (2 day)

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, hashHistory } from 'react-router';
+import { Link, hashHistory, withRouter} from 'react-router';
 
 
 class ProfileForm extends React.Component {
@@ -28,8 +28,8 @@ class ProfileForm extends React.Component {
 
   handleSubmit(e){
     e.preventDefault();
-    // const user = this.state;
     this.updateProfile(this.state);
+    this.props.router.replace("/profile");
   }
 
   render(){
@@ -113,4 +113,4 @@ class ProfileForm extends React.Component {
   }
 }
 
-export default ProfileForm;
+export default withRouter(ProfileForm);

@@ -5,8 +5,6 @@ import UpdateButton from './update_button';
 class Profile extends React.Component {
   constructor(props){
     super(props);
-    this.user = this.props.user;
-    this.currentUser = this.props.currentUser;
 
 
     //TODO: refactor out and update to include zip ~ neighborhood ~ lat/long center point
@@ -52,8 +50,9 @@ class Profile extends React.Component {
     }
   }
 
+
   updateButton(currentUser){
-    if (this.user === this.currentUser){
+    if (this.props.user === this.props.currentUser){
       return(<UpdateButton currentUser={currentUser}/>);
     }
   }
@@ -65,18 +64,18 @@ class Profile extends React.Component {
           <div className="profile-header inner">
             <div className="profile-info">
               <div className="profile-photo">
-                <img src={this.user.photo_url}/>
+                <img src={this.props.user.photo_url}/>
               </div>
               <div className="profile-basics">
                 <div className="profile-username">
-                  <h2>{this.user.username}</h2>
+                  <h2>{this.props.user.username}</h2>
                 </div>
                 {this.updateButton(this.currentUser)}
                 <div className="profile-sub-basic">
-                  <h3>{this.user.role}</h3>
+                  <h3>{this.props.user.role}</h3>
                 </div>
                 <div className="profile-sub-basic">
-                  <h3>{this.location(this.user.zip_code, this.neighborhoods)}</h3>
+                  <h3>{this.location(this.props.user.zip_code, this.neighborhoods)}</h3>
                 </div>
               </div>
             </div>
@@ -87,12 +86,12 @@ class Profile extends React.Component {
           <div className="profile-content-container inner ">
             <div className="profile-about col-lg-8 col-sm-6">
               <h2>About</h2>
-              <div className="profile-about"><p>{this.user.about}</p></div>
+              <div className="profile-about"><p>{this.props.user.about}</p></div>
             </div>
             <div className="profile-sidebox-container col-lg-4 col-sm-6">
               <div className ="profile-sidebox">
                 <div className="profile-looking">
-                  <h4>Looking for: {this.user.looking_for}</h4>
+                  <h4>Looking for: {this.props.user.looking_for}</h4>
                 </div>
                 <div className="profile-interests">
                   <h4>Interested in</h4>
