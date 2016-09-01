@@ -19,11 +19,22 @@ class ProfileForm extends React.Component {
 		};
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.uploadPhoto = this.uploadPhoto.bind(this);
 
   }
 
   update(field){
     return e => { this.setState({[field]: e.currentTarget.value }); };
+  }
+
+  uploadPhoto(e){
+    const that = this;
+    e.preventDefault();
+    cloudinary.openUploadWidget(CLOUDINARY_OPTIONS, function(error, results){
+      if(!error){
+        that.state.photo_url = results[0].secure_url;
+      }
+    });
   }
 
   handleSubmit(e){
@@ -41,7 +52,10 @@ class ProfileForm extends React.Component {
             <div className="profile-header inner">
               <div className="profile-info">
                 <div className="profile-photo">
-                  <img src={this.state.photo_url}/>
+                  <img src={this.state.photo_url} onChange={this.update("photo_url")}/>
+                  <div className="upload-photo">
+                    <button onClick={this.uploadPhoto}>Upload Photo</button>
+                  </div>
                 </div>
 
                 <div className="profile-basics">

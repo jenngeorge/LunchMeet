@@ -3,7 +3,8 @@
 ### Stuff I did
 + update currentUser's profile
 + guest signin
-
++ redirect to signup page on logout (and any time signout at a root)
++ redirect to current user show page after profile update
 
 
 ### notes
