@@ -11,6 +11,7 @@ class AuthForm extends React.Component {
 			looking_for: "developer"
 		};
 		this.handleSubmit = this.handleSubmit.bind(this);
+		this.handleGuest = this.handleGuest.bind(this);
 	}
 
 	componentDidUpdate(){
@@ -33,12 +34,30 @@ class AuthForm extends React.Component {
 		this.props.processForm({user});
 	}
 
+
 	navLink(){
 		if (this.props.formType === "signin") {
 			return <Link to="/signup">sign up instead</Link>;
 		} else {
 			return <Link to="/signin">sign in instead</Link>;
 		}
+	}
+
+	guestSigninButton(){
+		return (
+			<input type="submit" value="Guest" className="submit-btn"
+				onClick={this.handleGuest}/>
+		);
+	}
+
+	handleGuest(e){
+		e.preventDefault();
+		this.state = {
+			username: "AdaLovelace",
+			password: "password",
+		};
+		let user = this.state;
+		this.props.guestSignin({user});
 	}
 
 	renderSignupInputs(){
@@ -118,6 +137,8 @@ class AuthForm extends React.Component {
 
 						<br />
 						<input type="submit" value="Submit" className="submit-btn"/>
+						{this.guestSigninButton()}
+
 					</div>
 				</form>
 			</div>
