@@ -25,7 +25,6 @@ class Greeting extends React.Component {
   }
 
   handleSignout(e) {
-    // e.preventDefault();
     this.signout();
     this.props.router.replace("/signin");
   }

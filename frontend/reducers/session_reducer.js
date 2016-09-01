@@ -9,7 +9,6 @@ const _nullUser = Object.freeze({
 const SessionReducer = function(state = _nullUser, action){
   switch(action.type){
     case SessionConstants.RECEIVE_CURRENT_USER:
-      debugger
       console.log('in session_reducer receive current user ');
       const currentUser = action.currentUser;
       const merged = merge({}, state, {currentUser});

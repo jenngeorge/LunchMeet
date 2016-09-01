@@ -1,12 +1,14 @@
 import { receiveCurrentUser,
          receiveErrors,
-         SessionConstants
+         SessionConstants,
+         signoutAction
        } from '../actions/session_actions';
 
 import { signin, signout } from '../util/session_api_util';
 
 export default ({getState, dispatch}) => next => action => {
   const successCallback = user => dispatch(receiveCurrentUser(user));
+  const signoutSuccess = () => dispatch(signoutAction());
   const errorCallback = xhr => {
     const errors = xhr.responseJSON;
     dispatch(receiveErrors(errors));
@@ -18,8 +20,8 @@ export default ({getState, dispatch}) => next => action => {
       return next(action);
     case SessionConstants.SIGNOUT:
       console.log('in session_middleware signin');
-      signout(() => next(action));
-      break;
+      signout(signoutSuccess);
+      return next(action);
     default:
       return next(action);
   }

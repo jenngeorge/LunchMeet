@@ -10,7 +10,7 @@ export const signin = user => ({
   user
 });
 
-export const signout = () => ({
+export const signoutAction = () => ({
   type: SessionConstants.SIGNOUT
 });
 

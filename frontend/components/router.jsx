@@ -15,6 +15,7 @@ class AppRouter extends React.Component{
 
     this._redirectIfSignedIn = this._redirectIfSignedIn.bind(this);
     this._ensureSignedIn = this._ensureSignedIn.bind(this);
+    this._toSignup = this._toSignup.bind(this);
   }
 
   _ensureSignedIn(nextState, replace){
@@ -22,6 +23,15 @@ class AppRouter extends React.Component{
     const currentUser = currentState.session.currentUser;
     if (!currentUser) {
       replace('/signin');
+    }
+  }
+
+  _toSignup(nextState, replace){
+    const currentState = this.context.store.getState();
+    const currentUser = currentState.session.currentUser;
+
+    if (!currentUser && nextState.location.pathname === "/" ) {
+      replace('/signup');
     }
   }
 
@@ -34,11 +44,10 @@ class AppRouter extends React.Component{
   }
 
 
-
   render(){
     return(
       <Router history={ hashHistory }>
-        <Route path="/" component ={ App }>
+        <Route path="/" component ={ App } onEnter={this._toSignup}>
           <IndexRoute component = {HomeContainer} />
           <Route path='/signup' component={ AuthContainer }  onEnter={this._redirectIfSignedIn}/>
           <Route path='/signin' component={ AuthContainer }  onEnter={this._redirectIfSignedIn}/>
