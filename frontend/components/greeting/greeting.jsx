@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router';
+import {Link} from 'react-router';
+
 
 const sessionLinks = () => (
   <ul className="nav navbar-nav navbar-right">
@@ -12,13 +13,16 @@ const sessionLinks = () => (
   </ul>
 );
 
+
 const signedInOptions = (currentUser, signout) => (
   <ul className="nav navbar-nav navbar-right">
     <li>
       <Link to="/profile" activeClassName="current" >{currentUser.username}</Link>
     </li>
     <li>
-      <button className="navbar-btn navbar-right" onClick={signout}>Sign Out</button>
+      <button className="navbar-btn navbar-right" onClick={signout}>
+        <Link to='/signin' >Sign Out</Link>
+      </button>
     </li>
   </ul>
 );
