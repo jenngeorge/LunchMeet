@@ -32,7 +32,7 @@ class ProfileForm extends React.Component {
     e.preventDefault();
     cloudinary.openUploadWidget(CLOUDINARY_OPTIONS, function(error, results){
       if(!error){
-        that.state.photo_url = results[0].secure_url;
+        that.setState({photo_url: results[0].secure_url});
       }
     });
   }
@@ -54,7 +54,7 @@ class ProfileForm extends React.Component {
                 <div className="profile-photo">
                   <img src={this.state.photo_url} onChange={this.update("photo_url")}/>
                   <div className="upload-photo">
-                    <button onClick={this.uploadPhoto}>Upload Photo</button>
+                    <button onClick={this.uploadPhoto}>Update Photo</button>
                   </div>
                 </div>
 
