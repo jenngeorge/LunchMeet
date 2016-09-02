@@ -2,7 +2,7 @@ import { FilterConstants } from '../actions/filter_actions';
 import merge from 'lodash/merge';
 
 const _defaultFilter = Object.freeze({
-	role: "recruiter"
+	role: ""
 });
 
 const FiltersReducer = function(state = _defaultFilter, action){

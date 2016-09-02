@@ -54,7 +54,7 @@ Routes
 |“/sign-up” | “AuthFormContainer"|
 |“/sign-in” | “AuthFormContainer"|
 
-* do benchbnb auth
+
 
 
 |Path   | Component   |

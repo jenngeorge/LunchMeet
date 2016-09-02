@@ -16,7 +16,8 @@ const Browse = ({matches, currentUser, role, updateFilter, updateMatches}) => (
       updateMatches={updateMatches} />
     <MatchIndex
       matches={matches}
-      updateFilter={updateFilter} />
+      updateFilter={updateFilter}
+      updateMatches={updateMatches} />
   </div>
 );
 
