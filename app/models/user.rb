@@ -14,6 +14,7 @@
 #  looking_for     :string           not null
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  location_id     :integer
 #
 
 class User < ActiveRecord::Base
@@ -25,7 +26,9 @@ class User < ActiveRecord::Base
 
   after_initialize :ensure_session_token
 	before_validation :ensure_session_token_uniqueness
+  before_save :set_location
 
+  belongs_to :location
 
   def password=(password)
     @password = password
@@ -60,7 +63,23 @@ class User < ActiveRecord::Base
     end
   end
 
+  def set_location
+    @existing_zipcode = Location.where(zip_code: self.zip_code)
 
+    if @exisint_zipcode
+      
+    else
+
+    # if locations includes self.zip_code
+    #   find that location
+    #   user.location_id = that location
+    # else
+    #   ajax request
+    #   add location to table
+    #   user.location_id = that location
+
+
+  end
 
 
 end
