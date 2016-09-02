@@ -11,14 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160902061400) do
+ActiveRecord::Schema.define(version: 20160902162716) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "locations", force: :cascade do |t|
     t.string   "zip_code",     null: false
-    t.string   "anchor_name",  null: false
     t.float    "lat",          null: false
     t.float    "long",         null: false
     t.string   "neighborhood", null: false

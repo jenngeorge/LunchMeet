@@ -16,6 +16,7 @@
 #  updated_at      :datetime         not null
 #  location_id     :integer
 #
+require 'byebug'
 
 class User < ActiveRecord::Base
   attr_reader :password
@@ -64,22 +65,41 @@ class User < ActiveRecord::Base
   end
 
   def set_location
-    @existing_zipcode = Location.where(zip_code: self.zip_code)
-
-    if @exisint_zipcode
-      
+    existing_zipcode = Location.find_by_zip_code(self.zip_code)
+    if @exising_zipcode
+      self.location_id = existing_zipcode.id
     else
+      yelp_location = get_location(self.zip_code)
+      new_location = Location.create!(yelp_location)
 
-    # if locations includes self.zip_code
-    #   find that location
-    #   user.location_id = that location
-    # else
-    #   ajax request
-    #   add location to table
-    #   user.location_id = that location
+      self.location_id = new_location.id
+    end
+      # else something bad happened
+  end
 
+  def get_location(zip)
 
+    response = Yelp.client.search(location=zip)
+    lat = response.region.center.latitude
+    long = response.region.center.longitude
+    businesses = response.businesses
+    has_neighborhood = false
+
+    idx = 0
+    while has_neighborhood == false && idx < businesses.length
+      neighborhoods = businesses[idx].location.neighborhoods
+      unless neighborhoods.nil? || neighborhoods.empty?
+        neighborhood = neighborhoods[0]
+        has_neighborhood = true;
+        return {zip_code: zip, lat:lat, long:long, neighborhood: neighborhood}
+      end
+      idx +=1
+    end
+    return {zip_code: zip, lat:lat, long:long, neighborhood: businesses[0].location.city}
   end
 
 
-end
+
+
+
+end # class end

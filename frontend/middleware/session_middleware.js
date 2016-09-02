@@ -19,7 +19,7 @@ export default ({getState, dispatch}) => next => action => {
       signin(action.user, successCallback, errorCallback);
       return next(action);
     case SessionConstants.SIGNOUT:
-      console.log('in session_middleware signin');
+      console.log('in session_middleware signout');
       signout(signoutSuccess);
       return next(action);
     default:
