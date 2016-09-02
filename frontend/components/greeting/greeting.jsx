@@ -33,6 +33,9 @@ class Greeting extends React.Component {
     return (
       <ul className="nav navbar-nav navbar-right">
         <li>
+          <Link to="/browse" activeClassName="current" >Browse</Link>
+        </li>
+        <li>
           <Link to="/profile" activeClassName="current" >{this.props.currentUser.username}</Link>
         </li>
         <li>

@@ -9,11 +9,14 @@ class FilterForm extends React.Component {
 
   componentDidMount(){
     this.props.updateFilter("role", this.props.currentUser.looking_for);
+    this.props.updateFilter("zip_code", this.props.currentUser.zip_code);
     this.props.updateMatches();
   }
 
   _handleChange(e) {
-    this.props.updateFilter("role", e.currentTarget.value);
+    let filter = e.currentTarget.id;
+    let value = e.currentTarget.value;
+    this.props.updateFilter(filter, value);
   }
 
   render(){
@@ -21,7 +24,7 @@ class FilterForm extends React.Component {
       <div>
         <form onSubmit={this.props.updateMatches} className="filter-form">
           <label> Looking to meet
-            <select id="role" value={this.props.role}
+            <select id="role" value={ this.props.role}
               onChange={this._handleChange}
               defaultValue={this.props.currentUser.looking_for}>
               <option value="developer">Developers</option>
@@ -30,6 +33,12 @@ class FilterForm extends React.Component {
               <option value="recruiter" >Recruiters</option>
               <option value="business" >Business/Operations People</option>
             </select>
+          </label>
+          <label> near zip code:
+            <input type="text"
+              id="zip_code"
+              value={this.props.zip_code}
+              onChange={this._handleChange}/>
           </label>
           <input type="submit" value="Submit" className="submit-btn"/>
         </form>

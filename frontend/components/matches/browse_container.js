@@ -8,6 +8,7 @@ import { requestUsers } from '../../actions/user_actions';
 const mapStateToProps = state => ({
   matches: state.users,
   role: state.filters.role,
+  zip_code: state.filters.zip_code,
   currentUser: state.session.currentUser
 });
 

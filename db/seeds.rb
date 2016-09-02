@@ -8,13 +8,46 @@
 
 
 #initial user test data
+adaLovelace = User.create(
+username: "AdaLovelace",
+password: "password",
+email: "ada@ada.com",
+photo_url: "http://media.boingboing.net/wp-content/uploads/2015/12/ada-lovelace.jpg",
+zip_code: "94133",
+role: "developer",
+about: "Computers are the best",
+looking_for: "developer"
+)
+
+ogTesla = User.create(
+  username: "OG_Tesla",
+  password: "password",
+  email: "og@tesla.com",
+  photo_url: " ",
+  zip_code: "94133",
+  role: "developer",
+  about: "making stuff",
+  looking_for: "developer"
+)
+
+donNorman = User.create(
+  username: "DonNorman",
+  password: "password",
+  email: "don@norman.com",
+  photo_url: " ",
+  zip_code: "94102",
+  role: "designer",
+  about: "design === life",
+  looking_for: "designer"
+)
+
 billGates = User.create!(
   username: "BillGates",
   password: "password",
   email: "bill@bill.com",
   photo_url: "https://pbs.twimg.com/profile_images/558109954561679360/j1f9DiJi.jpeg",
   zip_code: "94102",
-  role: "business/operations",
+  role: "business",
   about: "working hard is good",
   looking_for: "developer")
 
@@ -34,7 +67,7 @@ elonMusk = User.create!(
   email: "elon@elon.com",
   photo_url: "http://i.telegraph.co.uk/multimedia/archive/02778/MUSKsum_2778344b.jpg",
   zip_code: "94121",
-  role: "business/operations",
+  role: "business",
   about: "lez go to marz",
   looking_for: "developer"
 )
@@ -45,7 +78,7 @@ marissaMayer = User.create(
   email: "m@m.com",
   photo_url: "http://i.forbesimg.com/media/lists/people/marissa-mayer_416x416.jpg",
   zip_code: "94123",
-  role: "business/operations",
+  role: "business",
   about: "looking for new opportunies ",
   looking_for: "recruiter"
 )
@@ -56,18 +89,7 @@ elizabethHolmes = User.create(
   email: "e@e.com",
   photo_url: "http://i.forbesimg.com/media/lists/people/elizabeth-holmes_416x416.jpg",
   zip_code: "94134",
-  role: "business/operations",
+  role: "business",
   about: "everything is fine I'm doing awesome ",
   looking_for: "recruiter"
-)
-
-adaLovelace = User.create(
-  username: "AdaLovelace",
-  password: "password",
-  email: "ada@ada.com",
-  photo_url: "http://media.boingboing.net/wp-content/uploads/2015/12/ada-lovelace.jpg",
-  zip_code: "94133",
-  role: "developer",
-  about: "Computers are the best",
-  looking_for: "developer"
 )

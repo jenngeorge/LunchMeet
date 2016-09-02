@@ -27,10 +27,13 @@ class Api::UsersController < ApplicationController
 
   def index
     if params[:role]
-      @users = User.where(role: params[:role])
+      users_with_role = User.where(role: params[:role])
+      @users = users_with_role.where(zip_code: params[:zip_code])
     end
     render :index
   end
+
+
 
   def show
     @user = User.find(params[:id])

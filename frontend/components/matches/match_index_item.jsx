@@ -10,7 +10,6 @@ class MatchIndexItem extends React.Component {
   }
 
   handleClick() {
-    debugger
     const matchID = this.props.match.id;
     hashHistory.push("matches/" + matchID );
   }
@@ -26,6 +25,9 @@ class MatchIndexItem extends React.Component {
           </span>
           <span className="index-item-copy">
             {match.about}
+          </span>
+          <span className="index-item-copy">
+            -- and I work near you in {match.location.neighborhood}
           </span>
         </div>
 
