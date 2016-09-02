@@ -52,7 +52,7 @@ class ProfileForm extends React.Component {
             <div className="profile-header inner">
               <div className="profile-info">
                 <div className="profile-photo">
-                  <img src={this.state.photo_url} onChange={this.update("photo_url")}/>
+                  <img src={this.state.photo_url} />
                   <div className="upload-photo">
                     <button onClick={this.uploadPhoto}>Update Photo</button>
                   </div>

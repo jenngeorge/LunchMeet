@@ -7,6 +7,7 @@ import AuthContainer from './auth/auth_container';
 import HomeContainer from './home/home_container';
 import ProfileContainer from './profile/profile_container';
 import ProfileFormContainer from './profile/profile_form_container';
+import BrowseContainer from './matches/browse_container';
 
 
 class AppRouter extends React.Component{
@@ -22,7 +23,7 @@ class AppRouter extends React.Component{
     const currentState = this.context.store.getState();
     const currentUser = currentState.session.currentUser;
     if (!currentUser) {
-      replace('/signin');
+      replace('/signup');
     }
   }
 
@@ -53,6 +54,7 @@ class AppRouter extends React.Component{
           <Route path='/signin' component={ AuthContainer }  onEnter={this._redirectIfSignedIn}/>
           <Route path='/profile' component={ ProfileContainer } onEnter={this._ensureSignedIn} />
           <Route path='/profile/update' component={ ProfileFormContainer } onEnter={this._ensureSignedIn} />
+          <Route path='/browse' component={ BrowseContainer } onEnter={this._ensureSignedIn} />
         </Route>
       </Router>
     );

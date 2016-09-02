@@ -20,13 +20,12 @@ export const updateUser = function (user, success, error){
   });
 };
 
-export const fetchUsers = function(success, error){
-  // TODO: add filters
+export const fetchUsers = function(filters, success){
   $.ajax({
     method:'GET',
     url: 'api/users',
-    success,
-    error
+    data: filters,
+    success
   });
 };
 
