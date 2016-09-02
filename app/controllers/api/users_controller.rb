@@ -26,7 +26,9 @@ class Api::UsersController < ApplicationController
   end
 
   def index
-    @users = User.all
+    if params[:role]
+      @users = User.where(role: params[:role])
+    end
     render :index
   end
 

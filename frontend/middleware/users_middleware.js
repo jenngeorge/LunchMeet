@@ -22,6 +22,9 @@ import {
   receiveSingleUser
   } from '../actions/user_actions';
 
+  //filter constants
+  import { FilterConstants } from '../actions/filter_actions';
+
 
 export default ({getState, dispatch}) => next => action => {
   const usersSuccess = data => dispatch(receiveUsers(data));
@@ -44,8 +47,9 @@ export default ({getState, dispatch}) => next => action => {
       break;
 
     case UserConstants.REQUEST_USERS:
+    const filters = getState().filters;
       console.log('users_middleware request users ');
-      fetchUsers(usersSuccess, errorCallback);
+      fetchUsers(filters, usersSuccess);
       break;
 
     case UserConstants.REQUEST_SINGLE_USER:
