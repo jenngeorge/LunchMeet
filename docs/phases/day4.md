@@ -12,3 +12,14 @@
 + should probably handle potential errors for zip codes:
   - zip code does not exist
   - no businesses in zip code have a neighborhood
+
+
+nesting components differently:
+- Browse on the outside
+- route = /username
+- put profile component inside Browse
+  - then check if user == currentUser
+-in greeting: change profile link to /currentUser.username
+
+
+-in browse: matchindex should not include currentUser

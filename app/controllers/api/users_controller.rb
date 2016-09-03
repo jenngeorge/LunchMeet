@@ -29,7 +29,10 @@ class Api::UsersController < ApplicationController
     if params[:role]
       users_with_role = User.where(role: params[:role])
       @users = users_with_role.where(zip_code: params[:zip_code])
-    end
+    else
+      @users = User.all
+    end 
+
     render :index
   end
 

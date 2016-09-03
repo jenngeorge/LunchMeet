@@ -5,7 +5,7 @@ const _defaultFilter = Object.freeze({
 	role: ""
 });
 
-const FiltersReducer = function(state = _defaultFilter, action){
+const FiltersReducer = function(state = {}, action){
   if (action.type == FilterConstants.UPDATE_FILTER){
     const newFilter = {[action.filter]: action.value};
     return merge({}, state, newFilter);

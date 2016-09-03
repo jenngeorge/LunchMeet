@@ -5,11 +5,19 @@ import Profile from './profile';
 import { updateUserAction } from '../../actions/session_actions';
 
 
-const mapStateToProps = state => ({
-  user: state.session.currentUser,
-  currentUser: state.session.currentUser
-  // change user to be any one user
-});
+const mapStateToProps = (state, ownProps) => {
+
+  debugger
+  const currentUser = state.session.currentUser;
+  const matchId = ownProps.params.matchId;
+  const user = state.users[matchId] || {};
+
+  return {
+    matchId,
+    user,
+    currentUser
+  };
+};
 
 
 const mapDispatchToProps = dispatch => ({

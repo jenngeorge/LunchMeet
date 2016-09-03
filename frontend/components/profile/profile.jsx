@@ -5,13 +5,14 @@ import UpdateButton from './update_button';
 class Profile extends React.Component {
   constructor(props){
     super(props);
-
     this.updateButton = this.updateButton.bind(this);
+
   }
 
   updateButton(currentUser){
-    if (this.props.user === this.props.currentUser){
-      return(<UpdateButton currentUser={currentUser}/>);
+    debugger
+    if (this.props.user.id === this.props.currentUser.id){
+      return(<UpdateButton currentUser={this.props.currentUser}/>);
     }
   }
 
@@ -28,7 +29,7 @@ class Profile extends React.Component {
                 <div className="profile-username">
                   <h2>{this.props.user.username}</h2>
                 </div>
-                {this.updateButton(this.currentUser)}
+                {this.updateButton(this.props.currentUser)}
                 <div className="profile-sub-basic">
                   <h3>{this.props.user.role}</h3>
                 </div>

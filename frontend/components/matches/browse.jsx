@@ -1,25 +1,30 @@
 import React from 'react';
-
 // import components
-import FilterForm from './filter_form';
+
 import MatchIndex from './match_index';
 
+class Browse extends React.Component{
+  constructor(props){
+    super(props);
 
-const Browse = ({matches, currentUser, role, zip_code, updateFilter, updateMatches}) => (
-  <div className="browse-container">
-    <h1>HI IM BROWSE</h1>
-    <h1>browse loves you</h1>
-    <FilterForm
-      updateFilter={updateFilter}
-      currentUser={currentUser}
-      role={role}
-      zip_code={zip_code}
-      updateMatches={updateMatches} />
-    <MatchIndex
-      matches={matches}
-      updateFilter={updateFilter}
-      updateMatches={updateMatches} />
-  </div>
-);
+  }
+
+  render(){
+    return(
+      <div className="browse-container">
+
+        <MatchIndex
+          matches={this.props.matches}
+          updateMatches={this.props.updateMatches}
+          updateFilter={this.props.updateFilter}
+          currentUser={this.props.currentUser}
+          role={this.props.role}
+          zip={this.props.zip_code} />
+      </div>
+    );
+  }
+
+} //class end
+
 
 export default Browse;

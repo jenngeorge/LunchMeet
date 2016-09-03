@@ -37,7 +37,7 @@ class FilterForm extends React.Component {
           <label> near zip code:
             <input type="text"
               id="zip_code"
-              value={this.props.zip_code}
+              defaultValue={this.props.currentUser.zip_code}
               onChange={this._handleChange}/>
           </label>
           <input type="submit" value="Submit" className="submit-btn"/>

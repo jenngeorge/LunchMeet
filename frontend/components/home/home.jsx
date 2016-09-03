@@ -1,11 +1,23 @@
 import React from 'react';
 //Components
 
-const Home = (props) => (
-  <div className="user-pane">
+class Home extends React.Component {
+  constructor(props){
+    super(props);
+  }
 
-  </div>
-);
+  componentDidMount(){
+    this.props.updateFilter();
+    this.props.requestUsers();
+  }
+
+  render(){
+    return(
+      <div className="user-pane"></div>
+    );
+  }
+
+} //class end 
 
 
 export default Home;

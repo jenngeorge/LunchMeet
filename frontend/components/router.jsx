@@ -44,7 +44,6 @@ class AppRouter extends React.Component{
     }
   }
 
-
   render(){
     return(
       <Router history={ hashHistory }>
@@ -55,6 +54,7 @@ class AppRouter extends React.Component{
           <Route path='/profile' component={ ProfileContainer } onEnter={this._ensureSignedIn} />
           <Route path='/profile/update' component={ ProfileFormContainer } onEnter={this._ensureSignedIn} />
           <Route path='/browse' component={ BrowseContainer } onEnter={this._ensureSignedIn} />
+          <Route path='/:matchId' component={ ProfileContainer } onEnter={this._ensureSignedIn} />
         </Route>
       </Router>
     );

@@ -11,6 +11,11 @@ class Greeting extends React.Component {
     this.signout = this.props.signout;
   }
 
+  componentDidMount(){
+    this.props.updateFilter();
+    this.props.requestUsers();
+  }
+
   sessionLinks() {
     return (
       <ul className="nav navbar-nav navbar-right">
@@ -36,7 +41,7 @@ class Greeting extends React.Component {
           <Link to="/browse" activeClassName="current" >Browse</Link>
         </li>
         <li>
-          <Link to="/profile" activeClassName="current" >{this.props.currentUser.username}</Link>
+          <Link to={'/' + this.props.currentUser.id} activeClassName="current" >{this.props.currentUser.username}</Link>
         </li>
         <li>
           <button className="navbar-btn navbar-right" onClick={this.handleSignout}>Sign out</button>
