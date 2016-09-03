@@ -9,23 +9,20 @@
 
 .profile-header-container{
   background-color: $color-1;
-  margin-bottom: 60px;
+  margin-bottom: $component-padding * 2;
+  padding: $component-padding $component-padding 0 ($component-padding*2);
 }
 
 .profile-header{
   display: flex;
-  padding-top: 100px;
-  padding-bottom: 30px;
+  padding-top: $padding-from-nav;
+  padding-bottom: $component-padding;
 
-
-  h3 {
-
-  }
 }
 
 .profile-info {
-  margin-bottom: -30px;
-  margin-left: -30px;
+  margin-bottom: -$component-padding;
+  margin-left: -$component-padding;
 
 }
 
@@ -34,8 +31,8 @@
   float: left;
   width: 200px;
   height: 200px;
-  z-index: 2;
-  margin-bottom: -50px;
+  // z-index: 2;
+  margin-bottom: -($component-padding*2);
 
   img{
     position: absolute;
@@ -51,22 +48,25 @@
 
 .profile-basics{
   float: left;
-  margin-top: 25px;
-  margin-left: 25px;
+  margin: $component-padding 0px 15px $component-padding;
 }
 
 .profile-username{
-
-  h2{
-
-  }
 
 }
 
 .profile-sub-basic{
   float: left;
-  padding-right: 20px;
+  padding-right: $component-padding;
 
+  h3 {
+    margin-top: 10px;
+  }
+
+}
+
+.update-button{
+  margin-top: $component-padding + ($component-padding/2);
 }
 
 .profile-about-container{
@@ -74,10 +74,28 @@
 }
 
 .profile-about{
-  padding-top: 30px;
+  padding-top: $component-padding;
 
   h2 {
-    color: $black;
+    color: $font-color;
   }
+
+}
+
+.profile-sidebox {
+  background-color: $background-2;
+  padding: $component-padding;
+  border-radius: $border-radius-sm;
+}
+
+@media (max-width: 975px){
+  .profile-header-container{
+    margin-bottom: $component-padding;
+  }
+
+  .profile-photo {
+    margin-bottom: $component-padding;
+  }
+
 
 }

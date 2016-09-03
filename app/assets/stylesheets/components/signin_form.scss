@@ -1,0 +1,17 @@
+.signin-form-container{
+  background-color: $color-1;
+  padding-top: 100px;
+  padding-bottom: 50px;
+
+  form {
+    max-width: 800px;
+    padding: $component-padding;
+    margin: auto;
+    text-align: center;
+  }
+
+  a:hover{
+    color: darken($color-3, 5);
+    text-decoration: none;
+  }
+}

@@ -2,8 +2,8 @@
 
 .navbar{
   border-radius: 0px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: $component-padding;
+  padding-right: $component-padding;
   background-color: $color-1;
   border-bottom: 1px solid $color-2;
 

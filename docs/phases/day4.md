@@ -6,20 +6,19 @@
   - if the first 100 businesses for a zipcode don't have neighborhoods, substitute the city
 + added location to user jbuilder
   - is nested under user, like {user: {id:1, location: {location info}}}
++ matchesindex, matchesindexitem
++ made users available in state everywhere
 
 
 ### notes
++ seed pictures for each person using cloudinary links 
++ profile doesn't have updated values after update submit?
++ signout happens twice (second time with error)?
 + should probably handle potential errors for zip codes:
   - zip code does not exist
   - no businesses in zip code have a neighborhood
 
-
-nesting components differently:
-- Browse on the outside
-- route = /username
-- put profile component inside Browse
-  - then check if user == currentUser
--in greeting: change profile link to /currentUser.username
++ distance from zip here: http://andrew.hedges.name/experiments/haversine/
 
 
 -in browse: matchindex should not include currentUser

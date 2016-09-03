@@ -21,7 +21,7 @@ class FilterForm extends React.Component {
 
   render(){
     return(
-      <div>
+      <div className="filter-form-container">
         <form onSubmit={this.props.updateMatches} className="filter-form">
           <label> Looking to meet
             <select id="role" value={ this.props.role}

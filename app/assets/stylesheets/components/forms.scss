@@ -1,41 +1,23 @@
+form {
+  color: $white;
 
-
-.signin-form-container{
-  background-color: $color-1;
-  padding-top: 100px;
-  padding-bottom: 50px;
-
-  form {
-    max-width: 800px;
-    padding: 20px;
-    margin: auto;
-    text-align: center;
-    color: $white;
-
-    a {
-      color: $color-3;
-    }
-
-    ul {
-        list-style: none;
-    }
+  a {
+    color: $color-3;
   }
 
-  label {
-    padding: 5px;
+  ul {
+    list-style: none;
   }
+}
 
-  input, select {
-    background-color: $color-2;
-    border: none;
-    border-radius: 4px;
-    margin-left: 5px;
+label {
+  padding: 5px;
+}
 
-  }
-
-  .submit-btn {
-    @include button-theme($white, $color-3, darken($color-3, 5));
-  }
-
-
+input, select {
+  background-color: $color-2;
+  border: none;
+  border-radius: $border-radius-sm;
+  margin-left: 10px;
+  padding-left: 10px;
 }

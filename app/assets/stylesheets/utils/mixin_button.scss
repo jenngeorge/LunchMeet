@@ -1,13 +1,19 @@
 // button mixin
 
-@mixin button-theme($color, $bg-color, $bg-color-hover){
+@mixin button-theme($color:$white, $bg-color:$color-3){
   color: $color;
   border-color: $color;
   background-color: $bg-color;
   height: 40px;
-  width: 80px;
+  padding: 10px;
+  border: none;
+  border-radius: $border-radius-sm;
 
   &:hover {
-    background-color: $bg-color-hover;
+    background-color: darken($bg-color, 5);
   }
+}
+
+button, .submit-btn{
+  @include button-theme($white, $color-3);
 }

@@ -10,8 +10,7 @@ class MatchIndexItem extends React.Component {
   }
 
   handleClick() {
-    debugger
-    const matchId= this.props.match.id;
+    const matchId = this.props.match.id;
     hashHistory.push("/" + matchId);
   }
 

@@ -3,11 +3,10 @@
 import { connect } from 'react-redux';
 import Profile from './profile';
 import { updateUserAction } from '../../actions/session_actions';
+import { requestUsers } from '../../actions/user_actions';
 
 
 const mapStateToProps = (state, ownProps) => {
-
-  debugger
   const currentUser = state.session.currentUser;
   const matchId = ownProps.params.matchId;
   const user = state.users[matchId] || {};
@@ -22,6 +21,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => ({
   // updateProfile: (user) => dispatch(updateUserAction(user))
+  requestUsers: () => dispatch(requestUsers())
 });
 
 export default connect(

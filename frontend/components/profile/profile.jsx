@@ -6,14 +6,17 @@ class Profile extends React.Component {
   constructor(props){
     super(props);
     this.updateButton = this.updateButton.bind(this);
-
   }
 
   updateButton(currentUser){
-    debugger
     if (this.props.user.id === this.props.currentUser.id){
       return(<UpdateButton currentUser={this.props.currentUser}/>);
     }
+  }
+
+
+  componentWillMount(){
+    this.props.requestUsers();
   }
 
   render(){
@@ -29,14 +32,14 @@ class Profile extends React.Component {
                 <div className="profile-username">
                   <h2>{this.props.user.username}</h2>
                 </div>
-                {this.updateButton(this.props.currentUser)}
                 <div className="profile-sub-basic">
                   <h3>{this.props.user.role}</h3>
                 </div>
                 <div className="profile-sub-basic">
-                  <h3>{this.props.user.location.neighborhood}</h3>
+                  <h3>{this.props.user.zip_code}</h3>
                 </div>
               </div>
+              {this.updateButton(this.props.currentUser)}
             </div>
           </div>
         </div>

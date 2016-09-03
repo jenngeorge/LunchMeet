@@ -40,7 +40,8 @@ class ProfileForm extends React.Component {
   handleSubmit(e){
     e.preventDefault();
     this.updateProfile(this.state);
-    this.props.router.replace("/profile");
+    this.props.router.push(`/${this.state.id}`);
+
   }
 
   render(){
@@ -53,12 +54,13 @@ class ProfileForm extends React.Component {
               <div className="profile-info">
                 <div className="profile-photo">
                   <img src={this.state.photo_url} />
-                  <div className="upload-photo">
-                    <button onClick={this.uploadPhoto}>Update Photo</button>
-                  </div>
                 </div>
 
                 <div className="profile-basics">
+                  <div className="upload-photo">
+                    <button onClick={this.uploadPhoto}>Update Photo</button>
+                    <input type="submit" value="Submit" className="submit-btn"/>
+                  </div>
                   <div className="profile-username">
                     <label> Username:
                       <input type="text"
@@ -70,7 +72,7 @@ class ProfileForm extends React.Component {
 
                   <div className="profile-sub-basic">
                     <label> I am a
-                      <select id="role" value={this.state.role} onChange={this.update("role")} defaultValue="developer">
+                      <select id="role" value={this.state.role} onChange={this.update("role")} defaultValue={this.state.role}>
                         <option value="developer">Developer</option>
                         <option value="designer" >Designer</option>
                         <option value="sales" >Salesperson</option>
@@ -95,11 +97,11 @@ class ProfileForm extends React.Component {
             <div className="profile-content-container inner ">
               <div className="profile-about col-lg-8 col-sm-6">
                 <h2>About</h2>
-                <input type="textarea"
+                <textarea
                   value={this.state.about}
-                  placeholder="Where to begin..."
+                  placeholder="Tell us about yourself!"
                   onChange={this.update("about")}/>
-                <input type="submit" value="Submit" className="submit-btn"/>
+
               </div>
               <div className="profile-sidebox-container col-lg-4 col-sm-6">
                 <div className ="profile-sidebox">
