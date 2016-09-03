@@ -16,7 +16,7 @@
 #  updated_at      :datetime         not null
 #  location_id     :integer
 #
-require 'byebug'
+
 
 class User < ActiveRecord::Base
   attr_reader :password
