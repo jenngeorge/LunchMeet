@@ -7,8 +7,7 @@ class Home extends React.Component {
   }
 
   componentDidMount(){
-    this.props.updateFilter();
-    this.props.requestUsers();
+    // this.props.updateFilter();
   }
 
   render(){

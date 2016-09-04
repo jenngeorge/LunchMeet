@@ -5,11 +5,11 @@ class FilterForm extends React.Component {
     super(props);
 
     this._handleChange = this._handleChange.bind(this);
+    this._handleSubmit = this._handleSubmit.bind(this);
   }
 
   componentDidMount(){
     this.props.updateFilter("role", this.props.currentUser.looking_for);
-    // this.props.updateFilter("zip_code", this.props.currentUser.zip_code);
     this.props.updateMatches();
   }
 
@@ -19,10 +19,14 @@ class FilterForm extends React.Component {
     this.props.updateFilter(filter, value);
   }
 
+  _handleSubmit(){
+    this.props.updateMatches();
+  }
+
   render(){
     return(
       <div className="filter-form-container">
-        <form onSubmit={this.props.updateMatches} className="filter-form">
+        <form onSubmit={this._handleSubmit} className="filter-form">
           <label> Looking to meet
             <select id="role" value={ this.props.role}
               onChange={this._handleChange}

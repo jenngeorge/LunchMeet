@@ -13,7 +13,6 @@ class Greeting extends React.Component {
 
   componentDidMount(){
     this.props.updateFilter();
-    this.props.requestUsers();
   }
 
   sessionLinks() {

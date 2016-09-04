@@ -9,8 +9,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  updateFilter: (filter, value) => dispatch(updateFilter(filter, value)),
-  requestUsers: () => dispatch(requestUsers())
+  // updateFilter: (filter, value) => dispatch(updateFilter(filter, value)),
+  // requestUsers: () => dispatch(requestUsers())
 });
 
 export default connect(

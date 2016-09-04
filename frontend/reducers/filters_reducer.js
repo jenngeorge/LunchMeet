@@ -3,6 +3,7 @@ import merge from 'lodash/merge';
 
 
 const FiltersReducer = function(state = {}, action){
+
   if (action.type == FilterConstants.UPDATE_FILTER){
     const newFilter = {[action.filter]: action.value};
     return merge({}, state, newFilter);

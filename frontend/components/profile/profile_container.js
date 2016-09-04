@@ -10,14 +10,11 @@ const mapStateToProps = (state, ownProps) => {
   const currentUser = state.session.currentUser;
   const matchId = ownProps.params.matchId;
   const user = state.users[matchId] || {};
-  const users = state.users;
-
 
   return {
     matchId,
     user,
-    currentUser,
-    users
+    currentUser
   };
 };
 
