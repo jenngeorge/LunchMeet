@@ -11,14 +11,13 @@
 
 
 ### notes
-+ seed pictures for each person using cloudinary links 
++ seed pictures for each person using cloudinary links
 + profile doesn't have updated values after update submit?
 + signout happens twice (second time with error)?
 + should probably handle potential errors for zip codes:
   - zip code does not exist
   - no businesses in zip code have a neighborhood
 
-+ distance from zip here: http://andrew.hedges.name/experiments/haversine/
 
 
 -in browse: matchindex should not include currentUser

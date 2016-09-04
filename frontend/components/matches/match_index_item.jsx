@@ -17,7 +17,7 @@ class MatchIndexItem extends React.Component {
   render() {
     const match = this.props.match;
     return (
-      <div className=" index-item-container col-lg-4 col-sm-6">
+      <div className="index-item-container col-lg-4 col-sm-6">
         <div className="match-index-item"
           onClick={this.handleClick}>
           <div className="index-item-photo">
