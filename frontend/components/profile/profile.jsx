@@ -20,6 +20,11 @@ class Profile extends React.Component {
   }
 
   render(){
+    // if (this.props.user.id === this.props.currentUser.id){
+    //   this.neighborhood = this.props.currentUser.location.neighborhood;
+    // } else {
+    //   this.neighborhood = this.props.user.location.neighborhood;
+    // }
     return (
       <div className="profile-container">
         <div className="profile-header-container">

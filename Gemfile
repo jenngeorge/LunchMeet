@@ -30,6 +30,9 @@ gem 'figaro'
 #yelp api
 gem 'yelp', require: 'yelp'
 
+#find distance between neighborhoods
+gem 'geokit-rails'
+
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 

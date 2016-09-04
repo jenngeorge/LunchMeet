@@ -65,9 +65,9 @@ class User < ActiveRecord::Base
   end
 
   def set_location
-    existing_zipcode = Location.find_by_zip_code(self.zip_code)
-    if @exising_zipcode
-      self.location_id = existing_zipcode.id
+    existing_zipcode = Location.where(zip_code: self.zip_code)
+    if existing_zipcode.length > 0
+      self.location_id = existing_zipcode[0].id
     else
       yelp_location = get_location(self.zip_code)
       new_location = Location.create!(yelp_location)

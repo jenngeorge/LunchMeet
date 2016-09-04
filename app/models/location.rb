@@ -13,6 +13,9 @@
 #
 
 class Location < ActiveRecord::Base
+  acts_as_mappable :distance_field_name => :distance,
+                  :lat_column_name => :lat,
+                   :lng_column_name => :long
   has_many :users
 
 

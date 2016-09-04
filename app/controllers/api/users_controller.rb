@@ -1,4 +1,7 @@
+require 'byebug'
+
 class Api::UsersController < ApplicationController
+
 
   # before_action :require_signin, only: [:index, :update, :show]
 
@@ -26,14 +29,21 @@ class Api::UsersController < ApplicationController
   end
 
   def index
+    @users = User.all
     if params[:role]
-      users_with_role = User.where(role: params[:role])
-      @users = users_with_role.where(zip_code: params[:zip_code])
-    else
-      @users = User.all
-    end 
-
-    render :index
+      @users = User.where(role: params[:role])
+    end
+    if params[:distance]
+      user_location = Location.find(current_user.location_id)
+      user_lat = user_location.lat
+      user_long = user_location.long
+      distance = params[:distance].to_i
+      locations = Location.within(distance, :origin => [user_lat, user_long])
+      # byebug
+      location_ids = locations.map{|location| location.id}
+      @users = @users.where(location_id: location_ids)
+    end
+    @users
   end
 
 

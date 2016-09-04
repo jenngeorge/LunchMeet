@@ -1,9 +1,6 @@
 import { FilterConstants } from '../actions/filter_actions';
 import merge from 'lodash/merge';
 
-const _defaultFilter = Object.freeze({
-	role: ""
-});
 
 const FiltersReducer = function(state = {}, action){
   if (action.type == FilterConstants.UPDATE_FILTER){

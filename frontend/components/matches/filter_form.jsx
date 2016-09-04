@@ -9,7 +9,7 @@ class FilterForm extends React.Component {
 
   componentDidMount(){
     this.props.updateFilter("role", this.props.currentUser.looking_for);
-    this.props.updateFilter("zip_code", this.props.currentUser.zip_code);
+    // this.props.updateFilter("zip_code", this.props.currentUser.zip_code);
     this.props.updateMatches();
   }
 
@@ -34,11 +34,17 @@ class FilterForm extends React.Component {
               <option value="business" >Business/Operations People</option>
             </select>
           </label>
-          <label> near zip code:
-            <input type="text"
-              id="zip_code"
-              defaultValue={this.props.currentUser.zip_code}
-              onChange={this._handleChange}/>
+          <label> within:
+            <select id="distance" value={ this.props.distance}
+              onChange={this._handleChange}
+              defaultValue="25">
+              <option value="1">1</option>
+              <option value="2" >2</option>
+              <option value="5" >5</option>
+              <option value="10" >10</option>
+              <option value="25" >25</option>
+            </select>
+            miles
           </label>
           <input type="submit" value="Submit" className="submit-btn"/>
         </form>
