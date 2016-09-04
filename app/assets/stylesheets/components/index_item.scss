@@ -1,10 +1,17 @@
+
+.index-item-container {
+  margin-bottom: $component-padding;
+}
+
 .match-index-item {
   border-radius: $border-radius-sm;
   background-color: $white;
 }
 
 .index-item-photo {
-
+  img {
+    width: 100%;
+  }
 }
 
 .index-item-info {
