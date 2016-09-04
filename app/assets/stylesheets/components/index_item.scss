@@ -1,0 +1,16 @@
+.match-index-item {
+  border-radius: $border-radius-sm;
+  background-color: $white;
+}
+
+.index-item-photo {
+
+}
+
+.index-item-info {
+  padding: $component-padding/2;
+
+  .index-description {
+    display: block;
+  }
+}

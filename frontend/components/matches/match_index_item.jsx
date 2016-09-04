@@ -17,20 +17,21 @@ class MatchIndexItem extends React.Component {
   render() {
     const match = this.props.match;
     return (
-      <div className="match-index-item"
-           onClick={this.handleClick}>
-        <div className="index-item-info">
-          <span className="index-item-copy">
-            I am {match.username} --
-          </span>
-          <span className="index-item-copy">
-            {match.about}
-          </span>
-          <span className="index-item-copy">
-            -- and I work near you in {match.location.neighborhood}
-          </span>
-        </div>
+      <div className="col-lg-4 col-sm-6">
+        <div className="match-index-item"
+          onClick={this.handleClick}>
+          <div className="index-item-photo">
+            <img src={match.photo_url} />
+          </div>
+          <div className="index-item-info">
+            <h4>{match.username}</h4>
+            <h5>{match.role} - {match.location.neighborhood}</h5>
+            <div className="index-description">
+              <p>{match.about}</p>
+            </div>
 
+          </div>
+        </div>
       </div>
     );
   }

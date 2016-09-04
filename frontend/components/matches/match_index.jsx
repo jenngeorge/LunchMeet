@@ -10,8 +10,7 @@ class MatchIndex extends React.Component {
     const matchKeys = Object.keys(this.props.matches);
     return(
       <div className="matchindex-container">
-        <div className="matches-list">
-          <h1>in the match index</h1>
+        <div className="matches-list inner">
           {
             matchKeys.map( key => (
               <MatchIndexItem match={this.props.matches[key]} key={key} />
