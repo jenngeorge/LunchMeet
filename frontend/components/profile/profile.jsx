@@ -38,11 +38,16 @@ class Profile extends React.Component {
   }
 
   componentDidMount(){
-    this.props.requestUsers();
+    this.props.requestSingleUser(this.props.matchId);
+  }
+
+  componentDidUpdate(){
+    this.props.requestSingleUser(this.props.matchId);
   }
 
 
   render(){
+
     if (Object.keys(this.props.user).length === 0 && this.props.user.constructor === Object){
       return (<div></div>);
     } else {

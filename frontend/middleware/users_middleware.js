@@ -54,7 +54,7 @@ export default ({getState, dispatch}) => next => action => {
 
     case UserConstants.REQUEST_SINGLE_USER:
       console.log('users_middleware request single user ');
-      fetchSingleUser(action.user, singleUserSuccess);
+      fetchSingleUser(action.id, singleUserSuccess);
       break;
 
     default:

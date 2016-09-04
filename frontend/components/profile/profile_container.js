@@ -3,7 +3,7 @@
 import { connect } from 'react-redux';
 import Profile from './profile';
 import { updateUserAction } from '../../actions/session_actions';
-import { requestUsers } from '../../actions/user_actions';
+import { requestUsers, requestSingleUser } from '../../actions/user_actions';
 
 
 const mapStateToProps = (state, ownProps) => {
@@ -20,8 +20,8 @@ const mapStateToProps = (state, ownProps) => {
 
 
 const mapDispatchToProps = dispatch => ({
-  // updateProfile: (user) => dispatch(updateUserAction(user))
-  requestUsers: () => dispatch(requestUsers())
+  requestUsers: () => dispatch(requestUsers()),
+  requestSingleUser: id => dispatch(requestSingleUser(id))
 });
 
 export default connect(

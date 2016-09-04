@@ -26,9 +26,9 @@ export const receiveUsers = users => ({
   users
 });
 
-export const requestSingleUser = user => ({
+export const requestSingleUser = id => ({
   type: UserConstants.REQUEST_SINGLE_USER,
-  user
+  id
 });
 
 export const receiveSingleUser = user => ({

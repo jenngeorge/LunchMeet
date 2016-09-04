@@ -29,10 +29,10 @@ export const fetchUsers = function(filters, success){
   });
 };
 
-export const fetchSingleUser = function(user, success, error){
+export const fetchSingleUser = function(id, success, error){
   $.ajax({
     method:'GET',
-    url: `api/users/${user.id}`,
+    url: `api/users/${id}`,
     success,
     error
   });
