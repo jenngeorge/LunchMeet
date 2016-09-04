@@ -6,7 +6,8 @@ import {signupAction} from '../../actions/user_actions';
 
 const mapStateToProps = state => ({
   signedIn: !!state.session.currentUser,
-  errors: state.session.errors
+  errors: state.session.errors,
+  users: state.users
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => {
@@ -17,7 +18,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     processForm: user => dispatch(processForm(user)),
     guestSignin: user => dispatch(guestSignin(user)),
-    formType
+    formType,
   };
 };
 

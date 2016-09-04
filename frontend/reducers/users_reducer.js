@@ -2,13 +2,18 @@ import { UserConstants } from '../actions/user_actions';
 import merge from 'lodash/merge';
 
 const UsersReducer = function(state = {}, action){
+
   switch(action.type){
     case UserConstants.RECEIVE_USERS:
       console.log('user reducer receive users');
-      return action.users;
+      const users = action.users;
+      const merged =  merge({}, state, users);
+      return merged;
     case UserConstants.RECEIVE_SINGLE_USER:
       console.log('user reducer receive single user');
-      return action.user;
+      const user = action.user;
+      const mergedUser = merge({}, state, user);
+      return mergedUser;
     default:
       return state;
   }

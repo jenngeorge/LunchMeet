@@ -3,6 +3,7 @@ import ProfileForm from './profile_form';
 import { updateUserAction } from '../../actions/user_actions';
 
 const mapStateToProps = state => ({
+  state: state,
   currentUser: state.session.currentUser
 });
 

@@ -25,11 +25,12 @@ class User < ActiveRecord::Base
   validates :username, uniqueness: true
   validates :password, length: {minimum: 6}, allow_nil: :true
 
-  after_initialize :ensure_session_token
+  after_initialize :ensure_session_token, :default_interests
 	before_validation :ensure_session_token_uniqueness
   before_save :set_location
 
   belongs_to :location
+
 
   def password=(password)
     @password = password
@@ -62,6 +63,14 @@ class User < ActiveRecord::Base
     while User.find_by(session_token: self.session_token)
       self.session_token = SecureRandom::urlsafe_base64(16)
     end
+  end
+
+  def default_interests
+    default_int = 10
+    self.mentor ||= default_int
+    self.hiring ||= default_int
+    self.friendship ||= default_int
+    self.collaboration ||= default_int
   end
 
   def set_location

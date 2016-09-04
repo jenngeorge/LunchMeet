@@ -47,7 +47,7 @@ export default ({getState, dispatch}) => next => action => {
       break;
 
     case UserConstants.REQUEST_USERS:
-    const filters = getState().filters;
+      const filters = getState().filters;
       console.log('users_middleware request users ');
       fetchUsers(filters, usersSuccess);
       break;
