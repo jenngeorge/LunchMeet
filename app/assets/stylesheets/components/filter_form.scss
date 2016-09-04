@@ -1,3 +1,14 @@
 .filter-form-container{
-  margin-top: $padding-from-nav;
+  padding-top: $padding-from-nav;
+  padding-bottom: $component-padding;
+  background-color: $color-1;
+
+  form {
+    max-width: 800px;
+    margin: 0 auto;
+
+    select{
+      margin: 10px;
+    }
+  }
 }

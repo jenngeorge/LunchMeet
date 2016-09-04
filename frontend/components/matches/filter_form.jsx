@@ -46,7 +46,7 @@ class FilterForm extends React.Component {
             </select>
             miles
           </label>
-          <input type="submit" value="Submit" className="submit-btn"/>
+          <input type="submit" value="Search" className="submit-btn"/>
         </form>
       </div>
     );
