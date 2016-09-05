@@ -29,9 +29,9 @@ class Profile extends React.Component {
     interests.push(interestObject.friendship[(this.props.user.friendship).toString()]);
     interests.push(interestObject.collaboration[(this.props.user.collaboration).toString()]);
 
-    interests.map(interest => {
+    return interests.map(interest => {
       if (interest.length > 0){
-        return (<li>{interest}</li>);
+        return (<li key={interest}>{interest}</li>);
       }
     });
 

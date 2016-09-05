@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link, hashHistory, withRouter} from 'react-router';
-import InterestForm from './interest_form.jsx';
 
 
 class ProfileForm extends React.Component {
@@ -25,7 +24,6 @@ class ProfileForm extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.uploadPhoto = this.uploadPhoto.bind(this);
-
   }
 
 
@@ -126,26 +124,36 @@ class ProfileForm extends React.Component {
 
                   <div className="profile-interests">
                     <h4>Interested in</h4>
-                    <select id="mentor" value={this.state.mentor} onChange={this.update("mentor")}>
+                    <label>
                       Mentorship
-                      <option value={-5}>Being a mentor</option>
-                      <option value={5}>Finding a mentor</option>
-                    </select>
-                    <select id="hiring" value={this.state.hiring} onChange={this.update("hiring")}>
+                      <select id="mentor" value={this.state.mentor} onChange={this.update("mentor")}>
+                        <option value={-5}>Being a mentor</option>
+                        <option value={5}>Finding a mentor</option>
+                        <option value={10}>Not Interested</option>
+                      </select>
+                    </label>
+                    <label>
                       Hiring
-                      <option value={-5}>Hiring people</option>
-                      <option value={5}>New Opportunities</option>
-                    </select>
-                    <label>
-                      <input type="checkbox" defaultChecked={this.state.collaboration === 0}
-                        onClick={this.update("collaboration")} value={0} />
-                      Project collaboration
+                      <select id="hiring" value={this.state.hiring} onChange={this.update("hiring")}>
+                        <option value={-5}>Hiring people</option>
+                        <option value={5}>New Opportunities</option>
+                        <option value={10}>Not Interested</option>
+                      </select>
                     </label>
-                    <label>
-                      <input type="checkbox" defaultChecked={this.state.friendship === 0}
-                        onClick={this.update("friendship")} value={0} />
-                      Friendship
-                    </label>
+                    <div>
+                      <label>
+                        <input className="checkbox" type="checkbox" defaultChecked={this.state.collaboration === 0}
+                          onClick={this.update("collaboration")} value={this.state.collaboration === 0 ? 10 : 0} />
+                        Project collaboration
+                      </label>
+                    </div>
+                    <div>
+                      <label>
+                        <input className="checkbox" type="checkbox" defaultChecked={this.state.friendship === 0}
+                          onClick={this.update("friendship")} value={this.state.friendship === 0 ? 10 : 0} />
+                        Friendship
+                      </label>
+                    </div>
                   </div>
 
                 </div>

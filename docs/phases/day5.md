@@ -13,4 +13,12 @@
   - if two user's interest values sum to 0, they are a match
   - default all interests to 10
 + add interests to jbuilder
-+ add interests to show profile 
++ add interests to show profile
+
+
+##Day 6
+
++ changed state on profile to only fetch the shown user, rather than ALLLLL the users
++ interests display on profile
++ interests form works
++ style interests

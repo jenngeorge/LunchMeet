@@ -15,9 +15,15 @@
   }
 
   select{
+    color: $font-color;
     margin-top: $component-padding/2;
-    background-color: $white;
-    font-weight: lighter;
+    background-color: $background-color;
+    font-weight: normal;
+  }
+
+  .checkbox {
+    float: left;
+    margin-right: $component-padding/2;
   }
 }
 
