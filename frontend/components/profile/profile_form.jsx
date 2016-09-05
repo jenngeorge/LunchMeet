@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, hashHistory, withRouter} from 'react-router';
+import InterestForm from './interest_form.jsx';
 
 
 class ProfileForm extends React.Component {
@@ -30,7 +31,7 @@ class ProfileForm extends React.Component {
 
 
   update(field){
-    return e => this.setState({[field]: e.target.value });
+    return e => this.setState({[field]: e.currentTarget.value });
   }
 
   uploadPhoto(e){
@@ -122,39 +123,31 @@ class ProfileForm extends React.Component {
                       </select>
                     </label>
                   </div>
+
                   <div className="profile-interests">
                     <h4>Interested in</h4>
+                    <select id="mentor" value={this.state.mentor} onChange={this.update("mentor")}>
+                      Mentorship
+                      <option value={-5}>Being a mentor</option>
+                      <option value={5}>Finding a mentor</option>
+                    </select>
+                    <select id="hiring" value={this.state.hiring} onChange={this.update("hiring")}>
+                      Hiring
+                      <option value={-5}>Hiring people</option>
+                      <option value={5}>New Opportunities</option>
+                    </select>
                     <label>
-                      <input type="checkbox" checked={this.state.mentor === -5}
-                        onClick={this.update("mentor")} value={-5}/>
-                      Being a mentor
-                    </label>
-                    <label>
-                      <input type="checkbox" checked={this.state.mentor === 5}
-                        onClick={this.update("mentor")} value={5} />
-                      Meeting a mentor
-                    </label>
-                    <label>
-                      <input type="checkbox" checked={this.state.mentor === 5}
-                        onClick={this.update("hiring")} value={5} />
-                      Hiring people
-                    </label>
-                    <label>
-                      <input type="checkbox" checked={this.state.mentor === -5}
-                        onClick={this.update("hiring")} value={-5} />
-                      New opportunities
-                    </label>
-                    <label>
-                      <input type="checkbox" checked={this.state.mentor === 0}
+                      <input type="checkbox" defaultChecked={this.state.collaboration === 0}
                         onClick={this.update("collaboration")} value={0} />
                       Project collaboration
                     </label>
                     <label>
-                      <input type="checkbox" checked={this.state.mentor === 0}
+                      <input type="checkbox" defaultChecked={this.state.friendship === 0}
                         onClick={this.update("friendship")} value={0} />
                       Friendship
                     </label>
                   </div>
+
                 </div>
               </div>
             </div>

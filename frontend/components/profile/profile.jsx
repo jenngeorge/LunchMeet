@@ -41,14 +41,11 @@ class Profile extends React.Component {
     this.props.requestSingleUser(this.props.matchId);
   }
 
-  componentDidUpdate(){
-    this.props.requestSingleUser(this.props.matchId);
-  }
-
 
   render(){
 
     if (Object.keys(this.props.user).length === 0 && this.props.user.constructor === Object){
+      this.props.requestSingleUser(this.props.matchId);
       return (<div></div>);
     } else {
       return (
