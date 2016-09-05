@@ -67,7 +67,7 @@ class Profile extends React.Component {
                     <h3>{this.props.user.role}</h3>
                   </div>
                   <div className="profile-sub-basic">
-                    <h3>{this.props.user.zip_code}</h3>
+                    <h3>{this.props.user.location.neighborhood}</h3>
                   </div>
                 </div>
                 {this.updateButton(this.props.currentUser)}
