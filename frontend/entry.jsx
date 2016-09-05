@@ -24,6 +24,16 @@ import {
   receiveCurrentUser
   } from './actions/session_actions';
 
+//question actions
+
+import {
+  QuestionConstants,
+  makeResponse,
+  requestQuestions,
+  receiveQuestions,
+  requestSingleQuestion,
+  receiveSingleQuestion
+} from './actions/question_actions';
 
 
 //test session actions
@@ -39,6 +49,14 @@ window.requestUsers = requestUsers;
 window.requestSingleUser = requestSingleUser;
 window.receiveSingleUser = receiveSingleUser;
 window.updateUserAction = updateUserAction;
+
+//test question actions
+window.makeResponse = makeResponse;
+window.receiveQuestions = receiveQuestions;
+window.requestQuestions = requestQuestions;
+window.receiveSingleQuestion = receiveSingleQuestion;
+window.requestSingleQuestion = requestSingleQuestion;
+
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;

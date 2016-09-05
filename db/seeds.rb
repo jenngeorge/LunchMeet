@@ -41,7 +41,7 @@ donNorman = User.create(
   looking_for: "designer"
 )
 
-billGates = User.create!(
+billGates = User.create(
   username: "BillGates",
   password: "password",
   email: "bill@bill.com",
@@ -51,7 +51,7 @@ billGates = User.create!(
   about: "working hard is good",
   looking_for: "developer")
 
-steveJobs = User.create!(
+steveJobs = User.create(
   username: "SteveJobs",
   password: "password",
   email: "steve@steve.com",
@@ -61,7 +61,7 @@ steveJobs = User.create!(
   about: "I am pretty great.",
   looking_for: "developer")
 
-elonMusk = User.create!(
+elonMusk = User.create(
   username: "ElonMusk",
   password: "password",
   email: "elon@elon.com",
@@ -92,4 +92,91 @@ elizabethHolmes = User.create(
   role: "business",
   about: "everything is fine I'm doing awesome ",
   looking_for: "recruiter"
+)
+
+#questions
+
+q1 = Question.create(
+  title: "Tabs or spaces?"
+)
+
+q1o1 = QuestionOption.create(
+  question_id: 1,
+  description: "tabs"
+)
+
+q1o2 = QuestionOption.create(
+  question_id: 1,
+  description: "spaces"
+)
+
+q1o3 = QuestionOption.create(
+  question_id: 1,
+  description: "what?"
+)
+
+q1o4 = QuestionOption.create(
+  question_id: 1,
+  description: "either"
+)
+
+##
+
+q2 = Question.create(
+  title: "I would like to see more diversity in tech"
+)
+
+q1o1 = QuestionOption.create(
+  question_id: 2,
+  description: "Absolutely agree"
+)
+
+q2o2 = QuestionOption.create(
+  question_id: 2,
+  description: "I don't care about diversity in tech."
+)
+
+q2o3 = QuestionOption.create(
+  question_id: 2,
+  description: "No, there's too much diversity already."
+)
+
+##
+
+q3 = Question.create(
+  title: "I believe entreneurship is an innate skill"
+)
+
+q3o1 = QuestionOption.create(
+  question_id: 3,
+  description: "True"
+)
+
+q3o2 = QuestionOption.create(
+  question_id: 3,
+  description: "False"
+)
+
+q3o3 = QuestionOption.create(
+  question_id: 3,
+  description: "Undecided"
+)
+
+##
+q4 = Question.create(  title: "Everyone in tech should learn how to code"
+)
+
+q4o1 = QuestionOption.create(
+  question_id: 4,
+  description: "True"
+)
+
+q4o2 = QuestionOption.create(
+  question_id: 4,
+  description: "False"
+)
+
+q4o3 = QuestionOption.create(
+  question_id: 4,
+  description: "Undecided"
 )
