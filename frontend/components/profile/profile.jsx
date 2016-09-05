@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, hashHistory } from 'react-router';
 import UpdateButton from './update_button';
+import Question from '../questions/question';
 
 class Profile extends React.Component {
   constructor(props){
@@ -78,6 +79,9 @@ class Profile extends React.Component {
                 <h2>About</h2>
                 <div className="profile-about"><p>{this.props.user.about}</p></div>
               </div>
+
+              <Question user={this.props.user} />
+
               <div className="profile-sidebox-container col-lg-4 col-sm-6">
                 <div className ="profile-sidebox">
                   <div className="profile-looking">

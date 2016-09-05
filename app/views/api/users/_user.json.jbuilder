@@ -10,4 +10,7 @@ json.extract! user,
               :hiring,
               :friendship,
               :collaboration,
-              :location
+              :location,
+              :question_responses,
+              :questions,
+              :question_options

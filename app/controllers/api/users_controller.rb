@@ -49,7 +49,10 @@ class Api::UsersController < ApplicationController
 
 
   def show
-    @user = User.find(params[:id])
+    @user = User.includes(
+    :question_responses, :questions, :question_options)
+    .find(params[:id])
+
   end
 
   private

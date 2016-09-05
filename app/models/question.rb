@@ -10,4 +10,5 @@
 
 class Question < ActiveRecord::Base
   has_many :question_options
+  has_many :question_responses
 end

@@ -180,3 +180,27 @@ q4o3 = QuestionOption.create(
   question_id: 4,
   description: "Undecided"
 )
+
+### Question responses
+
+u1q2 = QuestionResponse.create(
+  user_id: 1,
+  question_option_id: 5,
+  acceptable: 1,
+  importance: 5,
+  explanation: "That would be nice."
+)
+
+u1q3 = QuestionResponse.create(
+  user_id: 1,
+  question_option_id: 10,
+  acceptable: 10,
+  importance: 0
+)
+
+u1q3 = QuestionResponse.create(
+  user_id: 2,
+  question_option_id: 9,
+  acceptable: 9,
+  importance: 0
+)

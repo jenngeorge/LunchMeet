@@ -9,8 +9,7 @@ class Api::QuestionResponsesController < ApplicationController
       acceptable: response_params[:acceptable]
     )
 
-    if @question_response.save
-      @question_response.add_match_responses(response_params[:match_responses])
+    if @question_response.save!
       render :show
     else
       render json: @question_response.errors

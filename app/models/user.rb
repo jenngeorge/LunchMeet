@@ -33,6 +33,15 @@ class User < ActiveRecord::Base
   before_save :set_location
 
   belongs_to :location
+  has_many :question_responses
+
+  has_many :question_options,
+    through: :question_responses,
+    source: :question_option
+
+  has_many :questions,
+    through: :question_options,
+    source: :question
 
 
   def password=(password)
