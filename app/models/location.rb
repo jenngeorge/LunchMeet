@@ -4,7 +4,6 @@
 #
 #  id           :integer          not null, primary key
 #  zip_code     :string           not null
-#  anchor_name  :string           not null
 #  lat          :float            not null
 #  long         :float            not null
 #  neighborhood :string           not null

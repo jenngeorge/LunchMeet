@@ -15,8 +15,11 @@
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #  location_id     :integer
+#  mentor          :integer
+#  hiring          :integer
+#  friendship      :integer
+#  collaboration   :integer
 #
-
 
 class User < ActiveRecord::Base
   attr_reader :password

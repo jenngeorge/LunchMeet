@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160904031952) do
+ActiveRecord::Schema.define(version: 20160905175007) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,36 @@ ActiveRecord::Schema.define(version: 20160904031952) do
     t.string   "neighborhood", null: false
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+  end
+
+  create_table "question_options", force: :cascade do |t|
+    t.integer  "question_id", null: false
+    t.text     "description", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "question_options", ["question_id"], name: "index_question_options_on_question_id", using: :btree
+
+  create_table "question_responses", force: :cascade do |t|
+    t.integer  "user_id",         null: false
+    t.integer  "question_id",     null: false
+    t.integer  "acceptable",      null: false
+    t.integer  "importance",      null: false
+    t.text     "explanation"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.integer  "question_option"
+  end
+
+  add_index "question_responses", ["question_id"], name: "index_question_responses_on_question_id", using: :btree
+  add_index "question_responses", ["question_option"], name: "index_question_responses_on_question_option", using: :btree
+  add_index "question_responses", ["user_id"], name: "index_question_responses_on_user_id", using: :btree
+
+  create_table "questions", force: :cascade do |t|
+    t.text     "title",      null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
