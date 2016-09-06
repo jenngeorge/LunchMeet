@@ -22,11 +22,13 @@ import { receiveCurrentUser,
          SessionConstants
        } from '../actions/session_actions';
 
+import {requestSingleUser} from '../actions/user_actions';
+
 export default ({getState, dispatch }) => next => action => {
   //success constants
   const singleQuestionSuccess = question => dispatch(receiveSingleQuestion(question));
-  const questionsSuccess = data => dispatch(receiveQuestions(data));
-  const makeResponseSuccess = () => dispatch(requestQuestions());
+  const questionsSuccess = data => {dispatch(receiveQuestions(data));};
+  const makeResponseSuccess = (user) => dispatch(receiveCurrentUser(user));
   const errorCallback = xhr => {
     const errors = xhr.responseJSON;
     dispatch(receiveErrors(errors));

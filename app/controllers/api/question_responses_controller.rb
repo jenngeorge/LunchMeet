@@ -10,7 +10,8 @@ class Api::QuestionResponsesController < ApplicationController
     )
 
     if @question_response.save!
-      #
+      @user = @question_response.user
+      render "api/users/show"
     else
       render json: @question_response.errors
     end

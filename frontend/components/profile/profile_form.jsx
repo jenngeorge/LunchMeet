@@ -167,7 +167,7 @@ class ProfileForm extends React.Component {
 
       <div className="question-form-container">
         <h2>Unanswered Questions</h2>
-        <QuestionContainer user={this.currentUser} />
+        <QuestionContainer />
       </div>
 
     </div>
