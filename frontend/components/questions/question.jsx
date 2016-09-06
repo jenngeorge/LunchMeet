@@ -9,22 +9,40 @@ class Question extends React.Component {
   }
 
   questions(){
-    return (this.props.user.questions.map(question => {
+    const that = this;
+
+    return (this.props.user.question_responses.map(response => {
+
+      let option = that.props.user.question_options.find(question_option =>
+        question_option.id === response.question_option_id);
+      let question = that.props.user.questions.find(response_question =>
+        response_question.id === option.question_id);
+
       return(
-
-        <div className="question-container">
+        <div key={response.id} className="question-container">
           <div className="question-title">
-            {question.title}
+            <h4>{question.title}</h4>
           </div>
-
+          <div className="response-option">
+            <h4>Answer:</h4>
+            {option.description}
+          </div>
+          <div className="response-explanation">
+            <h4>Explanation:</h4>
+            {response.explanation}
+          </div>
         </div>
-
       );
-  }))}
+    }));
+  }
 
   render(){
 
-    return (<div>{this.questions()}</div>);
+    return (
+      <div className="questions-index">
+        <h2>Questions</h2>
+        {this.questions()}
+      </div>);
 
   }
 } //end class

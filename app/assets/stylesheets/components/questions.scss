@@ -1,0 +1,11 @@
+
+.question-container {
+  background-color: #fff;
+  border-radius: $border-radius-sm;
+  padding: $component-padding;
+  margin: $component-padding 0px;
+
+  .response-option, .resposne-explanation, .question-title {
+    margin-bottom: $component-padding;
+  }
+}

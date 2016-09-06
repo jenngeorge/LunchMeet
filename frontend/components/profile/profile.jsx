@@ -78,9 +78,10 @@ class Profile extends React.Component {
               <div className="profile-about col-lg-8 col-sm-6">
                 <h2>About</h2>
                 <div className="profile-about"><p>{this.props.user.about}</p></div>
+                
+                <Question user={this.props.user} />
               </div>
 
-              <Question user={this.props.user} />
 
               <div className="profile-sidebox-container col-lg-4 col-sm-6">
                 <div className ="profile-sidebox">
