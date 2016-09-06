@@ -26,7 +26,7 @@ export default ({getState, dispatch }) => next => action => {
   //success constants
   const singleQuestionSuccess = question => dispatch(receiveSingleQuestion(question));
   const questionsSuccess = data => dispatch(receiveQuestions(data));
-  const makeResponseSuccess = response => dispatch(receiveSingleQuestion(response.question_id));
+  const makeResponseSuccess = () => dispatch(requestQuestions());
   const errorCallback = xhr => {
     const errors = xhr.responseJSON;
     dispatch(receiveErrors(errors));

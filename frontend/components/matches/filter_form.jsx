@@ -35,7 +35,7 @@ class FilterForm extends React.Component {
               <option value="designer" >Designers</option>
               <option value="sales" >Salespeople</option>
               <option value="recruiter" >Recruiters</option>
-              <option value="business" >Business/Operations People</option>
+              <option value="business" >Business People</option>
             </select>
           </label>
           <label> within:

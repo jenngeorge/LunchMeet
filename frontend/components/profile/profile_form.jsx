@@ -83,7 +83,7 @@ class ProfileForm extends React.Component {
                         <option value="designer" >Designer</option>
                         <option value="sales" >Salesperson</option>
                         <option value="recruiter" >Recruiter</option>
-                        <option value="business" >Business/Operations person</option>
+                        <option value="business" >Business person</option>
                       </select>
                     </label>
                   </div>
@@ -100,7 +100,7 @@ class ProfileForm extends React.Component {
           </div>
 
           <div className="profile-content-container">
-            <div className="profile-content-container inner ">
+            <div className="profile-content-container inner clearfix">
               <div className="profile-about col-lg-8 col-sm-6">
                 <h2>About</h2>
                 <textarea
@@ -108,7 +108,7 @@ class ProfileForm extends React.Component {
                   placeholder="Tell us about yourself!"
                   onChange={this.update("about")}/>
 
-                <QuestionContainer user={this.currentUser} />
+
 
               </div>
               <div className="profile-sidebox-container col-lg-4 col-sm-6">
@@ -120,7 +120,7 @@ class ProfileForm extends React.Component {
                         <option value="designer" >Designers</option>
                         <option value="sales" >Salespeople</option>
                         <option value="recruiter" >Recruiters</option>
-                        <option value="business" >Business/Operations People</option>
+                        <option value="business" >Business People</option>
                       </select>
                     </label>
                   </div>
@@ -164,6 +164,12 @@ class ProfileForm extends React.Component {
             </div>
           </div>
       </form>
+
+      <div className="question-form-container">
+        <h2>Unanswered Questions</h2>
+        <QuestionContainer user={this.currentUser} />
+      </div>
+
     </div>
     );
   }

@@ -10,7 +10,7 @@ class Api::QuestionResponsesController < ApplicationController
     )
 
     if @question_response.save!
-      render :show
+      #
     else
       render json: @question_response.errors
     end
@@ -25,8 +25,8 @@ class Api::QuestionResponsesController < ApplicationController
   end
 
   def response_params
-    params.require(:question_resposne).permit(
-      :question_id, :question_option_id,
+    params.require(:question_response).permit(
+      :question_id, :question_option_id, :user_id,
       :acceptable, :importance, :explanation)
-  end 
+  end
 end

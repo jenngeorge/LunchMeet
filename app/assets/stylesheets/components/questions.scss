@@ -5,7 +5,43 @@
   padding: $component-padding;
   margin: $component-padding 0px;
 
-  .response-option, .resposne-explanation, .question-title {
+  .response-option, .response-explanation, .question-title {
     margin-bottom: $component-padding;
+  }
+
+
+}
+
+.question-form {
+  color: $font-color;
+  max-width: 450px;
+  background-color: #fff;
+  border-radius: $border-radius-sm;
+  padding: $component-padding;
+  margin: 30px 0;
+}
+
+.question-form-container{
+  max-width: 900px;
+  margin: 0 auto;
+
+  h2{
+    color: $font-color;
+  }
+
+  ul {
+    list-style: none;
+    margin-bottom: $component-padding;
+  }
+
+  li {
+
+    input {
+      margin-right: $component-padding/2;
+    }
+  }
+
+  .submit-btn {
+    margin-top: $component-padding;
   }
 }

@@ -32,6 +32,8 @@
   textarea{
     outline: none;
     width: 100%;
+    min-height: 230px;
+    max-width: 450px;
     color: $font-color;
     border-color: $font-color;
     padding: 10px;

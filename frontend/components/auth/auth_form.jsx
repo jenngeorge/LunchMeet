@@ -75,7 +75,7 @@ class AuthForm extends React.Component {
 							<option value="designer" >Designer</option>
 							<option value="sales" >Salesperson</option>
 							<option value="recruiter" >Recruiter</option>
-							<option value="business" >Business/Operations person</option>
+							<option value="business" >Business person</option>
 						</select>
 					</label>
 					<label> Looking to meet
@@ -84,7 +84,7 @@ class AuthForm extends React.Component {
 							<option value="designer" >Designers</option>
 							<option value="sales" >Salespeople</option>
 							<option value="recruiter" >Recruiters</option>
-							<option value="business" >Business/Operations People</option>
+							<option value="business" >Business People</option>
 						</select>
 					</label>
 					<label> near:
