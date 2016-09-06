@@ -28,4 +28,5 @@ class Api::QuestionResponsesController < ApplicationController
     params.require(:question_resposne).permit(
       :question_id, :question_option_id,
       :acceptable, :importance, :explanation)
+  end 
 end
