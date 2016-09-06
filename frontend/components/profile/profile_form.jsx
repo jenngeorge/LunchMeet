@@ -108,6 +108,8 @@ class ProfileForm extends React.Component {
                   placeholder="Tell us about yourself!"
                   onChange={this.update("about")}/>
 
+                <QuestionContainer user={this.currentUser} />
+
               </div>
               <div className="profile-sidebox-container col-lg-4 col-sm-6">
                 <div className ="profile-sidebox">

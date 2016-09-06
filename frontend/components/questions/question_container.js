@@ -6,10 +6,11 @@ import { makeResponse, requestQuestions, requestSingleQuestion }
   from '../../actions/question_actions';
 
 const mapStateToProps = (state) => ({
+  question: state.question
 });
 
 const mapDispatchToProps = dispatch => ({
-  // requestQuestions: () => dispatch(requestQuestions()),
+  requestQuestions: () => dispatch(requestQuestions()),
   // requestSingleQuestion: id => dispatch(requestSingleQuestion(id)),
   makeResponse: response => dispatch(makeResponse(response))
 });
