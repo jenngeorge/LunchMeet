@@ -20,7 +20,7 @@ class AuthForm extends React.Component {
 
 	redirectIfSignedIn(){
 		if (this.props.signedIn){
-			hashHistory.push("/");
+			hashHistory.push("/browse");
 		}
 	}
 

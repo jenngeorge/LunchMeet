@@ -6,7 +6,7 @@ const App = ({children}) => (
   <div>
     <div className="navbar navbar-fixed-top">
       <div className="container-fluid">
-        <Link to="/" className="navbar-brand">LunchMeet</Link>
+        <Link to="/browse" className="navbar-brand">LunchMeet</Link>
         <GreetingContainer className="nav navbar-nav"/>
       </div>
     </div>
