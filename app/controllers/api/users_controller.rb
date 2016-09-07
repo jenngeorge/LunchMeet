@@ -52,7 +52,6 @@ class Api::UsersController < ApplicationController
     @user = User.includes(
     :question_responses, :questions, :question_options)
     .find(params[:id])
-
   end
 
   private

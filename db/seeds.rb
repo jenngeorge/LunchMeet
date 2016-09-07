@@ -204,3 +204,36 @@ u1q3 = QuestionResponse.create(
   acceptable: 9,
   importance: 0
 )
+
+### Conversations
+
+c1 = Conversation.create(user_id: 1, other_user_id: 7)
+c1m1 = Message.create(
+  conversation_id: 1,
+  receiver_id: 1,
+  sender_id: 7,
+  content: "u r inspiration")
+c1m2 = Message.create(
+  conversation_id: 1,
+  receiver_id: 7,
+  sender_id: 1,
+  content: "thx girl (:"
+)
+c1m3 = Message.create(
+  conversation_id: 1,
+  receiver_id: 7,
+  sender_id: 1,
+  content: "and congrats on yahoo $$$"
+)
+c1m4 = Message.create(
+  conversation_id: 1,
+  receiver_id: 1,
+  sender_id: 7,
+  content: "omg thx so stressful"
+)
+c1m5 = Message.create(
+  conversation_id: 1,
+  receiver_id: 7,
+  sender_id: 1,
+  content: "u did it tho proud of u"
+)

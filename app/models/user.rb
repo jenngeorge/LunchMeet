@@ -59,12 +59,12 @@ class User < ActiveRecord::Base
     primary_key: :id
 
   has_many :other_conversations,
-    class_name: Conversaton,
+    class_name: Conversation,
     foreign_key: :other_user_id,
     primary_key: :id
 
 
-  def conversations
+  def self.all_conversations
     self.conversations + self.other_conversations
   end
 
