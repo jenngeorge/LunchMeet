@@ -35,6 +35,17 @@ import {
   receiveSingleQuestion
 } from './actions/question_actions';
 
+//conversation actions
+import {
+  ConversationConstants,
+  requestConversations,
+  requestSingleConversation,
+  receiveConversations,
+  receiveSingleConversation,
+  makeConversation,
+  sendMessage
+} from './actions/conversation_actions';
+
 
 //test session actions
 window.signout = signout;
@@ -56,6 +67,14 @@ window.receiveQuestions = receiveQuestions;
 window.requestQuestions = requestQuestions;
 window.receiveSingleQuestion = receiveSingleQuestion;
 window.requestSingleQuestion = requestSingleQuestion;
+
+// test
+window.requestConversations = requestConversations;
+window.requestSingleConversation = requestSingleConversation;
+window.receiveConversations = receiveConversations;
+window.receiveSingleConversation = receiveSingleConversation;
+window.makeConversation = makeConversation;
+window.sendMessage = sendMessage;
 
 
 document.addEventListener('DOMContentLoaded', () => {
