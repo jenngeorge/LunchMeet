@@ -10,10 +10,6 @@ class Browse extends React.Component{
 
   }
 
-  componentDidMount(){
-    this.props.updateMatches();
-  }
-
   render(){
     return(
       <div className="browse-container">

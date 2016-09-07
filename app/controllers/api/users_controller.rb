@@ -39,7 +39,7 @@ class Api::UsersController < ApplicationController
       user_long = user_location.long
       distance = params[:distance].to_i
       locations = Location.within(distance, :origin => [user_lat, user_long])
-      # byebug
+
       location_ids = locations.map{|location| location.id}
       @users = @users.where(location_id: location_ids)
     end
