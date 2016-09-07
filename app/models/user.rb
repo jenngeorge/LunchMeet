@@ -43,6 +43,21 @@ class User < ActiveRecord::Base
     through: :question_options,
     source: :question
 
+  has_many :sent_messages,
+    class_name: Message,
+    foreign_key: :sender_id
+
+  has_many :received_messages,
+    class_name: Message,
+    foreign_key: :receiver_id
+
+  has_many :conversations,
+    class_name: Conversation,
+    foreign_key: :user_id
+  # also need other user id
+
+
+
 
   def password=(password)
     @password = password
