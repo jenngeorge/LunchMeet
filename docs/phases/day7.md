@@ -2,4 +2,5 @@
 
 ### Stuff I did
 + create questions, question_options, question_responses tables
-  - and models 
+  - and models
++ questions redux loop

@@ -45,19 +45,28 @@ class User < ActiveRecord::Base
 
   has_many :sent_messages,
     class_name: Message,
-    foreign_key: :sender_id
+    foreign_key: :sender_id,
+    primary_key: :id
 
   has_many :received_messages,
     class_name: Message,
-    foreign_key: :receiver_id
+    foreign_key: :receiver_id,
+    primary_key: :id
 
   has_many :conversations,
     class_name: Conversation,
-    foreign_key: :user_id
-  # also need other user id
+    foreign_key: :user_id,
+    primary_key: :id
+
+  has_many :other_conversations,
+    class_name: Conversaton,
+    foreign_key: :other_user_id,
+    primary_key: :id
 
 
-
+  def conversations
+    self.conversations + self.other_conversations
+  end
 
   def password=(password)
     @password = password
