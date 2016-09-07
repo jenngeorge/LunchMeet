@@ -9,6 +9,7 @@ class Greeting extends React.Component {
     this.handleSignout = this.handleSignout.bind(this);
     this.signedInOptions = this.signedInOptions.bind(this);
     this.signout = this.props.signout;
+    this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount(){
@@ -33,11 +34,18 @@ class Greeting extends React.Component {
     this.props.router.replace("/signin");
   }
 
+  handleClick(){
+    this.props.router.replace("/conversations");
+  }
+
   signedInOptions() {
     return (
       <ul className="nav navbar-nav navbar-right">
         <li>
           <Link to="/browse" activeClassName="current" >Browse</Link>
+        </li>
+        <li>
+          <div onClick={this.handleClick} to="/conversations" activeClassName="current" >Conversations</div>
         </li>
         <li>
           <Link to={'/' + this.props.currentUser.id} activeClassName="current" >{this.props.currentUser.username}</Link>

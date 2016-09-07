@@ -30,6 +30,7 @@ export const fetchUsers = function(filters, success){
 };
 
 export const fetchSingleUser = function(id, success, error){
+  debugger
   $.ajax({
     method:'GET',
     url: `api/users/${id}`,

@@ -49,6 +49,7 @@ class Api::UsersController < ApplicationController
 
 
   def show
+    byebug
     @user = User.includes(
     :question_responses, :questions, :question_options)
     .find(params[:id])

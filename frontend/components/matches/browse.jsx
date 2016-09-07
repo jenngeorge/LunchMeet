@@ -10,6 +10,10 @@ class Browse extends React.Component{
 
   }
 
+  componentWillUnmount(){
+    debugger
+  }
+
   render(){
     return(
       <div className="browse-container">

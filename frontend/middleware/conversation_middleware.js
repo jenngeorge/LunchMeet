@@ -35,10 +35,10 @@ export default ({getState, dispatch}) => next => action => {
   const result = next(action);
 
   switch(action.type){
-    // case ConversationConstants.REQUEST_CONVERSATIONS:
-    //   console.log('convo middleware request questions');
-    //   fetchConversations(conversationsSuccess);
-    //   break;
+    case ConversationConstants.REQUEST_CONVERSATIONS:
+      console.log('convo middleware request questions');
+      fetchConversations(conversationsSuccess);
+      break;
     case ConversationConstants.REQUEST_SINGLE_CONVERSATION:
       console.log('convo middleware request question');
       fetchSingleConversation(action.id, singleConversationSuccess);

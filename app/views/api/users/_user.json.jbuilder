@@ -14,5 +14,4 @@ json.extract! user,
               :location,
               :question_responses,
               :questions,
-              :question_options,
-              :conversations
+              :question_options
