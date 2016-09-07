@@ -3,7 +3,7 @@ class Api::ConversationsController < ApplicationController
   def create
     @conversation = Conversation.new(conversation_params)
     if @conversation.save
-      render :show
+      render '../users/show'
     else
       render json: @user.errors.full_messages, status: 422
     end
@@ -11,7 +11,7 @@ class Api::ConversationsController < ApplicationController
 
   def show
     @conversation = Conversation.includes(:messages).find(params[:id])
-    render :show
+    render '../users/show'
   end
 
   #index is for each current user's inbox
@@ -19,8 +19,7 @@ class Api::ConversationsController < ApplicationController
     @conversations = Conversation
       .where("user_id = ? OR other_user_id = ?",
       current_user.id, current_user.id)
-
-    render :index
+    render '../users/show'
   end
 
   def conversation_params

@@ -16,7 +16,11 @@ photo_url: "https://res.cloudinary.com/jenngeorge/image/upload/v1472956127/aalun
 zip_code: "94133",
 role: "developer",
 about: "Computers are the best",
-looking_for: "developer"
+looking_for: "developer",
+mentor: 5,
+hiring: 10,
+friendship: 0,
+collaboration: 0
 )
 
 ogTesla = User.create(
@@ -27,7 +31,11 @@ ogTesla = User.create(
   zip_code: "94133",
   role: "developer",
   about: "making stuff",
-  looking_for: "developer"
+  looking_for: "developer",
+  mentor: 5,
+  hiring: 10,
+  friendship: 10,
+  collaboration: 0
 )
 
 donNorman = User.create(
@@ -38,7 +46,11 @@ donNorman = User.create(
   zip_code: "94102",
   role: "designer",
   about: "design === life",
-  looking_for: "designer"
+  looking_for: "designer",
+  mentor: 5,
+  hiring: 5,
+  friendship: 0,
+  collaboration: 0
 )
 
 billGates = User.create(
@@ -49,7 +61,11 @@ billGates = User.create(
   zip_code: "94102",
   role: "business",
   about: "working hard is good",
-  looking_for: "developer")
+  looking_for: "developer"),
+  mentor: 5,
+  hiring: 5,
+  friendship: 10,
+  collaboration: 0
 
 steveJobs = User.create(
   username: "SteveJobs",
@@ -59,7 +75,11 @@ steveJobs = User.create(
   zip_code: "94105",
   role: "designer",
   about: "I am pretty great.",
-  looking_for: "developer")
+  looking_for: "developer"),
+  mentor: 10,
+  hiring: 10,
+  friendship: 10,
+  collaboration: 0
 
 elonMusk = User.create(
   username: "ElonMusk",
@@ -69,7 +89,11 @@ elonMusk = User.create(
   zip_code: "94121",
   role: "business",
   about: "lez go to marz",
-  looking_for: "developer"
+  looking_for: "developer",
+  mentor: 5,
+  hiring: 10,
+  friendship: 0,
+  collaboration: 0
 )
 
 marissaMayer = User.create(
@@ -79,8 +103,12 @@ marissaMayer = User.create(
   photo_url: "https://res.cloudinary.com/jenngeorge/image/upload/v1472956822/aalunchmeet/tdlpemiubvcyonr7xwwe.jpg",
   zip_code: "94123",
   role: "business",
-  about: "looking for new opportunies ",
-  looking_for: "recruiter"
+  about: "on vacation ",
+  looking_for: "recruiter",
+  mentor: 5,
+  hiring: -5,
+  friendship: 0,
+  collaboration: 0
 )
 
 elizabethHolmes = User.create(
@@ -91,8 +119,73 @@ elizabethHolmes = User.create(
   zip_code: "94134",
   role: "business",
   about: "everything is fine I'm doing awesome ",
-  looking_for: "recruiter"
+  looking_for: "recruiter",
+  mentor: -5,
+  hiring: -5,
+  friendship: 0,
+  collaboration: 10
 )
+
+davidOgilvy = User.create(
+  username: "DavidOgilvy",
+  password: "password",
+  email: "do@do.com",
+  photo_url: "",
+  zip_code: "10036",
+  role: "sales",
+  about: "Advertising exec, enjoys cooking",
+  looking_for: "recruiter",
+  mentor: 5,
+  hiring: 5,
+  friendship: 10,
+  collaboration: 0
+)
+
+maryKay = User.create(
+  username: "MaryKay",
+  password: "password",
+  email: "mk@mk.com",
+  photo_url: "",
+  zip_code: "52631",
+  role: "sales",
+  about: "Contact me to get started selling makeup",
+  looking_for: "business",
+  mentor: 5,
+  hiring: 5,
+  friendship: 10,
+  collaboration: 0
+)
+
+daleCarnegie = User.create(
+  username: "DaleCarnegie",
+  password: "password",
+  email: "dc@dc.com",
+  photo_url: "",
+  zip_code: "10019",
+  role: "sales",
+  about: "I teach sales  ",
+  looking_for: "business",
+  mentor: 5,
+  hiring: 5,
+  friendship: 10,
+  collaboration: 0
+)
+
+peterGregory = User.create(
+  username: "PeterGregory",
+  password: "password",
+  email: "pg@pg.com",
+  photo_url: "",
+  zip_code: "94040",
+  role: "business",
+  about: "I appreciate the details of life",
+  looking_for: "developer",
+  mentor: -5,
+  hiring: 5,
+  friendship: 10,
+  collaboration: 0
+)
+
 
 #questions
 
@@ -198,11 +291,19 @@ u1q3 = QuestionResponse.create(
   importance: 0
 )
 
-u1q3 = QuestionResponse.create(
+u1q4 = QuestionResponse.create(
   user_id: 2,
   question_option_id: 9,
   acceptable: 9,
   importance: 0
+)
+
+u1q2 = QuestionResponse.create(
+  user_id: 2,
+  question_option_id: 5,
+  acceptable: 1,
+  importance: 5,
+  explanation:
 )
 
 ### Conversations

@@ -28,6 +28,7 @@ export const createConversation = function(conversation, success, errors){
 export const createMessage = function (message, conversationId, success, errors){
   $.ajax({
     method: 'POST',
+    data: message,
     url: `api/conversations/${conversationId}/messages`
   });
 };

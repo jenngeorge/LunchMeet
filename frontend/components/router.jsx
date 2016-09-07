@@ -8,6 +8,7 @@ import HomeContainer from './home/home_container';
 import ProfileContainer from './profile/profile_container';
 import ProfileFormContainer from './profile/profile_form_container';
 import BrowseContainer from './matches/browse_container';
+import ConversationContainer from './conversations/conversation_container';
 
 
 class AppRouter extends React.Component{
@@ -57,6 +58,7 @@ class AppRouter extends React.Component{
           <Route path='/profile/update' component={ ProfileFormContainer } onEnter={this._ensureSignedIn} />
           <Route path='/browse' component={ BrowseContainer } onEnter={this._ensureSignedIn} />
           <Route path='/:matchId' component={ ProfileContainer } onEnter={this._ensureSignedIn} />
+          <Route path='/conversations' component={ ConversationContainer } onEnter={this._ensureSignedIn} />
         </Route>
       </Router>
     );

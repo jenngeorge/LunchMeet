@@ -1,12 +1,12 @@
 class Api::MessagesController < ApplicationController
-  
+
   def create
     @message = Message.new(message_params)
     if @message.save
-      render :index
+      @conversation = @message.conversation
+      render "api/conversations/show"
     else
       render json: @user.errors.full_messages, status: 422
-      render :index
     end
   end
 
