@@ -10,7 +10,7 @@ import {
 
 const mapStateToProps = (state, ownProps) => {
   const currentUser = state.session.currentUser;
-  const conversationId = ownProps.params.conversationId;
+  const conversationId = ownProps.params.conversation_id;
   const conversation = state.conversations[conversationId] || {};
 
   return {
@@ -21,7 +21,8 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  sendMessage: message => dispatch(sendMessage(message))
+  sendMessage: message => dispatch(sendMessage(message)),
+  requestSingleConversation: id => dispatch(requestSingleConversation(id))
 });
 
 

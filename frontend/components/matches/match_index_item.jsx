@@ -6,7 +6,7 @@ class MatchIndexItem extends React.Component {
   constructor(props) {
     super(props);
 
-    this.handleClick = this._handleClick.bind(this);
+    this._handleClick = this._handleClick.bind(this);
   }
 
   _handleClick() {

@@ -57,9 +57,8 @@ class AppRouter extends React.Component{
           <Route path='/profile' component={ ProfileContainer } onEnter={this._ensureSignedIn} />
           <Route path='/profile/update' component={ ProfileFormContainer } onEnter={this._ensureSignedIn} />
           <Route path='/browse' component={ BrowseContainer } onEnter={this._ensureSignedIn} />
-          <Route path='/conversations' component={ ConversationContainer } onEnter={this._ensureSignedIn}>
-            <Route path=':conversation_id' component={ MessageContainer } onEnter={this._ensureSignedIn} />
-          </Route>
+          <Route path='/conversations' component={ ConversationContainer } onEnter={this._ensureSignedIn} />
+          <Route path='/conversations/:conversation_id' component={ MessageContainer } onEnter={this._ensureSignedIn} />
 
           <Route path='/:matchId' component={ ProfileContainer } onEnter={this._ensureSignedIn} />
         </Route>
