@@ -45,7 +45,7 @@ class Greeting extends React.Component {
           <Link to="/browse" activeClassName="current" >Browse</Link>
         </li>
         <li>
-          <div onClick={this.handleClick} to="/conversations" activeClassName="current" >Conversations</div>
+          <Link to="/conversations" activeClassName="current" >Conversations</Link>
         </li>
         <li>
           <Link to={'/' + this.props.currentUser.id} activeClassName="current" >{this.props.currentUser.username}</Link>

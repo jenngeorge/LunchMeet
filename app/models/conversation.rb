@@ -13,4 +13,14 @@ class Conversation < ActiveRecord::Base
 
   has_many :messages
 
+  belongs_to :user,
+    class_name: User,
+    foreign_key: :user_id,
+    primary_key: :id
+
+  belongs_to :other_user,
+    class_name: User,
+    foreign_key: :other_user_id,
+    primary_key: :id
+
 end
