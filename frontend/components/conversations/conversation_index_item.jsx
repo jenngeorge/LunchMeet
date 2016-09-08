@@ -1,4 +1,5 @@
 import React from 'react';
+import { hashHistory } from 'react-router';
 
 class ConversationItem extends React.Component {
   constructor(props){
@@ -6,6 +7,7 @@ class ConversationItem extends React.Component {
 
     this.otherUsername = this.otherUsername.bind(this);
     this.lastMessage = this.lastMessage.bind(this);
+    this._handleClick = this._handleClick.bind(this);
   }
 
   otherUsername(){
@@ -25,10 +27,15 @@ class ConversationItem extends React.Component {
     }
   }
 
+  _handleClick() {
+    const conversationId = this.props.conversation.id;
+    hashHistory.push("/conversations/" + conversationId);
+  }
+
   render(){
 
     return (
-      <div className="conversation-container">
+      <div className="conversation-container" onClick={this._handleClick}>
         <div className="other_user">
           {this.otherUsername()}
         </div>

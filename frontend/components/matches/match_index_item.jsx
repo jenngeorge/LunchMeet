@@ -6,10 +6,10 @@ class MatchIndexItem extends React.Component {
   constructor(props) {
     super(props);
 
-    this.handleClick = this.handleClick.bind(this);
+    this.handleClick = this._handleClick.bind(this);
   }
 
-  handleClick() {
+  _handleClick() {
     const matchId = this.props.match.id;
     hashHistory.push("/" + matchId);
   }
@@ -19,7 +19,7 @@ class MatchIndexItem extends React.Component {
     return (
       <div className="index-item-container col-lg-4 col-sm-6">
         <div className="match-index-item"
-          onClick={this.handleClick}>
+          onClick={this._handleClick}>
           <div className="index-item-photo">
             <img src={match.photo_url} />
           </div>

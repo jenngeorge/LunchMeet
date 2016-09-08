@@ -9,7 +9,7 @@ import ProfileContainer from './profile/profile_container';
 import ProfileFormContainer from './profile/profile_form_container';
 import BrowseContainer from './matches/browse_container';
 import ConversationContainer from './conversations/conversation_container';
-
+import MessageContainer from './conversations/message_container';
 
 class AppRouter extends React.Component{
   constructor(props){
@@ -57,7 +57,10 @@ class AppRouter extends React.Component{
           <Route path='/profile' component={ ProfileContainer } onEnter={this._ensureSignedIn} />
           <Route path='/profile/update' component={ ProfileFormContainer } onEnter={this._ensureSignedIn} />
           <Route path='/browse' component={ BrowseContainer } onEnter={this._ensureSignedIn} />
-          <Route path='/conversations' component={ ConversationContainer } onEnter={this._ensureSignedIn} />
+          <Route path='/conversations' component={ ConversationContainer } onEnter={this._ensureSignedIn}>
+            <Route path=':conversation_id' component={ MessageContainer } onEnter={this._ensureSignedIn} />
+          </Route>
+
           <Route path='/:matchId' component={ ProfileContainer } onEnter={this._ensureSignedIn} />
         </Route>
       </Router>

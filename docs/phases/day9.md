@@ -4,10 +4,15 @@
 + seed conversations
 + message model, controller, api
 + conversation model, controller, api
++ conversation and match redux loops
+  - decided to filter conversations by currentUser in the conversation controller,
+  then store in state separately from currentUser's state
++ conversations display to conversation index page
++ conversation participants are accessible from the conversation index 
 
 
 ###notes
 + do model validations after everything works
 + form security
 + future: delete all messages if a conversation is deleted
-+ creating a first message also creates the conversation ~ how to deal 
++ creating a first message also creates the conversation ~ how to deal
