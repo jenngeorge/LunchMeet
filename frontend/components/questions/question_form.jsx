@@ -30,7 +30,7 @@ class QuestionForm extends React.Component {
     let question_response = this.state;
     this.props.makeResponse({question_response});
 
-    this.setState();
+    // this.setState();
   }
 
   update(field){
@@ -54,7 +54,17 @@ class QuestionForm extends React.Component {
   }
 
   unansweredQuestions(){
-    return this.props.unansweredQuestions.map(question => {
+    if (this.props.unansweredQuestions.length === 0){
+      return (
+        <div>
+          <p>You've answered all available questions!</p>
+        </div>
+      );
+    } else {
+      let question = this.props.unansweredQuestions[0];
+
+
+    // return this.props.unansweredQuestions.map(question => {
 
       return (
         <div key={question.id} className="question-form-container">
@@ -114,7 +124,8 @@ class QuestionForm extends React.Component {
 
         </div>
       );
-    });
+    }
+
   }
 
 

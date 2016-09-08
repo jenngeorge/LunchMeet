@@ -9,7 +9,6 @@ class FilterForm extends React.Component {
   }
 
   componentDidMount(){
-    debugger
     this.props.updateMatches();
   }
 

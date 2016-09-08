@@ -18,7 +18,6 @@
   - fix looking to meet All within Any
   - seed more questions
   - match % based on questions
-
   - fix textarea state when answering questions
   - seed more things
 
@@ -34,7 +33,7 @@ each question they've both answered:
 
   importance: |user option amt| + |importance amt|
 
-importance: 0, 1, 2
+importance: 1, 2, 3
 
 questions both have responded to = N
 questions are 40% of total (means f(N) <= 40)
