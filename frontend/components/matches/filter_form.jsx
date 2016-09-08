@@ -9,16 +9,20 @@ class FilterForm extends React.Component {
   }
 
   componentDidMount(){
+    debugger
     this.props.updateMatches();
   }
 
   _handleChange(e) {
+    e.preventDefault();
     let filter = e.currentTarget.id;
     let value = e.currentTarget.value;
     this.props.updateFilter(filter, value);
   }
 
-  _handleSubmit(){
+
+  _handleSubmit(e){
+    e.preventDefault();
     this.props.updateMatches();
   }
 

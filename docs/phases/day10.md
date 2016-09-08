@@ -8,9 +8,7 @@
   to that conversation's message index
   - a message form in messageindex sends messages
     + after send clicked, shows message in messageindex and clears textarea
-
-
-
+  - fixed double search bug on first browse (had to preventDefault to avoid confusing Chrome)
 
 
 ###notes
@@ -20,7 +18,7 @@
   - fix looking to meet All within Any
   - seed more questions
   - match % based on questions
-  - fix double search bug on first browse
+
   - fix textarea state when answering questions
   - seed more things
 

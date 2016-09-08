@@ -47,7 +47,6 @@ class Api::UsersController < ApplicationController
   end
 
 
-
   def show
     @user = User.includes(
     :question_responses, :questions, :question_options)

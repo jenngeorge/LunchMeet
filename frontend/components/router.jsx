@@ -35,7 +35,7 @@ class AppRouter extends React.Component{
     if (!currentUser && nextState.location.pathname === "/" ) {
       replace('/signup');
     } else if (nextState.location.pathname === "/") {
-      replace('/browse');
+      replace('browse');
     }
   }
 
@@ -50,15 +50,15 @@ class AppRouter extends React.Component{
   render(){
     return(
       <Router history={ hashHistory }>
-        <Route path="/" component ={ App } onEnter={this._toHomePage}>
+        <Route path="/" component ={ App } onEnter={this._toHomePage} >
           <IndexRoute component = {HomeContainer} />
-          <Route path='/signup' component={ AuthContainer }  onEnter={this._redirectIfSignedIn}/>
-          <Route path='/signin' component={ AuthContainer }  onEnter={this._redirectIfSignedIn}/>
-          <Route path='/profile' component={ ProfileContainer } onEnter={this._ensureSignedIn} />
-          <Route path='/profile/update' component={ ProfileFormContainer } onEnter={this._ensureSignedIn} />
-          <Route path='/browse' component={ BrowseContainer } onEnter={this._ensureSignedIn} />
-          <Route path='/conversations' component={ ConversationContainer } onEnter={this._ensureSignedIn} />
-          <Route path='/conversations/:conversation_id' component={ MessageContainer } onEnter={this._ensureSignedIn} />
+          <Route path='signup' component={ AuthContainer }  onEnter={this._redirectIfSignedIn}/>
+          <Route path='signin' component={ AuthContainer }  onEnter={this._redirectIfSignedIn} />
+          <Route path='profile' component={ ProfileContainer } onEnter={this._ensureSignedIn} />
+          <Route path='profile/update' component={ ProfileFormContainer } onEnter={this._ensureSignedIn} />
+          <Route path='browse' component={ BrowseContainer } onEnter={this._ensureSignedIn} />
+          <Route path='conversations' component={ ConversationContainer } onEnter={this._ensureSignedIn} />
+          <Route path='conversations/:conversation_id' component={ MessageContainer } onEnter={this._ensureSignedIn} />
 
           <Route path='/:matchId' component={ ProfileContainer } onEnter={this._ensureSignedIn} />
         </Route>

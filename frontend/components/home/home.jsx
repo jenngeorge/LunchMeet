@@ -6,10 +6,6 @@ class Home extends React.Component {
     super(props);
   }
 
-  componentDidMount(){
-    // this.props.updateFilter();
-  }
-
   render(){
     return(
       <div className="user-pane"></div>

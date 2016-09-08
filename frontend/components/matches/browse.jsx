@@ -18,7 +18,7 @@ class Browse extends React.Component{
           updateFilter={this.props.updateFilter}
           currentUser={this.props.currentUser}
           role={this.props.role}
-          zip_code={this.props.zip_code}
+          zipCode={this.props.zip_code}
           updateMatches={this.props.updateMatches} />
         <MatchIndex
           matches={this.props.matches}
