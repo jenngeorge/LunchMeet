@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import Profile from './profile';
 import { updateUserAction } from '../../actions/session_actions';
 import { requestUsers, requestSingleUser } from '../../actions/user_actions';
+import { requestConversations } from '../../actions/conversation_actions';
 
 
 const mapStateToProps = (state, ownProps) => {
@@ -21,7 +22,8 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => ({
   requestUsers: () => dispatch(requestUsers()),
-  requestSingleUser: id => dispatch(requestSingleUser(id))
+  requestSingleUser: id => dispatch(requestSingleUser(id)),
+  requestConversations: () => dispatch(requestConversations())
 });
 
 export default connect(

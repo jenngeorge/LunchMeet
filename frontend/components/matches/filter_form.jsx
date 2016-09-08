@@ -9,16 +9,12 @@ class FilterForm extends React.Component {
   }
 
   componentDidMount(){
-    // this.props.updateFilter("role", this.props.currentUser.looking_for);
     this.props.updateMatches();
   }
 
   _handleChange(e) {
     let filter = e.currentTarget.id;
     let value = e.currentTarget.value;
-    if (this.value === "any") {
-      value = false;
-    }
     this.props.updateFilter(filter, value);
   }
 
@@ -33,8 +29,8 @@ class FilterForm extends React.Component {
           <label> Looking to meet
             <select id="role" value={ this.props.role}
               onChange={this._handleChange}
-              defaultValue="all">
-              <option value="all">All</option>
+              defaultValue="any">
+              <option value="any">All</option>
               <option value="developer">Developers</option>
               <option value="designer" >Designers</option>
               <option value="sales" >Salespeople</option>

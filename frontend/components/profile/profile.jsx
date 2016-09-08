@@ -2,17 +2,24 @@ import React from 'react';
 import { Link, hashHistory } from 'react-router';
 import UpdateButton from './update_button';
 import Question from '../questions/question';
+import MessageButtonContainer from './message_button_container';
 
 class Profile extends React.Component {
   constructor(props){
     super(props);
-    this.updateButton = this.updateButton.bind(this);
+    this.whichButton = this.whichButton.bind(this);
     this.listInterests = this.listInterests.bind(this);
   }
 
-  updateButton(currentUser){
+  whichButton(currentUser){
     if (this.props.user.id === this.props.currentUser.id){
       return(<UpdateButton currentUser={this.props.currentUser}/>);
+    } else {
+      return(
+        <MessageButtonContainer
+        currentUserId={this.props.currentUser.id}
+        otherUserId={this.props.user.id} />
+      );
     }
   }
 
@@ -40,6 +47,7 @@ class Profile extends React.Component {
 
   componentDidMount(){
     this.props.requestSingleUser(this.props.matchId);
+    this.props.requestConversations();
   }
 
 
@@ -68,7 +76,7 @@ class Profile extends React.Component {
                     <h3>{this.props.user.location.neighborhood}</h3>
                   </div>
                 </div>
-                {this.updateButton(this.props.currentUser)}
+                {this.whichButton(this.props.currentUser)}
               </div>
             </div>
           </div>
@@ -78,7 +86,7 @@ class Profile extends React.Component {
               <div className="profile-about col-lg-8 col-sm-6">
                 <h2>About</h2>
                 <div className="profile-about"><p>{this.props.user.about}</p></div>
-                
+
                 <Question user={this.props.user} />
               </div>
 

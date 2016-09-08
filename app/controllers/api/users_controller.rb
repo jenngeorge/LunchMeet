@@ -30,10 +30,10 @@ class Api::UsersController < ApplicationController
 
   def index
     @users = User.all
-    if params[:role]
+    if params[:role] != nil && params[:role] != "any"
       @users = User.where(role: params[:role])
     end
-    if params[:distance]
+    if params[:distance] != nil && params[:distance] !="any"
       user_location = Location.find(current_user.location_id)
       user_lat = user_location.lat
       user_long = user_location.long

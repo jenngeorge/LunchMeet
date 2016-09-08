@@ -1,3 +1,4 @@
+import {hashHistory} from 'react-router';
 
 import {
   ConversationConstants,
@@ -26,7 +27,11 @@ export default ({getState, dispatch}) => next => action => {
   // success constants
   const conversationsSuccess = conversations => dispatch(receiveConversations(conversations));
   const singleConversationSuccess = conversation => dispatch(receiveSingleConversation(conversation));
-  const makeConversationSuccess = user => dispatch(receiveCurrentUser(user));
+  const makeMessageSuccess = user => dispatch(receiveCurrentUser(user));
+  const makeConversationSuccess = conversation => {
+    dispatch(receiveSingleConversation(conversation));
+    hashHistory.push(`/conversations/${conversation.id}`);
+  };
 
   const errorCallback = xhr => {
     const errors = xhr.responseJSON;
@@ -49,7 +54,7 @@ export default ({getState, dispatch}) => next => action => {
       break;
     case ConversationConstants.SEND_MESSAGE:
     console.log('convo middleware send message');
-      createMessage(action.message, action.message.conversation_id, makeConversationSuccess, errorCallback);
+      createMessage(action.message, action.message.conversation_id, makeMessageSuccess, errorCallback);
       break;
     default:
       break;
