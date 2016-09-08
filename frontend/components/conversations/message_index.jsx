@@ -48,7 +48,8 @@ class MessageIndex extends React.Component {
               sendMessage={this.props.sendMessage}
               senderId={this.props.currentUser.id}
               receiverId={this.getReceiverId()}
-              conversationId={this.props.conversationId}/>
+              conversationId={this.props.conversationId}
+              requestSingleConversation={this.props.requestSingleConversation}/>
           </div>
         </div>
       );

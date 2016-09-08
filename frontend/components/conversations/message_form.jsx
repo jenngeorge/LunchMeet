@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 class MessageForm extends React.Component {
   constructor(props){
     super(props);
@@ -21,15 +20,13 @@ class MessageForm extends React.Component {
   _handleSubmit(e){
     e.preventDefault();
     this.props.sendMessage({message: this.state});
+    this.props.requestSingleConversation(this.props.conversationId);
+    this.setState({content: ""});
   }
 
   render(){
     return (
     <form onSubmit={this._handleSubmit} className="message-form">
-      <div>adsflasjdf</div>
-      <div>adsflasjdf</div>
-      <div>adsflasjdf</div>
-      <div>adsflasjdf</div>
       <textarea
           value={this.state.content}
           onChange={this.update("content")} />

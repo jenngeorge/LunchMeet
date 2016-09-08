@@ -23,10 +23,6 @@ class QuestionForm extends React.Component {
 
   }
 
-  // componentWillReceiveProps(newProps){
-  //   newProps.requestQuestions();
-  // }
-
 
   handleSubmit(e){
 
@@ -124,11 +120,7 @@ class QuestionForm extends React.Component {
 
 
   render(){
-
-
-      return (<div>{this.unansweredQuestions()}</div>);
-
-
+    return (<div>{this.unansweredQuestions()}</div>);
   }
 
 

@@ -61,11 +61,12 @@ billGates = User.create(
   zip_code: "94102",
   role: "business",
   about: "working hard is good",
-  looking_for: "developer"),
+  looking_for: "developer",
   mentor: 5,
   hiring: 5,
   friendship: 10,
   collaboration: 0
+  )
 
 steveJobs = User.create(
   username: "SteveJobs",
@@ -75,11 +76,12 @@ steveJobs = User.create(
   zip_code: "94105",
   role: "designer",
   about: "I am pretty great.",
-  looking_for: "developer"),
+  looking_for: "developer",
   mentor: 10,
   hiring: 10,
   friendship: 10,
   collaboration: 0
+  )
 
 elonMusk = User.create(
   username: "ElonMusk",
@@ -303,7 +305,7 @@ u1q2 = QuestionResponse.create(
   question_option_id: 5,
   acceptable: 1,
   importance: 5,
-  explanation:
+  explanation: ""
 )
 
 ### Conversations
