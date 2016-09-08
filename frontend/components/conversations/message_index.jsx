@@ -1,9 +1,11 @@
 import React from 'react';
+import MessageForm from './message_form';
 
 class MessageIndex extends React.Component {
   constructor(props){
     super(props);
     this.renderMessages = this.renderMessages.bind(this);
+    this.getReceiverId = this.getReceiverId.bind(this);
   }
 
 
@@ -12,12 +14,20 @@ class MessageIndex extends React.Component {
       return 'no messages';
     } else {
       return this.props.conversation.messages.map(message => {
-        if (message.sender_id === this.props.currenUser.id){
-          return <div className="sent-message">{message.content}</div> ;
+        if (message.sender_id === this.props.currentUser.id){
+          return <div key={message.id} className="sent-message">{message.content}</div> ;
         } else {
-          return <div className="received-message">{message.content}</div> ;
+          return <div key={message.id} className="received-message">{message.content}</div> ;
         }
       });
+    }
+  }
+
+  getReceiverId(){
+    if (this.props.conversation.user_id === this.props.currentUser.id){
+      return this.props.conversation.other_user_id;
+    } else {
+      return this.props.conversation.user_id;
     }
   }
 
@@ -28,16 +38,18 @@ class MessageIndex extends React.Component {
       return (<div></div>);
     } else {
       return (
-        <div className="message-index-container">
-          HIIIIII
-          {this.renderMessages()}
-          <div>HIIIIII</div>
-          <div>HIIIIII</div>
-          <div>HIIIIII</div>
-          <div>HIIIIII</div>
-          <div>HIIIIII</div>
-          <div>HIIIIII</div>
-          <div>HIIIIII</div>
+        <div className="message-container">
+
+          <div className="message-index-container">
+            {this.renderMessages()}
+          </div>
+          <div className="message-form-container">
+            <MessageForm
+              sendMessage={this.props.sendMessage}
+              senderId={this.props.currentUser.id}
+              receiverId={this.getReceiverId()}
+              conversationId={this.props.conversationId}/>
+          </div>
         </div>
       );
     }
