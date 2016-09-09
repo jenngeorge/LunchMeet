@@ -14,6 +14,7 @@
 ###notes
 + Things left to do:
   - style messages
+  - style message button
   - style conversations
   - fix looking to meet All within Any
   - seed more questions

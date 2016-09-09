@@ -2,8 +2,60 @@
 .message-container {
   padding-top: $padding-from-nav;
   color: $font-color;
+  max-width: $container-width;
+  margin: auto;
+
+  a {
+    margin-left: 10px;
+    color: $color-1;
+
+    &:hover {
+      color: $color-2;
+      text-decoration: none;
+    }
+  }
+
+}
+
+.message-index-container {
+  background-color: $white;
+  padding: $component-padding;
+  border-radius: $border-radius-sm;
+
+  p {
+    border-radius: $border-radius-sm;
+    margin-bottom: $component-padding/2;
+    padding: $component-padding/2;
+    color: $white;
+  }
+}
+
+.received-message {
+  p {
+    float: left;
+    background-color: $color-2;
+  }
+}
+
+.sent-message {
+  p {
+    float: right;
+    background-color: $color-3;
+  }
 }
 
 .message-form {
   color: $font-color;
+  margin: $component-padding;
+
+  textarea {
+    width: 100%;
+    border-radius: $border-radius-sm;
+    padding:10px;
+    margin-bottom: $component-padding/2;
+  }
+
+  .submit-btn {
+    float:right;
+  }
 }

@@ -79,7 +79,7 @@ class QuestionForm extends React.Component {
             </div>
             <div className="response-options">
               <div className="question-title">
-                <h4>Answers I'll accept</h4>
+                <h4>Answer I'll accept</h4>
               </div>
               <ul>
                 {this.questionOptions(question, "acceptable")}

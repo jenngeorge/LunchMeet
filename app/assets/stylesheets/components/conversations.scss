@@ -2,4 +2,27 @@
 .conversation-index-container {
   padding-top: $padding-from-nav;
   color: $font-color;
+  max-width: $container-width;
+  margin: auto;
+}
+
+.conversation-container {
+  background-color: $white;
+  padding: $component-padding/2;
+  margin: $component-padding/2 0;
+  border-radius: $border-radius-sm;
+
+  &:hover {
+    border: 1px solid $color-2;
+  }
+}
+
+
+.message-preview{
+  margin-left: $component-padding/2;
+  margin-top: $component-padding/2;
+}
+
+.other-user {
+  font-weight: bold;
 }

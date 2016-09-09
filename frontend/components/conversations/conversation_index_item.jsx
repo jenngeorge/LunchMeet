@@ -36,7 +36,7 @@ class ConversationItem extends React.Component {
 
     return (
       <div className="conversation-container" onClick={this._handleClick}>
-        <div className="other_user">
+        <div className="other-user">
           {this.otherUsername()}
         </div>
         <div className="message-preview">

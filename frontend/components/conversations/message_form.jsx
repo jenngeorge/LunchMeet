@@ -29,7 +29,8 @@ class MessageForm extends React.Component {
     <form onSubmit={this._handleSubmit} className="message-form">
       <textarea
           value={this.state.content}
-          onChange={this.update("content")} />
+          onChange={this.update("content")}
+          placeholder="Your message here"/>
 
       <input type="submit" value="Send" className="submit-btn"/>
     </form>
