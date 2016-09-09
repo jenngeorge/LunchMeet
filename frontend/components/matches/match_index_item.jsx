@@ -24,7 +24,7 @@ class MatchIndexItem extends React.Component {
             <img src={match.photo_url} />
           </div>
           <div className="index-item-info">
-            <h4>{match.username}</h4>
+            <h4>{match.username} {this.props.matchPercent}% match</h4>
             <h5>{match.role} - {match.location.neighborhood}</h5>
             <div className="index-description">
               <p>{match.about}</p>

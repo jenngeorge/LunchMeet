@@ -281,8 +281,8 @@ q4o3 = QuestionOption.create(
 u1q2 = QuestionResponse.create(
   user_id: 1,
   question_option_id: 5,
-  acceptable: 1,
-  importance: 5,
+  acceptable: 5,
+  importance: 1,
   explanation: "That would be nice."
 )
 
@@ -290,21 +290,37 @@ u1q3 = QuestionResponse.create(
   user_id: 1,
   question_option_id: 10,
   acceptable: 10,
-  importance: 0
+  importance: 3
 )
 
 u1q4 = QuestionResponse.create(
   user_id: 2,
   question_option_id: 9,
   acceptable: 9,
-  importance: 0
+  importance: 3
 )
 
-u1q2 = QuestionResponse.create(
+u2q2 = QuestionResponse.create(
   user_id: 2,
   question_option_id: 5,
-  acceptable: 1,
-  importance: 5,
+  acceptable: 5,
+  importance: 3,
+  explanation: ""
+)
+
+u3q2 = QuestionResponse.create(
+  user_id: 3,
+  question_option_id: 5,
+  acceptable: 5,
+  importance: 1,
+  explanation: ""
+)
+
+u3q3 = QuestionResponse.create(
+  user_id: 3,
+  question_option_id: 10,
+  acceptable: 10,
+  importance: 3,
   explanation: ""
 )
 
@@ -316,6 +332,7 @@ c1m1 = Message.create(
   receiver_id: 1,
   sender_id: 7,
   content: "u r inspiration")
+
 c1m2 = Message.create(
   conversation_id: 1,
   receiver_id: 7,

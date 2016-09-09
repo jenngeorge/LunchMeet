@@ -9,18 +9,21 @@
   - a message form in messageindex sends messages
     + after send clicked, shows message in messageindex and clears textarea
   - fixed double search bug on first browse (had to preventDefault to avoid confusing Chrome)
++ render questions to profile form on at a time
++ style messages
++ style message button
++ style conversations
++ fix looking to meet All within Any
 
 
 ###notes
 + Things left to do:
-  - style messages
-  - style message button
-  - style conversations
-  - fix looking to meet All within Any
   - seed more questions
   - match % based on questions
-  - fix textarea state when answering questions
   - seed more things
+  - fix cloudinary picture displays
+  - keep heroku awake
+  -
 
 matching:
 

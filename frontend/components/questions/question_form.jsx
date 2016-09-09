@@ -92,7 +92,7 @@ class QuestionForm extends React.Component {
               <li key="importance1">
                 <input type="radio"
                   name="importance"
-                  value={1}
+                  value={3}
                   onChange={this.update("importance")} />
                 Not Important
               </li>
@@ -106,7 +106,7 @@ class QuestionForm extends React.Component {
               <li key="importance3">
                 <input type="radio"
                   name="importance"
-                  value={3}
+                  value={1}
                   onChange={this.update("importance")} />
                 Very Important
               </li>
