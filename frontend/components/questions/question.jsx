@@ -38,13 +38,23 @@ class Question extends React.Component {
 
   render(){
 
-    return (
-      <div className="questions-index">
-        <h2>Questions</h2>
-        {this.questions()}
-      </div>);
-
+    if (this.props.user.question_responses.length === 0){
+      return (
+        <div className="questions-index">
+          <h2>Questions</h2>
+          <p>No question responses yet</p>
+        </div>
+      );
+    } else {
+      return (
+        <div className="questions-index">
+          <h2>Questions</h2>
+          {this.questions()}
+        </div>
+      );
+    }
   }
+
 } //end class
 
 export default Question;
