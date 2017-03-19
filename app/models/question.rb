@@ -8,7 +8,7 @@
 #  updated_at :datetime         not null
 #
 
-class Question < ActiveRecord::Base
+class Question < ApplicationRecord
   has_many :question_options
   has_many :question_responses
 end

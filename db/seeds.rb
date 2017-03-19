@@ -281,7 +281,7 @@ q4o3 = QuestionOption.create(
 u1q2 = QuestionResponse.create(
   user_id: 1,
   question_option_id: 5,
-  acceptable: 5,
+  acceptable_option_id: 5,
   importance: 1,
   explanation: "That would be nice."
 )
@@ -289,21 +289,21 @@ u1q2 = QuestionResponse.create(
 u1q3 = QuestionResponse.create(
   user_id: 1,
   question_option_id: 10,
-  acceptable: 10,
+  acceptable_option_id: 10,
   importance: 3
 )
 
 u1q4 = QuestionResponse.create(
   user_id: 2,
   question_option_id: 9,
-  acceptable: 9,
+  acceptable_option_id: 9,
   importance: 3
 )
 
 u2q2 = QuestionResponse.create(
   user_id: 2,
   question_option_id: 5,
-  acceptable: 5,
+  acceptable_option_id: 5,
   importance: 3,
   explanation: ""
 )
@@ -311,7 +311,7 @@ u2q2 = QuestionResponse.create(
 u3q2 = QuestionResponse.create(
   user_id: 3,
   question_option_id: 5,
-  acceptable: 5,
+  acceptable_option_id: 5,
   importance: 1,
   explanation: ""
 )
@@ -319,7 +319,7 @@ u3q2 = QuestionResponse.create(
 u3q3 = QuestionResponse.create(
   user_id: 3,
   question_option_id: 10,
-  acceptable: 10,
+  acceptable_option_id: 10,
   importance: 3,
   explanation: ""
 )

@@ -9,7 +9,7 @@
 #  updated_at  :datetime         not null
 #
 
-class QuestionOption < ActiveRecord::Base
+class QuestionOption < ApplicationRecord
   belongs_to :question
-  has_many :question_responses 
+  has_many :question_responses
 end

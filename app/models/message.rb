@@ -11,7 +11,7 @@
 #  updated_at      :datetime         not null
 #
 
-class Message < ActiveRecord::Base
+class Message < ApplicationRecord
 
   belongs_to :conversation
 

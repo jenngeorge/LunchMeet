@@ -9,7 +9,7 @@
 #  other_user_id :integer          not null
 #
 
-class Conversation < ActiveRecord::Base
+class Conversation < ApplicationRecord
 
   has_many :messages
 

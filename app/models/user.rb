@@ -21,7 +21,7 @@
 #  collaboration   :integer
 #
 
-class User < ActiveRecord::Base
+class User < ApplicationRecord
   attr_reader :password
 
   validates :username, :password_digest, :session_token, :email, :zip_code, :role, :looking_for, presence: true

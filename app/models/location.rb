@@ -11,7 +11,7 @@
 #  updated_at   :datetime         not null
 #
 
-class Location < ActiveRecord::Base
+class Location < ApplicationRecord
   acts_as_mappable :distance_field_name => :distance,
                   :lat_column_name => :lat,
                    :lng_column_name => :long

@@ -1,82 +1,111 @@
 ## example state
 ```json
 {
-  currentUser: {
-    id: 1,
-    username: "JennGeorge"
+  session: {
+    currentUser:{}
   },
-  forms: {
-    signUp: {errors: []},
-    signIn: {errors: []},
-    answerQuestion: {errors: ["must select one option"]}
-  },
-  current_profile: {
-    profile_info: {
-      username: AnotherUser,
-      photo_url: "pic.jpg",
-      type: "Recruiter",
-      location: "SOMA",
-      about: "Hi I want to hire people."
-    },
-    availability: {
-      "Monday": 1-2,
-      "Wednesday": 12-1
-    },
-    looking_for: "developers",
-    interests: ["mentee", "friendship"],
-    questions: {
+  errors: [],
+  users: {
+    byId: {
       1: {
-        title: "Tabs or spaces?"
-        answer: "Spaces",
-        acceptable: "Spaces",
-        importance: 2,
-        explanation: ""
+        photo_url: "photo.url",
+        username: "userName",
+        neighborhood: "SOMA"
+      },
+      2: {
+        photo_url: "photo.url",
+        username: "userName1",
+        neighborhood: "FiDi"
+      }
+    },
+    allIds: [1, 2]
+  }
+
+  userDetail: {
+    id: 1,
+    about: "description",
+    collaboration: "something",
+    friendship: "something",
+    hiring: "something",
+    location: {
+      lat: "lat",
+      long: "long",
+      zip: "94110",
+      neighborhood: "Mission"
+    },
+    questionOptions: {
+      byId: {
+        1: {
+          title: "do you like tech?"
+        },
+      }
+      allIds: [1]
+    },
+    questionResponses: {
+      byId: {
+
       }
     }
   },
-  conversations: {
-    1: {
-      sender_id: 1,
-      receiver_id: 2,
-      messages: [
-        1: {
-        sender_id: 1,
-        receiver_id: 2,
-        content: "Coding is fun",
-        timestamp: 2038-01-19 03:10:05
-        },
-        2: {
-        sender_id: 2,
-        receiver_id: 1,
-        content: "I agree",
-        timestamp: 2038-01-19 03:12:05
-        },
-      ]
+
+  unansweredQuestions:{
+    byId: {
+      1: {
+        title: "a question",
+        question_options: [1, 2, 3]
+      }
     },
+    allIds: [1]
   },
-  likes : {},
-  question: {},
-  matches: {
-    1: {
-      username: AnotherUser,
-      photo_url: "pic.jpg",
-      type: "Recruiter",
-      location: "SOMA"
+  question_options: {
+    byId: {
+      1: {
+        description: "tabs"
+      },
+      2: {
+        description: "spaces"
+      },
+      3: {
+        description: "neither"
+      }
     },
-    2: {
-      username: GreatRecruiter,
-      photo_url: "myface.jpg",
-      type: "Recruiter",
-      location: "SOMA"
-    },
-    3: {
-      username: FirstnameLastname,
-      photo_url: "so_professional.jpg",
-      type: "Recruiter",
-      location: "SOMA"
-    }
+    allIds: [1, 2, 3]
   }
 
-  filters: ["Mentee", "Friendship"]
+  conversations: {
+    byId: {
+      1: {
+        other_user: {
+          id: 2,
+          username: "userName"
+        },
+      message_ids: [1, 2]
+      }
+    },
+    allIds: [1]
+  }
+  messages: {
+    byId: {
+      1: {
+        content: "hi",
+        created_at: "2016-09-09T02:36:43.716Z",
+        receiver_id: 1,
+        sender_id: 2
+      },
+      2: {
+        content: "hi",
+        created_at: "2016-09-09T02:36:43.716Z",
+        receiver_id: 1,
+        sender_id: 2
+      },
+      3: {
+        content: "hi",
+        created_at: "2016-09-09T02:36:43.716Z",
+        receiver_id: 1,
+        sender_id: 2
+      }
+    },
+    allIds: [1, 2, 3]
+  },
 }
 ```

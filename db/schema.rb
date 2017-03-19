@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160907054048) do
+ActiveRecord::Schema.define(version: 20170319030006) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,10 +20,9 @@ ActiveRecord::Schema.define(version: 20160907054048) do
     t.datetime "updated_at",    null: false
     t.integer  "user_id",       null: false
     t.integer  "other_user_id", null: false
+    t.index ["other_user_id"], name: "index_conversations_on_other_user_id", using: :btree
+    t.index ["user_id"], name: "index_conversations_on_user_id", using: :btree
   end
-
-  add_index "conversations", ["other_user_id"], name: "index_conversations_on_other_user_id", using: :btree
-  add_index "conversations", ["user_id"], name: "index_conversations_on_user_id", using: :btree
 
   create_table "locations", force: :cascade do |t|
     t.string   "zip_code",     null: false
@@ -42,33 +40,30 @@ ActiveRecord::Schema.define(version: 20160907054048) do
     t.text     "content"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.index ["conversation_id"], name: "index_messages_on_conversation_id", using: :btree
+    t.index ["receiver_id"], name: "index_messages_on_receiver_id", using: :btree
+    t.index ["sender_id"], name: "index_messages_on_sender_id", using: :btree
   end
-
-  add_index "messages", ["conversation_id"], name: "index_messages_on_conversation_id", using: :btree
-  add_index "messages", ["receiver_id"], name: "index_messages_on_receiver_id", using: :btree
-  add_index "messages", ["sender_id"], name: "index_messages_on_sender_id", using: :btree
 
   create_table "question_options", force: :cascade do |t|
     t.integer  "question_id", null: false
     t.text     "description", null: false
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.index ["question_id"], name: "index_question_options_on_question_id", using: :btree
   end
-
-  add_index "question_options", ["question_id"], name: "index_question_options_on_question_id", using: :btree
 
   create_table "question_responses", force: :cascade do |t|
-    t.integer  "user_id",            null: false
-    t.integer  "acceptable",         null: false
-    t.integer  "importance",         null: false
+    t.integer  "user_id",              null: false
+    t.integer  "acceptable_option_id", null: false
+    t.integer  "importance",           null: false
     t.text     "explanation"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
     t.integer  "question_option_id"
+    t.index ["question_option_id"], name: "index_question_responses_on_question_option_id", using: :btree
+    t.index ["user_id"], name: "index_question_responses_on_user_id", using: :btree
   end
-
-  add_index "question_responses", ["question_option_id"], name: "index_question_responses_on_question_option_id", using: :btree
-  add_index "question_responses", ["user_id"], name: "index_question_responses_on_user_id", using: :btree
 
   create_table "questions", force: :cascade do |t|
     t.text     "title",      null: false
@@ -89,14 +84,13 @@ ActiveRecord::Schema.define(version: 20160907054048) do
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.integer  "location_id"
-    t.integer  "mentor"
-    t.integer  "hiring"
-    t.integer  "friendship"
+    t.string   "mentor"
+    t.string   "hiring"
+    t.string   "friendship"
     t.integer  "collaboration"
+    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
+    t.index ["location_id"], name: "index_users_on_location_id", using: :btree
+    t.index ["username"], name: "index_users_on_username", unique: true, using: :btree
   end
-
-  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
-  add_index "users", ["location_id"], name: "index_users_on_location_id", using: :btree
-  add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree
 
 end
